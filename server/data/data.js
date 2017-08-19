@@ -12,7 +12,7 @@ const init = (db) => {
 
     const getPizzaById = (id) => {
         return db.collection('pizzas')
-            .findOne({'_id':  objectId(id)})
+            .findOne({'id': id})
             .then((pizza) => {
                 return Promise.resolve(pizza);
             })

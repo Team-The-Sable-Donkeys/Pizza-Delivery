@@ -16,9 +16,20 @@ export class PizzaComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.id = params.id;
+      if (params.id) {
+        this.id = +params.id;
+      }
     });
-    if (this.id) {
+    // if (typeof this.id !== 'number' || this.id < 1) {
+    //   throw new Error('Invalid id: ' + this.id);
+    // } else {
+    //   this.PizzaService.getPizzaById(this.id)
+    //     .subscribe((value) => {
+    //       console.log('value: ' + value);
+    //       this.pizza = value;
+    //     });
+    // }
+    if (this.id && typeof this.id === 'number') {
       this.PizzaService.getPizzaById(this.id)
         .subscribe((value) => {
           this.pizza = value;

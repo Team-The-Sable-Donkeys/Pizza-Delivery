@@ -21,15 +21,15 @@ const init = (data) => {
     });
 
     app.get('/api/pizzas', (request, response) => {
-        data.getPizzas()
+        return data.getPizzas()
             .then((pizzas) => {
                 return response.json(pizzas);
             });
     });
 
     app.get('/api/pizzas/:id', (request, response) => {
-        const id = request.params.id;
-        data.getPizzaById(id)
+        const id = +request.params.id;
+        return data.getPizzaById(id)
             .then((pizza) => {
                 return response.json(pizza);
             });

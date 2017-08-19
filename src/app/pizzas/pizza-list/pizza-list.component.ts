@@ -8,11 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PizzaListComponent implements OnInit {
 
-  // pizzas = [
-  //   {name: 'Peperoni', price: 10},
-  //   {name: 'Na gosho liubimata', price: 15}
-  // ];
-
   pizzas: Pizza[];
 
 
