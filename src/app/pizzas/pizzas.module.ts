@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PizzasRoutingModule } from './pizzas-routing.module';
+import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { PizzasRoutingModule } from './pizzas-routing.module';
   ],
   declarations: [
     PizzaComponent,
-    PizzaListComponent
+    PizzaListComponent,
+    PizzaDetailsComponent
   ],
   providers: [PizzaService]
 })

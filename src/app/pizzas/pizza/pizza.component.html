@@ -1,6 +1,13 @@
-<div *ngIf="pizza">
-  <p>Name: {{pizza.name}}</p>
-  <p>Price: {{pizza.price}}</p>
-  <a *ngIf="!this.id" routerLink="/pizzas/{{pizza.id}}">Details</a>
-  <a *ngIf="this.id" routerLink="/pizzas">Go back</a>
+<div class="col-md-4">
+  <div class="product-item">
+    <div class="pi-img-wrapper">
+      <img src="http://via.placeholder.com/500x500" class="img-responsive">
+    </div>
+    <h3>
+      <p>{{pizza.name}}</p>
+    </h3>
+    <div class="pi-price">{{pizza.price}}$</div>
+    <a routerLink="/pizzas/{{pizza.id}}" class="btn add2cart">Details</a>
+    <!-- <a routerLink="" class="btn add2cart">Add to Cart</a> -->
+  </div>
 </div>
