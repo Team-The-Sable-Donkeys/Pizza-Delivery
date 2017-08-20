@@ -3,3 +3,12 @@
 .main-input {
     margin-top: 150px;
 }
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0 0 125px; /* bottom = footer height */
+}
