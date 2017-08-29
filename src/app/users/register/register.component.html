@@ -6,6 +6,10 @@
         <form #form="ngForm" (ngSubmit)="registerUser(form.value)">
           <div class="col-sm-12">
             <div class="row">
+              <div class="col-sm-12 form-group">
+                <label>Username</label>
+                <input name="username" type="text" placeholder="Enter Username Here.." class="form-control" [(ngModel)]="username">
+              </div>
               <div class="col-sm-6 form-group">
                 <label>First Name</label>
                 <input name="firstName" type="text" placeholder="Enter First Name Here.." class="form-control" [(ngModel)]="firstName">

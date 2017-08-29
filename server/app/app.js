@@ -39,8 +39,8 @@ const init = (data) => {
     app.post('/register', (request, response) => {
         const user = request.body;
         const saltRounds = 10;
+        delete user.confirmPassword;
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(saltRounds), null);
-        user.confirmPassword = bcrypt.hashSync(user.confirmPassword, bcrypt.genSaltSync(saltRounds), null);
         return data.register(user)
             .then((value) => {
                 
