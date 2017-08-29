@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 
 const init = (data) => {
     const app = express();
 
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser());
     // app.use(cors());
 
@@ -32,6 +33,17 @@ const init = (data) => {
         return data.getPizzaById(id)
             .then((pizza) => {
                 return response.json(pizza);
+            });
+    });
+
+    app.post('/register', (request, response) => {
+        const user = request.body;
+        const saltRounds = 10;
+        user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(saltRounds), null);
+        user.confirmPassword = bcrypt.hashSync(user.confirmPassword, bcrypt.genSaltSync(saltRounds), null);
+        return data.register(user)
+            .then((value) => {
+                
             });
     });
 

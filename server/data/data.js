@@ -18,9 +18,15 @@ const init = (db) => {
             })
     };
 
+    const register = (user) => {
+        return db.collection('pizza-users')
+            .insert(user);
+    };
+
     const data = {
         getPizzas,
-        getPizzaById
+        getPizzaById,
+        register
     };
     
     return Promise.resolve(data);
