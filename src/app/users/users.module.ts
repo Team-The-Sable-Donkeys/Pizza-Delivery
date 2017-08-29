@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule
   ],
   declarations: [RegisterComponent, LoginComponent],
-  providers: [UsersService, AuthService, AuthGuard],
+  providers: [UsersService],
   exports: [RegisterComponent, LoginComponent]
 })
 export class UsersModule { }

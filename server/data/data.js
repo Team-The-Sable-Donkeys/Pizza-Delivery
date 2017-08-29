@@ -16,7 +16,7 @@ const init = (db) => {
 
     const getPizzaById = (id) => {
         return db.collection('pizzas')
-            .findOne({'id': id})
+            .findOne({ 'id': id })
             .then((pizza) => {
                 return Promise.resolve(pizza);
             })
@@ -24,7 +24,22 @@ const init = (db) => {
 
     const register = (user) => {
         return db.collection('pizza-users')
-            .insert(user);
+            .find()
+            .toArray()
+            .then((users) => {
+                let canRegister = true;
+                users.forEach((u) => {
+                    if (u.username === user.username) {
+                        canRegister = false;
+                    }
+                })
+                if (canRegister) {
+                    return db.collection('pizza-users')
+                        .insert(user);
+                } else {
+                    throw new Error('Username is already in use!');
+                }
+            })
     };
 
     const login = (user) => {
@@ -44,7 +59,7 @@ const init = (db) => {
         register,
         login
     };
-    
+
     return Promise.resolve(data);
 };
 

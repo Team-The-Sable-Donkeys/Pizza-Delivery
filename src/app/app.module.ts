@@ -1,3 +1,5 @@
+import { AuthGuard } from './services/auth/auth-guard.service';
+import { AuthService } from './services/auth/auth.service';
 import { UsersModule } from './users/users.module';
 import { SharedModule } from './shared/shared.module';
 import { PizzasModule } from './pizzas/pizzas.module';
@@ -22,7 +24,7 @@ import { HomeComponent } from './home/home.component';
     SharedModule,
     UsersModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

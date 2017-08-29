@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth/auth.service';
 import { PizzaService } from './../../pizza.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,7 +15,9 @@ export class PizzaComponent implements OnInit {
   isLoading: boolean;
 
 
-  constructor(private route: ActivatedRoute, private PizzaService: PizzaService) {
+  constructor(private route: ActivatedRoute,
+    private PizzaService: PizzaService,
+    private auth: AuthService) {
   }
 
   ngOnInit() {

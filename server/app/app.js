@@ -47,7 +47,7 @@ const init = (data) => {
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(saltRounds), null);
         return data.register(user)
             .then((value) => {
-                
+                response.json(value);
             });
     });
 
