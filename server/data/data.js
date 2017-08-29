@@ -1,3 +1,7 @@
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = 'the camp alpha';
+
 const init = (db) => {
     const objectId = require('mongodb').ObjectID;
 
@@ -23,10 +27,22 @@ const init = (db) => {
             .insert(user);
     };
 
+    const login = (user) => {
+        return db.collection('pizza-users')
+            .findOne({ 'username': user.username })
+            .then((foundUser) => {
+                if (bcrypt.compareSync(user.password, foundUser.password)) {
+                    const token = jwt.sign(foundUser, SECRET_KEY);
+                    return Promise.resolve(token);
+                }
+            });
+    };
+
     const data = {
         getPizzas,
         getPizzaById,
-        register
+        register,
+        login
     };
     
     return Promise.resolve(data);

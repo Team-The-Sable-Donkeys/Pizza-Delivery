@@ -5,6 +5,9 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 
+const jwt = require('jsonwebtoken');
+const SECRET_KEY = 'the camp alpha';
+
 const init = (data) => {
     const app = express();
 
@@ -40,10 +43,19 @@ const init = (data) => {
         const user = request.body;
         const saltRounds = 10;
         delete user.confirmPassword;
+        user.authKey = jwt.sign(user, SECRET_KEY);
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(saltRounds), null);
         return data.register(user)
             .then((value) => {
                 
+            });
+    });
+
+    app.post('/login', (request, response) => {
+        const user = request.body;
+        return data.login(user)
+            .then((authKey) => {
+                return response.json(authKey);
             });
     });
 

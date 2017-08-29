@@ -1,3 +1,4 @@
+import { AuthGuard } from './../services/auth/auth-guard.service';
 import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { PizzaListComponent } from './pizza-list/pizza-list.component';
@@ -6,7 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'all', pathMatch: 'full' },
-  { path: 'all', component: PizzaListComponent },
+  { path: 'all', component: PizzaListComponent /*canActivate: [AuthGuard]*/},
   { path: ':id', component: PizzaDetailsComponent }
 ];
 

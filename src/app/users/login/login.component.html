@@ -1,0 +1,25 @@
+<main>
+  <div class="container">
+    <h1 class="well">Login</h1>
+    <div class="col-lg-12 well">
+      <div class="row">
+        <form #form="ngForm" (ngSubmit)="loginUser(form.value)">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <label>Username</label>
+                <input name="username" type="text" placeholder="Enter Username Here.." class="form-control" [(ngModel)]="username">
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Password</label>
+                <input name="password" type="text" placeholder="Enter Password Here.." class="form-control" [(ngModel)]="password">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-lg btn-info">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <h3>{{errorMessage}}</h3>
+  </div>
+</main>
