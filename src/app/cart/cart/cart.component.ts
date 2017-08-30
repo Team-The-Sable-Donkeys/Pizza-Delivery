@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-cart',
+  selector: '[app-cart]',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
