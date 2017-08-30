@@ -1,0 +1,14 @@
+ #wrong-page-div {
+    background-image: url('../../../assets/wrong-way-pic.jpg');
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    background-position: center;
+    min-height: 100vh;
+} 
+
+ h1 {
+    color: black;
+    position: relative;
+    text-align: center;
+    top: 100px;
+}
