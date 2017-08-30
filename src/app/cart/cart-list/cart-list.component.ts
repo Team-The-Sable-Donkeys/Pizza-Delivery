@@ -20,11 +20,23 @@ export class CartListComponent implements OnInit {
       });
   }
 
+  getPrice() {
+    let price = 0;
+    this.pizzas.forEach((p) => {
+      price += p.price;
+    });
+    return price;
+  }
+
   updateTotalPrice(value) {
-    console.log(value);
     if (this.totalPrice !== value) {
       this.totalPrice = parseFloat(String(+this.totalPrice + +value)).toFixed(2);
     }
+  }
+
+  updateCartList(id) {
+    this.pizzas = this.pizzas.filter((p) => +p.id !== +id);
+    this.totalPrice = this.getPrice();
   }
 
 }

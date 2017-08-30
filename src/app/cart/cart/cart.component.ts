@@ -9,7 +9,9 @@ import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } fro
 export class CartComponent implements OnInit {
 
   @Output() totalPriceChanged = new EventEmitter();
+  @Output() itemRemoved = new EventEmitter();
   @Input() pizza;
+
   subTotal: any = 0;
   prevTotal: any = 0;
   errorMessage;
@@ -57,7 +59,8 @@ export class CartComponent implements OnInit {
         this.PizzaService.removeFromCart(body)
           .subscribe();
       });
-
+    this.totalPriceChanged.emit(this.prevTotal - this.subTotal);
+    this.itemRemoved.emit(this.pizza.id);
   }
 
 }
