@@ -8,6 +8,6 @@
     </h3>
     <div class="pi-price">{{pizza.price}}$</div>
     <a routerLink="/pizzas/{{pizza.id}}" class="btn add2cart">Details</a>
-    <a *ngIf="auth.isLoggedIn()" class="btn add2cart">Add to Cart</a>
+    <a *ngIf="auth.isLoggedIn()" (click)="addToCart(pizza.id)" class="btn add2cart">Add to Cart</a>
   </div>
 </div>

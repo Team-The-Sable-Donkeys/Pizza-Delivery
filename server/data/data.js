@@ -14,11 +14,42 @@ const init = (db) => {
             })
     };
 
+    const getUsers = () => {
+        return db.collection('pizza-users')
+            .find()
+            .toArray()
+            .then((users) => {
+                return Promise.resolve(users);
+            })
+    };
+
+    const getUserById = (id) => {
+        return db.collection('pizza-users')
+            .findOne({ 'id': id })
+            .then((user) => {
+                return Promise.resolve(user);
+            })
+    };
+
     const getPizzaById = (id) => {
         return db.collection('pizzas')
             .findOne({ 'id': id })
             .then((pizza) => {
                 return Promise.resolve(pizza);
+            })
+    };
+
+    const updateUserCart = (userId, pizza) => {
+        return db.collection('pizza-users')
+            .update({ 'id': userId },
+            {
+                $push: {
+                    cart: pizza,
+                },
+            }
+            )
+            .then((user) => {
+                return Promise.resolve(user);
             })
     };
 
@@ -34,6 +65,7 @@ const init = (db) => {
                     }
                 })
                 if (canRegister) {
+                    user.id = users.length + 1;
                     return db.collection('pizza-users')
                         .insert(user);
                 } else {
@@ -47,7 +79,8 @@ const init = (db) => {
             .findOne({ 'username': user.username })
             .then((foundUser) => {
                 if (bcrypt.compareSync(user.password, foundUser.password)) {
-                    const token = jwt.sign(foundUser, SECRET_KEY);
+                    // const token = jwt.sign(foundUser, SECRET_KEY);
+                    const token = foundUser.authKey;
                     return Promise.resolve(token);
                 }
             });
@@ -57,7 +90,10 @@ const init = (db) => {
         getPizzas,
         getPizzaById,
         register,
-        login
+        login,
+        getUsers,
+        getUserById,
+        updateUserCart
     };
 
     return Promise.resolve(data);

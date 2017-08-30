@@ -19,7 +19,7 @@ const init = (data) => {
     app.use(function (req, res, next) {
         res.header('Access-Control-Allow-Credentials', true);
         res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT');
         res.header('Access-Control-Allow-Headers', 'appid, X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
         next();
     });
@@ -39,10 +39,35 @@ const init = (data) => {
             });
     });
 
+    app.get('/api/users', (request, response) => {
+        return data.getUsers()
+            .then((user) => {
+                return response.json(user);
+            });
+    });
+
+    app.get('/api/users/:id', (request, response) => {
+        const id = +request.params.id;
+        return data.getUserById(id)
+            .then((user) => {
+                return response.json(user);
+            });
+    });
+
+    app.put('/api/cart', (request, response) => {
+        const userId = +request.body.userId;
+        const pizza = request.body.pizza;
+        return data.updateUserCart(userId, pizza)
+            .then((user) => {
+                return response.json(user);
+            });
+    });
+
     app.post('/register', (request, response) => {
         const user = request.body;
         const saltRounds = 10;
         delete user.confirmPassword;
+        user.cart = [];
         user.authKey = jwt.sign(user, SECRET_KEY);
         user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(saltRounds), null);
         return data.register(user)

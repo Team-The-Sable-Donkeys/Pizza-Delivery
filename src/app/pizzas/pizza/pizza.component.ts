@@ -28,4 +28,20 @@ export class PizzaComponent implements OnInit {
     }
   }
 
+  addToCart(id) {
+    this.PizzaService.getUsers()
+      .subscribe((users) => {
+        const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
+        this.PizzaService.getPizzaById(id)
+          .subscribe((pizza) => {
+            const body = {
+              pizza: pizza,
+              userId: loggedUser.id
+            };
+            this.PizzaService.addToCart(body)
+              .subscribe();
+          });
+      });
+  }
+
 }
