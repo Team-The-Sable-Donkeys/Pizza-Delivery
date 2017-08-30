@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CartListComponent implements OnInit {
 
   pizzas;
+  totalPrice: any = 0;
   constructor(private PizzaService: PizzaService) { }
 
   ngOnInit() {
@@ -17,6 +18,13 @@ export class CartListComponent implements OnInit {
         const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
         this.pizzas = loggedUser.cart;
       });
+  }
+
+  updateTotalPrice(value) {
+    console.log(value);
+    if (this.totalPrice !== value) {
+      this.totalPrice = parseFloat(String(+this.totalPrice + +value)).toFixed(2);
+    }
   }
 
 }

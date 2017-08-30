@@ -40,7 +40,6 @@ const init = (db) => {
     };
 
     const updateUserCart = (userId, pizza) => {
-        console.log('add');
         pizza.quantity = 1;
 
         getUserById(userId)
@@ -49,7 +48,6 @@ const init = (db) => {
                 user.cart.forEach((p) => {
                     if (+p.id === +pizza.id) {
                         isInCart = true;
-                        console.log(p.id + ': is inside already');
                     }
                 });
                 // if pizza is in cart, dont add it, update the quantity
@@ -87,7 +85,6 @@ const init = (db) => {
     };
 
     const deletePizzaFromCart = (userId, pizza) => {
-        console.log('delete');
         return db.collection('pizza-users')
             .update({ 'id': userId },
             {

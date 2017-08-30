@@ -1,5 +1,5 @@
 import { PizzaService } from './../../pizza.service';
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: '[app-cart]',
@@ -8,8 +8,10 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
+  @Output() totalPriceChanged = new EventEmitter();
   @Input() pizza;
   subTotal: any = 0;
+  prevTotal: any = 0;
   errorMessage;
 
   constructor(private PizzaService: PizzaService) {
@@ -17,7 +19,11 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.prevTotal = this.subTotal;
     this.subTotal = this.pizza.price * this.pizza.quantity;
+    this.subTotal = parseFloat(String(this.subTotal)).toFixed(2);
+
+    this.totalPriceChanged.emit(this.subTotal - this.prevTotal);
   }
 
   changeSubTotal(ev) {
@@ -28,8 +34,12 @@ export class CartComponent implements OnInit {
       return;
     }
     if (+quantity === parseInt(quantity, 10)) {
+      this.prevTotal = this.subTotal;
       this.subTotal = this.pizza.price * quantity;
       this.subTotal = parseFloat(String(this.subTotal)).toFixed(2);
+
+      this.totalPriceChanged.emit(this.subTotal - this.prevTotal);
+
       this.errorMessage = '';
     } else {
       this.errorMessage = 'Please enter a valid quantity';
@@ -41,9 +51,9 @@ export class CartComponent implements OnInit {
       .subscribe((users) => {
         const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
         const body = {
-              pizza: this.pizza,
-              userId: loggedUser.id
-            };
+          pizza: this.pizza,
+          userId: loggedUser.id
+        };
         this.PizzaService.removeFromCart(body)
           .subscribe();
       });

@@ -7,11 +7,11 @@
     </div>
   </div>
 </td>
-<td data-th="Price">{{pizza?.price}}$</td>
+<td data-th="Price">${{pizza?.price}}</td>
 <td data-th="Quantity">
   <input type="number" min="0" (input)="changeSubTotal($event)" class="form-control text-center" value="{{pizza.quantity}}">
 </td>
-<td data-th="Subtotal" class="text-center">{{subTotal}}$</td>
+<td data-th="Subtotal" class="text-center">${{subTotal}}</td>
 <td class="actions" data-th="">
   <button class="btn btn-danger btn-sm" (click)="removeFromCart()"><i class="fa fa-trash-o"></i></button>
 </td>
