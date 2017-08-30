@@ -1,3 +1,5 @@
+import { CartListComponent } from './cart/cart-list/cart-list.component';
+import { AuthGuard } from './services/auth/auth-guard.service';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
 import { HomeComponent } from './home/home.component';
@@ -11,7 +13,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pizzas', loadChildren: './pizzas/pizzas.module.ts#PizzasModule' },
   { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'cart', component: CartListComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

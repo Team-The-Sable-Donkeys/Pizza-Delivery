@@ -1,0 +1,33 @@
+/* tr>td, tr>td{
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+    td .form-control{
+		width:20%;
+		display: inline !important;
+	}
+	.actions .btn{
+		width:36%;
+		margin:1.5em 0;
+	}
+	
+	.actions .btn-info{
+		float:left;
+	}
+	.actions .btn-danger{
+		float:right;
+	}
+	
+	td { display: block; padding: .6rem; min-width:320px;}
+	tr td:first-child { background: #333; color: #fff; }
+	td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+	
+	
+	
+	td{display:block; }
+	td .btn{display:block;}
+	
+} */

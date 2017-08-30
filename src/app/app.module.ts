@@ -1,3 +1,4 @@
+import { CartModule } from './cart/cart.module';
 import { AuthGuard } from './services/auth/auth-guard.service';
 import { AuthService } from './services/auth/auth.service';
 import { UsersModule } from './users/users.module';
@@ -22,7 +23,8 @@ import { HomeComponent } from './home/home.component';
     PizzasModule,
     HttpModule,
     SharedModule,
-    UsersModule
+    UsersModule,
+    CartModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

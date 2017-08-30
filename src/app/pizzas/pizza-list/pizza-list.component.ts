@@ -12,13 +12,13 @@ export class PizzaListComponent implements OnInit {
 
 
   constructor(private PizzaService: PizzaService) {
+  }
+
+  ngOnInit() {
     this.PizzaService.getPizzas()
       .subscribe((value) => {
         this.pizzas = value;
       });
-  }
-
-  ngOnInit() {
   }
 
 }

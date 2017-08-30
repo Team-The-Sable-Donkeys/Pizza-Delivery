@@ -32,6 +32,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a *ngIf="!auth.isLoggedIn()" routerLink="/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
         <li><a *ngIf="!auth.isLoggedIn()" routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a *ngIf="auth.isLoggedIn()" routerLink="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
         <li><a *ngIf="auth.isLoggedIn()" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
