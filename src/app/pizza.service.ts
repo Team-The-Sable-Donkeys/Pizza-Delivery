@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -28,4 +28,9 @@ export class PizzaService {
       .map((response) => response.json());
   }
 
+  removeFromCart(body) {
+    return this.http.delete('http://localhost:3000/api/cart', new RequestOptions({
+      body: body
+    }));
+  }
 }

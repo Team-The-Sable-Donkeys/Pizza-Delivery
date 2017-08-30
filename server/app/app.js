@@ -19,7 +19,7 @@ const init = (data) => {
     app.use(function (req, res, next) {
         res.header('Access-Control-Allow-Credentials', true);
         res.header('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT');
+        res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
         res.header('Access-Control-Allow-Headers', 'appid, X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
         next();
     });
@@ -57,10 +57,13 @@ const init = (data) => {
     app.put('/api/cart', (request, response) => {
         const userId = +request.body.userId;
         const pizza = request.body.pizza;
-        return data.updateUserCart(userId, pizza)
-            .then((user) => {
-                return response.json(user);
-            });
+        return data.updateUserCart(userId, pizza);
+    });
+
+    app.delete('/api/cart', (request, response) => {
+        const userId = +request.body.userId;
+        const pizza = request.body.pizza;
+        return data.deletePizzaFromCart(userId, pizza);
     });
 
     app.post('/register', (request, response) => {
