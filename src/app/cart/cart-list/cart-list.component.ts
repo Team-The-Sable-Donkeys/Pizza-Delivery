@@ -23,7 +23,7 @@ export class CartListComponent implements OnInit {
   getPrice() {
     let price = 0;
     this.pizzas.forEach((p) => {
-      price += p.price;
+      price += p.price * p.quantity;
     });
     return price;
   }
@@ -37,6 +37,7 @@ export class CartListComponent implements OnInit {
   updateCartList(id) {
     this.pizzas = this.pizzas.filter((p) => +p.id !== +id);
     this.totalPrice = this.getPrice();
+    this.totalPrice = parseFloat(String(this.totalPrice)).toFixed(2);
   }
 
 }
