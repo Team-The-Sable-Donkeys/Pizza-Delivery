@@ -1,0 +1,27 @@
+ h2 {
+    color: black;
+    position: relative;
+    text-align: center;
+    top: 100px;
+}
+
+#make-pizza-container{
+    position: relative;
+    text-align: left;
+    top: 150px;
+}
+
+button{
+    margin-right: 50px;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+
+ul .select-menu{
+    font-size: 50px;
+    display: inline;
+}
