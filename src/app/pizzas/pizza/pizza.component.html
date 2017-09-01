@@ -1,13 +1,15 @@
 <div class="col-md-6">
   <div class="product-item pizza-item">
+     <img *ngIf="showLoader" src="../../../assets/Spinner.gif" alt="" class="loader"> 
     <div class="pi-img-wrapper">
-      <img src="{{pizza.imageUrl}}" class="img-responsive" id="pizza-img">
+      <!-- <img [src]="pizzaIsLoaded()" class="img-responsive" class="pizza-img"> -->
+       <img src="{{pizza.imageUrl}}" class="img-responsive" class="pizza-img"> 
     </div>
     <h3>
       <p class="pizza-name">{{pizza.name}}</p>
     </h3>
     <div class="pi-price">{{pizza.price}}$</div>
     <a routerLink="/pizzas/{{pizza.id}}" class="btn add2cart"> Details</a>
-    <a *ngIf="auth.isLoggedIn()" (click)="addToCart()" class="btn add2cart"> Add to Cart </a>
+    <button *ngIf="auth.isLoggedIn()" (click)="addToCart()" class="btn add2cart" [disabled]="btnDisabled"> Add to Cart </button>
   </div>
 </div>

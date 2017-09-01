@@ -42,7 +42,7 @@ const init = (db) => {
     const updateUserCart = (userId, pizza) => {
         pizza.quantity = 1;
 
-        getUserById(userId)
+        return getUserById(userId)
             .then((user) => {
                 let isInCart = false;
                 user.cart.forEach((p) => {
@@ -89,7 +89,7 @@ const init = (db) => {
             .update({ 'id': userId },
             {
                 $pull: {
-                    cart: pizza,
+                    cart: { name: pizza.name },
                 },
             }
             );

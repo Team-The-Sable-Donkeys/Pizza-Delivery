@@ -1,6 +1,7 @@
 <main>
   <div class="container" id="pizza-container">
     <div class="row">
+      <img *ngIf="showLoader" src="../../../assets/Spinner.gif" alt="">
       <div *ngFor="let pizza of pizzas">
         <app-pizza [pizza]="pizza"></app-pizza>
       </div>

@@ -10,14 +10,17 @@ export class PizzaListComponent implements OnInit {
 
   pizzas: Pizza[];
 
+  showLoader = false;
 
   constructor(private PizzaService: PizzaService) {
   }
 
   ngOnInit() {
+    this.showLoader = true;
     this.PizzaService.getPizzas()
       .subscribe((value) => {
         this.pizzas = value;
+        this.showLoader = false;
       });
   }
 

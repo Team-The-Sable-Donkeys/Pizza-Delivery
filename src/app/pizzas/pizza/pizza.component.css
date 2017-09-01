@@ -102,7 +102,7 @@
             /* background: #e84d1c;
             border-color: #e84d1c; */
         }
-#pizza-img {
+.pizza-img {
     max-width: 500px;
     min-width: 500px;
     min-height: 450px;
@@ -110,5 +110,13 @@
 }
 
 .pizza-item {
+    position: relative;
     background: transparent;
+}
+
+.loader {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    z-index: 100;
 }

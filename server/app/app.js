@@ -57,7 +57,10 @@ const init = (data) => {
     app.put('/api/cart', (request, response) => {
         const userId = +request.body.userId;
         const pizza = request.body.pizza;
-        return data.updateUserCart(userId, pizza);
+        return data.updateUserCart(userId, pizza)
+            .then(() => {
+                return response.status(201);
+            });
     });
 
     app.delete('/api/cart', (request, response) => {

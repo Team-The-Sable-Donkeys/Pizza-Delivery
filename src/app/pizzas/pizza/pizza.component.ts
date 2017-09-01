@@ -12,8 +12,8 @@ export class PizzaComponent implements OnInit {
   id: number;
   @Input() pizza;
 
-  isLoading: boolean;
-
+  showLoader = false;
+  btnDisabled = false;
 
   constructor(private route: ActivatedRoute,
     private PizzaService: PizzaService,
@@ -21,16 +21,22 @@ export class PizzaComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.pizza) {
-      this.isLoading = false;
+  }
+
+  pizzaIsLoaded() {
+    if (this.pizza.imageUrl) {
+      return this.pizza.imageUrl;
     } else {
-      this.isLoading = true;
+      return '../../../assets/Spinner.gif';
     }
   }
 
   addToCart() {
+    this.showLoader = true;
+    this.btnDisabled = true;
+
     this.PizzaService.getUsers()
-      .subscribe((users) => {
+      .map((users) => {
         const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
         const body = {
           pizza: this.pizza,
@@ -38,6 +44,23 @@ export class PizzaComponent implements OnInit {
         };
         this.PizzaService.addToCart(body)
           .subscribe();
+      })
+      .subscribe(() => {
+        this.showLoader = false;
+        this.btnDisabled = false;
       });
+
+    // 100% working below
+    // this.PizzaService.getUsers()
+    //   .subscribe((users) => {
+    //     const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
+    //     const body = {
+    //       pizza: this.pizza,
+    //       userId: loggedUser.id
+    //     };
+    //     this.PizzaService.addToCart(body)
+    //       .subscribe(() => {
+    //       });
+    //   });
   }
 }

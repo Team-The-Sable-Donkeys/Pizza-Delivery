@@ -10,7 +10,8 @@
           <th style="width:10%"></th>
         </tr>
       </thead>
-
+      
+        <img *ngIf="showLoader" src="../../../assets/Spinner.gif" alt="">
         <tbody *ngFor="let pizza of pizzas" class="cart-item">
              <tr app-cart (totalPriceChanged)="updateTotalPrice($event)" (itemRemoved)="updateCartList($event)" [pizza]="pizza"></tr>   
         </tbody>

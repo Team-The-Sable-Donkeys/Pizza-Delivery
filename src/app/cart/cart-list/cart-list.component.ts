@@ -15,6 +15,7 @@ export class CartListComponent implements OnInit {
   pizzas;
   totalPrice: any = 0;
   loggedUser;
+  showLoader = true;
   constructor(private PizzaService: PizzaService,
     private dialog: MdDialog) { }
 
@@ -24,7 +25,8 @@ export class CartListComponent implements OnInit {
         const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
         this.loggedUser = loggedUser;
         this.pizzas = loggedUser.cart;
-      });
+        this.showLoader = false;
+      }, (error) => this.showLoader = false);
   }
 
   getPrice() {
