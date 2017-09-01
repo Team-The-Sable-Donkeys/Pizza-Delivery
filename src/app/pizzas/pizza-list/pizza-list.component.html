@@ -1,7 +1,9 @@
-<div class="container" id="pizza-container">
-  <div class="row">
-    <div *ngFor="let pizza of pizzas">
-      <app-pizza [pizza]="pizza"></app-pizza>
+<main>
+  <div class="container" id="pizza-container">
+    <div class="row">
+      <div *ngFor="let pizza of pizzas">
+        <app-pizza [pizza]="pizza"></app-pizza>
+      </div>
     </div>
   </div>
-</div>
+</main>

@@ -1,5 +1,7 @@
 main {
-    margin-top: 75px;
+    background-image: url('../../../assets/wooden-background.jpg');
+    margin-top: 50px;
+    min-height: 100vh;
 }
 
 

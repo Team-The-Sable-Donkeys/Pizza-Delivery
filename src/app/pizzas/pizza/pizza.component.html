@@ -1,13 +1,13 @@
 <div class="col-md-6">
-  <div class="product-item">
+  <div class="product-item pizza-item">
     <div class="pi-img-wrapper">
       <img src="{{pizza.imageUrl}}" class="img-responsive" id="pizza-img">
     </div>
     <h3>
-      <p>{{pizza.name}}</p>
+      <p class="pizza-name">{{pizza.name}}</p>
     </h3>
     <div class="pi-price">{{pizza.price}}$</div>
-    <a routerLink="/pizzas/{{pizza.id}}" class="btn add2cart">Details</a>
-    <a *ngIf="auth.isLoggedIn()" (click)="addToCart()" class="btn add2cart">Add to Cart</a>
+    <a routerLink="/pizzas/{{pizza.id}}" class="btn add2cart"> Details</a>
+    <a *ngIf="auth.isLoggedIn()" (click)="addToCart()" class="btn add2cart"> Add to Cart </a>
   </div>
 </div>
