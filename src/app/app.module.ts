@@ -1,3 +1,4 @@
+import { OrdersModule } from './orders/orders.module';
 import { CartModule } from './cart/cart.module';
 import { AuthGuard } from './services/auth/auth-guard.service';
 import { AuthService } from './services/auth/auth.service';
@@ -24,7 +25,8 @@ import { HomeComponent } from './home/home.component';
     HttpModule,
     SharedModule,
     UsersModule,
-    CartModule
+    CartModule,
+    OrdersModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

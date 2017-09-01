@@ -1,0 +1,9 @@
+<main>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="order-container" *ngFor="let order of orders">
+        <app-order [order]="order" class="col-md-3"></app-order>
+      </div>
+    </div>
+  </div>
+</main>

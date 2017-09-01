@@ -145,7 +145,16 @@ const init = (db) => {
                     }
                 }
             )
-    } 
+    }
+
+    const getOrders = () => {
+        return db.collection('pizza-orders')
+            .find()
+            .toArray()
+            .then((orders) => {
+                return Promise.resolve(orders);
+            })
+    }
 
     const data = {
         getPizzas,
@@ -157,7 +166,8 @@ const init = (db) => {
         updateUserCart,
         deletePizzaFromCart,
         insertOrder,
-        emptyUserCart
+        emptyUserCart,
+        getOrders
     };
 
     return Promise.resolve(data);

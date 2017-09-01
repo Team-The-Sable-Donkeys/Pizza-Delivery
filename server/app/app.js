@@ -92,6 +92,13 @@ const init = (data) => {
             });
     });
 
+    app.get('/api/orders', (request, response) => {
+        return data.getOrders()
+            .then((orders) => {
+                return response.json(orders);
+            });
+    });
+
     app.post('/api/orders', (request, response) => {
         const order = request.body;
         return data.insertOrder(order);
