@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Pizzas</h1>
+    <div class="col-md-12" *ngFor="let pizza of data.order.pizzas">
+      <div class="col-md-1">
+        <h3>{{pizza.quantity}} x </h3>
+      </div>
+      <div class="col-md-3">
+        <h3>{{pizza.name}}</h3>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h1 class="text-center">Address</h1>
+      <h3 class="text-center">City: {{data.order.address.city}}</h3>
+      <h3 class="text-center">Street: {{data.order.address.street}}</h3>
+    </div>
+    <div class="col-md-12">
+      <h1 class="text-center">Date</h1>
+      <h3 class="text-center">{{data.order.date.hour}}:{{data.order.date.minute}} {{data.order.date.weekDay}}
+        {{data.order.date.day}} {{data.order.date.month}} {{data.order.date.year}}
+      </h3>
+    </div>
+  </div>
+</div>

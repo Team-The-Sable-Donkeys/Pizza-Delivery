@@ -1,3 +1,4 @@
+import { AdminGuard } from './services/auth/admin-guard.service';
 import { OrdersListComponent } from './orders/orders-list/orders-list.component';
 import { UnauthorizedComponent } from './shared/unauthorized/unauthorized.component';
 import { CartListComponent } from './cart/cart-list/cart-list.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: CartListComponent, canActivate: [AuthGuard] },
-  { path: 'orders', component: OrdersListComponent },
+  { path: 'orders', component: OrdersListComponent, canActivate: [AdminGuard] },
   { path: '**', component: UnauthorizedComponent, pathMatch: 'full' }
 ];
 

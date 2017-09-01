@@ -1,5 +1,7 @@
-
+main {
+    background-image: url('../../../assets/wooden-background.jpg');
+}
 
 #pizza-container {
-    margin-bottom: 150px;
+    margin-bottom: 125px;
 }

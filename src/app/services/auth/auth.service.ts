@@ -7,6 +7,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthService {
 
+  adminAuthKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluI'
+   + 'iwicGFzc3dvcmQiOiJhZG1pbiIsImFkZHJlc3MiOnt9LCJjYXJ0IjpbXSwiaWF0IjoxNTA0MjY1ODQzfQ'
+   + '.KJNAAz95_2BC5IVN03u5jCSebEoWxXkhamjG7vJp1e0';
+
   constructor(private http: Http, private router: Router) { }
 
   loginUser(user) {
@@ -21,6 +25,11 @@ export class AuthService {
   logout() {
     localStorage.removeItem('auth-key');
     this.router.navigate(['/home']);
+  }
+
+  isAdmin() {
+    const gotAdminKey = (localStorage.getItem('auth-key') === this.adminAuthKey) ? true : false;
+    return this.isLoggedIn() && gotAdminKey;
   }
 
 }

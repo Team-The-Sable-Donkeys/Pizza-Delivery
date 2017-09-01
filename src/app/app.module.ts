@@ -1,3 +1,4 @@
+import { AdminGuard } from './services/auth/admin-guard.service';
 import { OrdersModule } from './orders/orders.module';
 import { CartModule } from './cart/cart.module';
 import { AuthGuard } from './services/auth/auth-guard.service';
@@ -28,7 +29,7 @@ import { HomeComponent } from './home/home.component';
     CartModule,
     OrdersModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

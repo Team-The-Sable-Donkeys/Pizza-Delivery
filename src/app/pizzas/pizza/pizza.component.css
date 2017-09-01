@@ -70,29 +70,45 @@
     color: #3e4d5c;
 }
 .product-item h3 a:hover {
-    color: #E02222;
+    /* color: #E02222; */
+    color: green;
 }
 .pi-price {
-    color: #e84d1c;
-    font-size: 18px;
+    /* color: #e84d1c; */
+    color: white;
+    font-size: 25px;
     float: left;
     padding-top: 1px;
 }
+
+.pizza-name {
+    color: white;
+    font-size: 22px;
+}
+
 .product-item .add2cart {
+    background-color: blanchedalmond;
     float: right;
-    color: #a8aeb3;
+    /* color: #a8aeb3; */
+    color: black;
     border: 1px #ededed solid;
     padding: 3px 6px;
     text-transform: uppercase;
 }
         .product-item .add2cart:hover {
             color: #fff;
-            background: #e84d1c;
-            border-color: #e84d1c;
+            background: green;
+            border-color: darkolivegreen;
+            /* background: #e84d1c;
+            border-color: #e84d1c; */
         }
 #pizza-img {
     max-width: 500px;
     min-width: 500px;
     min-height: 450px;
     max-height: 450px;
+}
+
+.pizza-item {
+    background: transparent;
 }
