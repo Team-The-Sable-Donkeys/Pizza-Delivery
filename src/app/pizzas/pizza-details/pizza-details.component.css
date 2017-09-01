@@ -1,0 +1,29 @@
+main {
+    min-height: 100vh;
+    background-image: url('../../../assets/wooden-background.jpg');
+    margin-top: -100px; 
+}
+
+.main-input {
+    padding-top: 250px;
+}
+
+h1, h3 {
+    color: white;
+}
+
+a {
+    background-color: blanchedalmond;
+    border-radius: 5px;
+    color: black;
+    border: 1px #ededed solid;
+    padding: 6px 9px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+a:hover {
+     color: #fff;
+    background: green;
+    border-color: darkolivegreen;
+}

@@ -1,14 +1,16 @@
-<div class="container main-input">
-  <div class="row">
-    <div *ngIf="pizza" class="col-md-6">
-      <img src="{{pizza.imageUrl}}" class="img-responsive">
-    </div>
-    <div class="col-md-6">
-      <div *ngIf="pizza">
-        <p>Name: {{pizza.name}}</p>
-        <p>Price: {{pizza.price}}</p>
-        <a routerLink="/pizzas/all">Go back</a>
+<main>
+  <div class="container main-input">
+    <div class="row">
+      <div *ngIf="pizza" class="col-md-6">
+        <img src="{{pizza.imageUrl}}" class="img-responsive">
+      </div>
+      <div class="col-md-6">
+        <div *ngIf="pizza">
+          <h1>Name: {{pizza.name}}</h1>
+          <h3>Price: ${{pizza.price}}</h3>
+          <a routerLink="/pizzas/all">Go back</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</main>
