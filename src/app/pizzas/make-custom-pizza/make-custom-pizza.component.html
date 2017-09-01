@@ -4,11 +4,23 @@
   <ul>
     <li class='select-menu'>
       <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose size
+  <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let size of sizes">
+            <input type="radio" name = 'size' value = 'selectSize'>{{size}}
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class='select-menu'>
+      <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose flour
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let flour of flours">
-            {{ flour }}
+            <input type="radio" name = 'flour' value = 'selectFlour'>{{flour}}
           </li>
         </ul>
       </div>
@@ -20,7 +32,7 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let diary of diaries">
-            {{ diary }}
+            <input type="checkbox" >{{diary}}
           </li>
         </ul>
       </div>
@@ -32,7 +44,19 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let meat of meats">
-            {{ meat }}
+            <input type="checkbox">{{meat}}
+          </li>
+        </ul>
+      </div>
+    </li>
+
+  <li class='select-menu'>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose sauce
+  <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let sauce of sauces">
+            <input type="checkbox">{{sauce}}
           </li>
         </ul>
       </div>
