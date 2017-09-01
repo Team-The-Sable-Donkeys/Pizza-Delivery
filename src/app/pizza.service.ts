@@ -33,4 +33,8 @@ export class PizzaService {
       body: body
     }));
   }
+
+  sendOrder(data) {
+    return this.http.post('http://localhost:3000/api/orders', data);
+  }
 }

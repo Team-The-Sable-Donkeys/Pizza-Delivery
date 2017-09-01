@@ -36,6 +36,8 @@ export class CartComponent implements OnInit {
       return;
     }
     if (+quantity === parseInt(quantity, 10)) {
+      this.pizza.quantity = +quantity;
+
       this.prevTotal = this.subTotal;
       this.subTotal = this.pizza.price * quantity;
       this.subTotal = parseFloat(String(this.subTotal)).toFixed(2);

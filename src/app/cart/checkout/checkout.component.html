@@ -1,0 +1,42 @@
+<div class="container">
+  <md-dialog-content>
+    <h2 class="text-center">Checkout</h2>
+  </md-dialog-content>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Pizzas</h3>
+      <div id="pizzas-container">
+        <div *ngFor="let pizza of data.pizzas" class="container">
+          <div class="row">
+            <p class="col-xs-1">{{pizza.quantity}} x </p>
+            <img src="{{pizza.imageUrl}}" alt="" class="img-responsive pizza-img col-xs-3">
+            <h4 class="col-xs-3">{{pizza.name}}</h4>
+            <p class="col-xs-1">${{pizza.price * pizza.quantity}}</p>
+          </div>
+        </div>
+      </div>
+      <h4>Total price: ${{data.totalPrice}}</h4>
+    </div>
+    <div class="col-md-4">
+      <h3>Address</h3>
+      <div id="address-container">
+        <div class="alert alert-info">
+          <strong>Note!</strong><span> Default address set is taken from your profile.</span>
+        </div>
+        <div>
+          <h4>To:</h4>
+          <form #form="ngForm" (ngSubmit)="sendOrder(form.value)">
+            <label for="city">City: </label>
+            <input type="text" value="{{city}}" name="city" [(ngModel)]="city">
+            <br>
+            <label for="street">Street: </label>
+            <input type="text" value="{{street}}" name="street" [(ngModel)]="street">
+            <br>
+            <button type="submit" class="btn btn-success">Send order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button (click)="closeDialog()">Close</button>
+</div>

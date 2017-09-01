@@ -128,6 +128,25 @@ const init = (db) => {
             });
     };
 
+    const insertOrder = (order) => {
+        return db.collection('pizza-orders')
+            .insert(order);
+    }
+
+    const emptyUserCart = (userId) => {
+        return db.collection('pizza-users')
+            .update(
+                {
+                    'id': userId
+                },
+                {
+                    $set: {
+                        cart: []
+                    }
+                }
+            )
+    } 
+
     const data = {
         getPizzas,
         getPizzaById,
@@ -136,7 +155,9 @@ const init = (db) => {
         getUsers,
         getUserById,
         updateUserCart,
-        deletePizzaFromCart
+        deletePizzaFromCart,
+        insertOrder,
+        emptyUserCart
     };
 
     return Promise.resolve(data);

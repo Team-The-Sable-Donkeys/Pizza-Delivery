@@ -66,6 +66,11 @@ const init = (data) => {
         return data.deletePizzaFromCart(userId, pizza);
     });
 
+    app.delete('/api/empty', (request, response) => {
+        const userId = +request.body.id;
+        return data.emptyUserCart(userId);
+    });
+
     app.post('/register', (request, response) => {
         const user = request.body;
         const saltRounds = 10;
@@ -85,6 +90,11 @@ const init = (data) => {
             .then((authKey) => {
                 return response.json(authKey);
             });
+    });
+
+    app.post('/api/orders', (request, response) => {
+        const order = request.body;
+        return data.insertOrder(order);
     });
 
     app.get('*', (request, response) => {
