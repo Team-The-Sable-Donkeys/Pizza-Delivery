@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from './product.model';
+import { CustomPizza } from './custom-pizza.model';
 
 @Component({
   selector: 'app-make-custom-pizza',
@@ -7,28 +7,30 @@ import { Product } from './product.model';
   styleUrls: ['./make-custom-pizza.component.css']
 })
 export class MakeCustomPizzaComponent implements OnInit {
- public flours: string[];
+  public customPizza: CustomPizza;
+  public sizes: string[];
+  public flours: string[];
   public diaries: string[];
   public meats: string[];
+  public sauces: string[];
+
+   kk = {
+    size: 'dfghj',
+    name: 'fefe'
+  };
 
 
   constructor() {
+    this.sizes = ['small', 'medium', 'large', 'family'];
     this.flours = ['traditional', 'italian style', 'thin and crispy'];
     this.diaries = ['white cheese', 'yellow cheese', 'mozarella'];
     this.meats = ['salami', 'backon', 'ham'];
+    this.sauces = ['garlic', 'tomato'];
   }
 
-  chooseProduct(products) {
-    for (let i = 0; i < products.length; i++) {
-      console.log(products[i]);
-    }
-  }
-
-  testClick() {
-    console.log('test');
-  }
 
   ngOnInit() {
+     console.log(this.kk.size);
   }
 
 }
