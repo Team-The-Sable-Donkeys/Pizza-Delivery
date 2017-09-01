@@ -1,0 +1,55 @@
+<div id="make-pizza-container">
+
+
+  <ul>
+    <li class='select-menu'>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose flour
+  <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let flour of flours">
+            {{ flour }}
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class='select-menu'>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose diary
+  <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let diary of diaries">
+            {{ diary }}
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <li class='select-menu'>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose meat
+  <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let meat of meats">
+            {{ meat }}
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2> make pizza </h2>

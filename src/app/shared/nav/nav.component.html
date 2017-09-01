@@ -27,7 +27,8 @@
           </ul> -->
         </li>
         <li><a routerLink="/pizzas">Menu</a></li>
-        <li><a>Something</a></li>
+        <li><a routerLink = "/pizzas/makePizza">Make your own pizza</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a *ngIf="!auth.isLoggedIn()" routerLink="/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
