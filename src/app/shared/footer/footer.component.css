@@ -6,7 +6,7 @@ footer {
     height: 125px;
     width: 100%;
     overflow: hidden;
-    color: #cccccc;
+	color: #cccccc;
 }
 
 ul.social-network {
@@ -85,3 +85,5 @@ a.socialIcon:hover, .socialHoverClass {
 	-ms-transition: all 0.8s;
 	transition: all 0.8s;
 }
+
+

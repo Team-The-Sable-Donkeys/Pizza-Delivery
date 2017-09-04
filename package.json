@@ -40,6 +40,7 @@
     "jquery": "^3.2.1",
     "jsonwebtoken": "^7.4.3",
     "mongodb": "^2.2.31",
+    "ngx-bootstrap": "^1.9.1",
     "popper.js": "^1.12.3",
     "rxjs": "^5.4.2",
     "tether": "^1.4.0",
