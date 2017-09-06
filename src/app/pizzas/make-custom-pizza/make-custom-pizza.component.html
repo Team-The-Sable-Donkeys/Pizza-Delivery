@@ -8,10 +8,10 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let size of sizes">
-            <input type="radio" name='pizzaSize' value='{{size}}' [(ngModel)] = 'selectedSize'>{{size}}
+            <input type="radio" name='pizzaSize' value='{{size}}' [(ngModel)]='selectedSize'>{{size}}
           </li>
         </ul>
-        <span>Selected size: {{ selectedSize }}</span>
+        <span class='selected-product'>Selected size: {{ selectedSize }}</span>
       </div>
     </li>
 
@@ -21,29 +21,32 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let flour of flours">
-            <input type="radio" name='flourType' value='{{flour}}' [(ngModel)] = 'selectedFlour'>{{flour}}
+            <input type="radio" name='flourType' value='{{flour}}' [(ngModel)]='selectedFlour'>{{flour}}
           </li>
         </ul>
-        <span>Selected flour: {{ selectedFlour }}</span>
+        <span class='selected-product'>Selected flour: {{ selectedFlour }}</span>
       </div>
     </li>
-    
-    <form #d = "ngForm">
-    <li class='select-menu'>
-      <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose dairy
+
+    <form #d="ngForm">
+      <li class='select-menu'>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose dairy
   <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li *ngFor="let dairy of dairies">
-            <input type="checkbox" name = 'dairyType' value = '{{dairy.valueOf(dairy)}}' [(ngModel)] = 'selectedDairies'>{{dairy}}
+          <ul class="dropdown-menu">
+            <li *ngFor="let dairy of dairies">
+              <input type="checkbox" name='dairy' value='{{dairy}}' (change) = 'selectDairy($event, dairy)'>{{dairy}}
+            </li>
+          </ul>
+        <span class='selected-product' >Selected dairies:
+          <li *ngFor = 'let pr of selectedDairies' class = 'checked'>
+           {{ pr }}
           </li>
-        </ul>
-        <span>Selected dairies: {{ selectedDairies }}</span>
-        
-      </div>
-    </li>
+        </span>
+        </div>
+      </li>
     </form>
-    
+
 
     <li class='select-menu'>
       <div class="dropdown">
@@ -51,9 +54,14 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let meat of meats">
-            <input type="checkbox">{{meat}}
+            <input type='checkbox' name='meat' value='{{meat}}' (change) = 'selectMeat($event, meat)'>{{meat}}
           </li>
         </ul>
+        <span class='selected-product'>Selected meats: 
+          <li *ngFor = 'let pr of selectedMeats' class = 'checked'>
+           {{ pr }}
+          </li>
+        </span>
       </div>
     </li>
 
@@ -63,35 +71,17 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let sauce of sauces">
-            <input type="checkbox">{{sauce}}
+            <input type='checkbox' name='sauce' value='{{sauce}}' (change) = 'selectSauce($event, sauce)'>{{sauce}}
           </li>
         </ul>
+        <span class='selected-product' >Selected sauces:
+          <li *ngFor = 'let pr of selectedSauces' class = 'checked'>
+           {{ pr }}
+          </li>
+        </span>
       </div>
     </li>
 
   </ul>
 
 </div>
-
-
-
-<div class='test'>
-
-
-
-
-
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-<h2> make pizza </h2>

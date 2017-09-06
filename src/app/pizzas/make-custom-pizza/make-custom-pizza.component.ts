@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { CustomPizza } from './custom-pizza.model';
 
 @Component({
@@ -17,9 +17,11 @@ export class MakeCustomPizzaComponent implements OnInit {
 
   selectedSize = '';
   selectedFlour = '';
-  selectedDairies = '';
+  selectedDairies = [];
   selectedMeats = [];
   selectedSauces = [];
+
+  container = [' '];
 
 
   constructor() {
@@ -30,6 +32,38 @@ export class MakeCustomPizzaComponent implements OnInit {
     this.sauces = ['garlic', 'tomato'];
   }
 
+  selectDairy(e, dairy) {
+    if (e.target.checked) {
+      this.selectedDairies.push(dairy);
+    } else {
+      const index = this.selectedDairies.indexOf(dairy, 0);
+      if (index > -1) {
+        this.selectedDairies.splice(index, 1);
+      }
+    }
+  }
+
+  selectMeat(e, meat) {
+    if (e.target.checked) {
+      this.selectedMeats.push(meat);
+    } else {
+      const index = this.selectedMeats.indexOf(meat, 0);
+      if (index > -1) {
+        this.selectedMeats.splice(index, 1);
+      }
+    }
+  }
+
+  selectSauce(e, sauce) {
+    if (e.target.checked) {
+      this.selectedSauces.push(sauce);
+    } else {
+      const index = this.selectedSauces.indexOf(sauce, 0);
+      if (index > -1) {
+        this.selectedSauces.splice(index, 1);
+      }
+    }
+  }
 
   ngOnInit() {
   }

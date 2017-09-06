@@ -20,7 +20,7 @@ import { MakeCustomPizzaComponent } from './make-custom-pizza/make-custom-pizza.
     PizzaComponent,
     PizzaListComponent,
     PizzaDetailsComponent,
-    MakeCustomPizzaComponent
+    MakeCustomPizzaComponent,
   ],
   providers: [PizzaService]
 })

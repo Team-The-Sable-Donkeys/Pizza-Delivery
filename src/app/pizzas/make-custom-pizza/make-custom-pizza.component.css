@@ -11,6 +11,13 @@
     top: 150px;
 }
 
+.selected-product{
+    font-size: 18px;
+}
+
+.checked {
+    display: inline;
+}
 
 button{
     margin-right: 50px;
