@@ -1,3 +1,4 @@
+import { CustomPizza } from './make-custom-pizza/custom-pizza.model';
 import { PizzaService } from './../pizza.service';
 import { PizzaComponent } from './pizza/pizza.component';
 import { PizzaListComponent } from './pizza-list/pizza-list.component';
@@ -22,6 +23,6 @@ import { MakeCustomPizzaComponent } from './make-custom-pizza/make-custom-pizza.
     PizzaDetailsComponent,
     MakeCustomPizzaComponent,
   ],
-  providers: [PizzaService]
+  providers: [PizzaService, CustomPizza]
 })
 export class PizzasModule { }
