@@ -1,0 +1,2476 @@
+webpackJsonp(["main"],{
+
+/***/ "../../../../../src lazy recursive":
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./pizzas/pizzas.module.ts": [
+		"../../../../../src/app/pizzas/pizzas.module.ts"
+	]
+};
+function webpackAsyncContext(req) {
+	var ids = map[req];
+	if(!ids)
+		return Promise.reject(new Error("Cannot find module '" + req + "'."));
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
+		return __webpack_require__(ids[0]);
+	});
+};
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+module.exports = webpackAsyncContext;
+webpackAsyncContext.id = "../../../../../src lazy recursive";
+
+/***/ }),
+
+/***/ "../../../../../src/app/app-routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_admin_guard_service__ = __webpack_require__("../../../../../src/app/services/auth/admin-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__orders_orders_list_orders_list_component__ = __webpack_require__("../../../../../src/app/orders/orders-list/orders-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_unauthorized_unauthorized_component__ = __webpack_require__("../../../../../src/app/shared/unauthorized/unauthorized.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cart_cart_list_cart_list_component__ = __webpack_require__("../../../../../src/app/cart/cart-list/cart-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__users_login_login_component__ = __webpack_require__("../../../../../src/app/users/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__users_register_register_component__ = __webpack_require__("../../../../../src/app/users/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+var routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_7__home_home_component__["a" /* HomeComponent */] },
+    { path: 'pizzas', loadChildren: './pizzas/pizzas.module.ts#PizzasModule' },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_6__users_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_5__users_login_login_component__["a" /* LoginComponent */] },
+    { path: 'cart', component: __WEBPACK_IMPORTED_MODULE_3__cart_cart_list_cart_list_component__["a" /* CartListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_4__services_auth_auth_guard_service__["a" /* AuthGuard */]] },
+    { path: 'orders', component: __WEBPACK_IMPORTED_MODULE_1__orders_orders_list_orders_list_component__["a" /* OrdersListComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_0__services_auth_admin_guard_service__["a" /* AdminGuard */]] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__shared_unauthorized_unauthorized_component__["a" /* UnauthorizedComponent */], pathMatch: 'full' }
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
+    }
+    return AppRoutingModule;
+}());
+AppRoutingModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_8__angular_core__["NgModule"])({
+        imports: [__WEBPACK_IMPORTED_MODULE_9__angular_router__["c" /* RouterModule */].forRoot(routes)],
+        exports: [__WEBPACK_IMPORTED_MODULE_9__angular_router__["c" /* RouterModule */]]
+    })
+], AppRoutingModule);
+
+//# sourceMappingURL=app-routing.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "main {\r\n    margin-top: 150px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\r\n\r\n<app-nav></app-nav>\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AppComponent = (function () {
+    function AppComponent() {
+    }
+    AppComponent.prototype.ngOnInit = function () {
+    };
+    return AppComponent;
+}());
+AppComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-root',
+        template: __webpack_require__("../../../../../src/app/app.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/app.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
+
+//# sourceMappingURL=app.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_admin_guard_service__ = __webpack_require__("../../../../../src/app/services/auth/admin-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__orders_orders_module__ = __webpack_require__("../../../../../src/app/orders/orders.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart_cart_module__ = __webpack_require__("../../../../../src/app/cart/cart.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_auth_guard_service__ = __webpack_require__("../../../../../src/app/services/auth/auth-guard.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__users_users_module__ = __webpack_require__("../../../../../src/app/users/users.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__ = __webpack_require__("../../../../../src/app/shared/shared.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pizzas_pizzas_module__ = __webpack_require__("../../../../../src/app/pizzas/pizzas.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap__ = __webpack_require__("../../../../ngx-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AppModule = (function () {
+    function AppModule() {
+    }
+    return AppModule;
+}());
+AppModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_9__angular_core__["NgModule"])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__home_home_component__["a" /* HomeComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_12__app_routing_module__["a" /* AppRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_7__pizzas_pizzas_module__["PizzasModule"],
+            __WEBPACK_IMPORTED_MODULE_11__angular_http__["HttpModule"],
+            __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__["a" /* SharedModule */],
+            __WEBPACK_IMPORTED_MODULE_5__users_users_module__["a" /* UsersModule */],
+            __WEBPACK_IMPORTED_MODULE_2__cart_cart_module__["a" /* CartModule */],
+            __WEBPACK_IMPORTED_MODULE_1__orders_orders_module__["a" /* OrdersModule */],
+            __WEBPACK_IMPORTED_MODULE_10_ngx_bootstrap__["a" /* AlertModule */].forRoot()
+        ],
+        providers: [__WEBPACK_IMPORTED_MODULE_4__services_auth_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_3__services_auth_auth_guard_service__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_0__services_auth_admin_guard_service__["a" /* AdminGuard */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
+    })
+], AppModule);
+
+//# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart-list/cart-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "main {\r\n\tmargin-top: 75px;\r\n}\r\n\r\n.table>tbody>tr>td, .table>tfoot>tr>td {\r\n    vertical-align: middle;\r\n}\r\n@media screen and (max-width: 600px) {\r\n    table#cart tbody td .form-control{\r\n\t\twidth:20%;\r\n\t\tdisplay: inline !important;\r\n\t}\r\n\t.actions .btn{\r\n\t\twidth:36%;\r\n\t\tmargin:1.5em 0;\r\n\t}\r\n\t\r\n\t.actions .btn-info{\r\n\t\tfloat:left;\r\n\t}\r\n\t.actions .btn-danger{\r\n\t\tfloat:right;\r\n\t}\r\n\t\r\n\ttable#cart thead { display: none; }\r\n\ttable#cart tbody td { display: block; padding: .6rem; min-width:320px;}\r\n\ttable#cart tbody tr td:first-child { background: #333; color: #fff; }\r\n\ttable#cart tbody td:before {\r\n\t\tcontent: attr(data-th); font-weight: bold;\r\n\t\tdisplay: inline-block; width: 8rem;\r\n\t}\r\n\t\r\n\t\r\n\t\r\n\ttable#cart tfoot td{display:block; }\r\n\ttable#cart tfoot td .btn{display:block;}\r\n\t\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart-list/cart-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main>\r\n  <div class=\"container\">\r\n    <table id=\"cart\" class=\"table table-hover table-condensed\">\r\n      <thead>\r\n        <tr>\r\n          <th style=\"width:50%\">Product</th>\r\n          <th style=\"width:10%\">Price</th>\r\n          <th style=\"width:8%\">Quantity</th>\r\n          <th style=\"width:22%\" class=\"text-center\">Subtotal</th>\r\n          <th style=\"width:10%\"></th>\r\n        </tr>\r\n      </thead>\r\n      \r\n        <img *ngIf=\"showLoader\" src=\"../../../assets/Spinner.gif\" alt=\"\">\r\n        <tbody *ngFor=\"let pizza of pizzas\" class=\"cart-item\">\r\n             <tr app-cart (totalPriceChanged)=\"updateTotalPrice($event)\" (itemRemoved)=\"updateCartList($event)\" [pizza]=\"pizza\"></tr>   \r\n        </tbody>\r\n\r\n      <tfoot>\r\n        <tr class=\"visible-xs\">\r\n          <td class=\"text-center\"><strong>Total ${{totalPrice}}</strong></td>\r\n        </tr>\r\n        <tr>\r\n          <td><a routerLink=\"/pizzas\" class=\"btn btn-warning\"><i class=\"fa fa-angle-left\"></i> Continue Shopping</a></td>\r\n          <td colspan=\"2\" class=\"hidden-xs\"></td>\r\n          <td class=\"hidden-xs text-center\"><strong>Total ${{totalPrice}}</strong></td>\r\n          <td><a class=\"btn btn-success btn-block\" (click)=\"checkOut()\">Checkout <i class=\"fa fa-angle-right\"></i></a></td>\r\n        </tr>\r\n      </tfoot>\r\n    </table>\r\n  </div>\r\n</main>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart-list/cart-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__checkout_checkout_component__ = __webpack_require__("../../../../../src/app/cart/checkout/checkout.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pizza_service__ = __webpack_require__("../../../../../src/app/pizza.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+// dialog
+
+var CartListComponent = (function () {
+    function CartListComponent(PizzaService, dialog) {
+        this.PizzaService = PizzaService;
+        this.dialog = dialog;
+        this.totalPrice = 0;
+        this.showLoader = true;
+    }
+    CartListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.PizzaService.getUsers()
+            .subscribe(function (users) {
+            var loggedUser = users.find(function (u) { return u.authKey === localStorage.getItem('auth-key'); });
+            _this.loggedUser = loggedUser;
+            _this.pizzas = loggedUser.cart;
+            _this.showLoader = false;
+        }, function (error) { return _this.showLoader = false; });
+    };
+    CartListComponent.prototype.getPrice = function () {
+        var price = 0;
+        this.pizzas.forEach(function (p) {
+            price += p.price * p.quantity;
+        });
+        return price;
+    };
+    CartListComponent.prototype.updateTotalPrice = function (value) {
+        if (this.totalPrice !== value) {
+            this.totalPrice = parseFloat(String(+this.totalPrice + +value)).toFixed(2);
+        }
+    };
+    CartListComponent.prototype.updateCartList = function (id) {
+        this.pizzas = this.pizzas.filter(function (p) { return +p.id !== +id; });
+        this.totalPrice = this.getPrice();
+        this.totalPrice = parseFloat(String(this.totalPrice)).toFixed(2);
+    };
+    // checkout
+    CartListComponent.prototype.checkOut = function () {
+        var width = window.outerWidth * 0.8;
+        var height = window.outerHeight * 0.6;
+        var checkOutDialog = this.dialog.open(__WEBPACK_IMPORTED_MODULE_0__checkout_checkout_component__["a" /* CheckoutComponent */], {
+            height: height + 'px',
+            width: width + 'px',
+            data: {
+                pizzas: this.pizzas,
+                user: this.loggedUser,
+                totalPrice: this.totalPrice
+            }
+        });
+    };
+    return CartListComponent;
+}());
+CartListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+        selector: 'app-cart-list',
+        template: __webpack_require__("../../../../../src/app/cart/cart-list/cart-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/cart/cart-list/cart-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__pizza_service__["a" /* PizzaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__pizza_service__["a" /* PizzaService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_material__["b" /* MdDialog */]) === "function" && _b || Object])
+], CartListComponent);
+
+var _a, _b;
+//# sourceMappingURL=cart-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cart_cart_component__ = __webpack_require__("../../../../../src/app/cart/cart/cart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cart_list_cart_list_component__ = __webpack_require__("../../../../../src/app/cart/cart-list/cart-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__checkout_checkout_component__ = __webpack_require__("../../../../../src/app/cart/checkout/checkout.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+// dialog
+
+
+
+var CartModule = (function () {
+    function CartModule() {
+    }
+    return CartModule;
+}());
+CartModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_material__["c" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormsModule */]
+        ],
+        declarations: [__WEBPACK_IMPORTED_MODULE_5__cart_list_cart_list_component__["a" /* CartListComponent */], __WEBPACK_IMPORTED_MODULE_2__cart_cart_component__["a" /* CartComponent */], __WEBPACK_IMPORTED_MODULE_8__checkout_checkout_component__["a" /* CheckoutComponent */]],
+        // dialog
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_8__checkout_checkout_component__["a" /* CheckoutComponent */],
+        ],
+    })
+], CartModule);
+
+//# sourceMappingURL=cart.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart/cart.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "  /* tr>td, tr>td{\r\n    vertical-align: middle;\r\n}\r\n@media screen and (max-width: 600px) {\r\n    td .form-control{\r\n\t\twidth:20%;\r\n\t\tdisplay: inline !important;\r\n\t}\r\n\t.actions .btn{\r\n\t\twidth:36%;\r\n\t\tmargin:1.5em 0;\r\n\t}\r\n\t\r\n\t.actions .btn-info{\r\n\t\tfloat:left;\r\n\t}\r\n\t.actions .btn-danger{\r\n\t\tfloat:right;\r\n\t}\r\n\t\r\n\ttd { display: block; padding: .6rem; min-width:320px;}\r\n\ttr td:first-child { background: #333; color: #fff; }\r\n\ttd:before {\r\n\t\tcontent: attr(data-th); font-weight: bold;\r\n\t\tdisplay: inline-block; width: 8rem;\r\n\t}\r\n\t\r\n\t\r\n\t\r\n\ttd{display:block; }\r\n\ttd .btn{display:block;}\r\n\t\r\n}   */", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart/cart.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<td data-th=\"Product\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-2 hidden-xs\"><img src=\"{{pizza.imageUrl}}\" alt=\"...\" class=\"img-responsive\" /></div>\r\n    <div class=\"col-sm-10\">\r\n      <h4 class=\"nomargin\">{{pizza?.name}}</h4>\r\n      <p>{{errorMessage}}</p>\r\n    </div>\r\n  </div>\r\n</td>\r\n<td data-th=\"Price\">${{pizza?.price}}</td>\r\n<td data-th=\"Quantity\">\r\n  <input type=\"number\" min=\"0\" (input)=\"changeSubTotal($event)\" class=\"form-control text-center\" value=\"{{pizza.quantity}}\">\r\n</td>\r\n<td data-th=\"Subtotal\" class=\"text-center\">${{subTotal}}</td>\r\n<td class=\"actions\" data-th=\"\">\r\n  <button class=\"btn btn-danger btn-sm\" (click)=\"removeFromCart()\"><i class=\"fa fa-trash-o\"></i></button>\r\n</td>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/cart/cart.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CartComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pizza_service__ = __webpack_require__("../../../../../src/app/pizza.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CartComponent = (function () {
+    function CartComponent(PizzaService) {
+        this.PizzaService = PizzaService;
+        this.totalPriceChanged = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        this.itemRemoved = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        this.subTotal = 0;
+        this.prevTotal = 0;
+    }
+    CartComponent.prototype.ngOnInit = function () {
+        this.prevTotal = this.subTotal;
+        this.subTotal = this.pizza.price * this.pizza.quantity;
+        this.subTotal = parseFloat(String(this.subTotal)).toFixed(2);
+        this.totalPriceChanged.emit(this.subTotal - this.prevTotal);
+    };
+    CartComponent.prototype.changeSubTotal = function (ev) {
+        var quantity = ev.target.value;
+        if (+quantity < 0) {
+            this.errorMessage = 'Please enter a valid quantity';
+            ev.target.value = 1;
+            return;
+        }
+        if (+quantity === parseInt(quantity, 10)) {
+            this.pizza.quantity = +quantity;
+            this.prevTotal = this.subTotal;
+            this.subTotal = this.pizza.price * quantity;
+            this.subTotal = parseFloat(String(this.subTotal)).toFixed(2);
+            this.totalPriceChanged.emit(this.subTotal - this.prevTotal);
+            this.errorMessage = '';
+        }
+        else {
+            this.errorMessage = 'Please enter a valid quantity';
+        }
+    };
+    CartComponent.prototype.removeFromCart = function () {
+        var _this = this;
+        this.PizzaService.getUsers()
+            .subscribe(function (users) {
+            var loggedUser = users.find(function (u) { return u.authKey === localStorage.getItem('auth-key'); });
+            var body = {
+                pizza: _this.pizza,
+                userId: loggedUser.id
+            };
+            _this.PizzaService.removeFromCart(body)
+                .subscribe();
+        });
+        this.totalPriceChanged.emit(this.prevTotal - this.subTotal);
+        this.itemRemoved.emit(this.pizza.id);
+    };
+    return CartComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], CartComponent.prototype, "totalPriceChanged", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], CartComponent.prototype, "itemRemoved", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], CartComponent.prototype, "pizza", void 0);
+CartComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: '[app-cart]',
+        template: __webpack_require__("../../../../../src/app/cart/cart/cart.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/cart/cart/cart.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__pizza_service__["a" /* PizzaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__pizza_service__["a" /* PizzaService */]) === "function" && _a || Object])
+], CartComponent);
+
+var _a;
+//# sourceMappingURL=cart.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/checkout/checkout.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#pizzas-container, #address-container {\r\n    min-height: 50%;\r\n}\r\n\r\n.pizza-img {\r\n    max-width: 100px;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/checkout/checkout.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n  <md-dialog-content>\r\n    <h2 class=\"text-center\">Checkout</h2>\r\n  </md-dialog-content>\r\n  <div class=\"row\">\r\n    <div class=\"col-md-8\">\r\n      <h3>Pizzas</h3>\r\n      <div id=\"pizzas-container\">\r\n        <div *ngFor=\"let pizza of data.pizzas\" class=\"container\">\r\n          <div class=\"row\">\r\n            <p class=\"col-xs-1\">{{pizza.quantity}} x </p>\r\n            <img src=\"{{pizza.imageUrl}}\" alt=\"\" class=\"img-responsive pizza-img col-xs-3\">\r\n            <h4 class=\"col-xs-3\">{{pizza.name}}</h4>\r\n            <p class=\"col-xs-1\">${{pizza.price * pizza.quantity}}</p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <h4>Total price: ${{data.totalPrice}}</h4>\r\n    </div>\r\n    <div class=\"col-md-4\">\r\n      <h3>Address</h3>\r\n      <div id=\"address-container\">\r\n        <div class=\"alert alert-info\">\r\n          <strong>Note!</strong><span> Default address set is taken from your profile.</span>\r\n        </div>\r\n        <div>\r\n          <h4>To:</h4>\r\n          <form #form=\"ngForm\" (ngSubmit)=\"sendOrder(form.value)\">\r\n            <label for=\"city\">City: </label>\r\n            <input type=\"text\" value=\"{{city}}\" name=\"city\" [(ngModel)]=\"city\">\r\n            <br>\r\n            <label for=\"street\">Street: </label>\r\n            <input type=\"text\" value=\"{{street}}\" name=\"street\" [(ngModel)]=\"street\">\r\n            <br>\r\n            <button type=\"submit\" class=\"btn btn-success\">Send order</button>\r\n          </form>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <button (click)=\"closeDialog()\">Close</button>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/cart/checkout/checkout.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckoutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_users_service__ = __webpack_require__("../../../../../src/app/services/users/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pizza_service__ = __webpack_require__("../../../../../src/app/pizza.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+// dialog
+
+var CheckoutComponent = (function () {
+    function CheckoutComponent(dialogRef, data, PizzaService, usersService, router) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+        this.PizzaService = PizzaService;
+        this.usersService = usersService;
+        this.router = router;
+    }
+    CheckoutComponent.prototype.ngOnInit = function () {
+        this.city = this.data.user.address.city;
+        this.street = this.data.user.address.street;
+        var left = window.outerWidth * 0.1;
+        var top = window.outerHeight * 0.1;
+        this.dialogRef.updatePosition({ top: top + 'px', left: left + 'px' });
+    };
+    CheckoutComponent.prototype.sendOrder = function (value) {
+        var currentDate = Date().split(' ').slice(0, 5);
+        var currentTime = currentDate[4].split(':');
+        var pizzasInOrder = [];
+        this.data.pizzas.forEach(function (p) {
+            var currentPizza = {
+                name: p.name,
+                quantity: p.quantity,
+            };
+            pizzasInOrder.push(currentPizza);
+        });
+        var order = {
+            address: value,
+            pizzas: pizzasInOrder,
+            date: {
+                weekDay: currentDate[0],
+                month: currentDate[1],
+                day: currentDate[2],
+                year: currentDate[3],
+                hour: currentTime[0],
+                minute: currentTime[1],
+                second: currentTime[2]
+            },
+            price: this.data.totalPrice
+        };
+        this.PizzaService.sendOrder(order)
+            .subscribe();
+        this.usersService.clearUserCart(this.data.user)
+            .subscribe();
+        this.closeDialog();
+        this.router.navigate(['/home']);
+    };
+    CheckoutComponent.prototype.closeDialog = function () {
+        this.dialogRef.close();
+    };
+    return CheckoutComponent;
+}());
+CheckoutComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
+        selector: 'app-checkout',
+        template: __webpack_require__("../../../../../src/app/cart/checkout/checkout.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/cart/checkout/checkout.component.css")]
+    }),
+    __param(1, Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_4__angular_material__["a" /* MD_DIALOG_DATA */])),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__angular_material__["d" /* MdDialogRef */]) === "function" && _a || Object, Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__pizza_service__["a" /* PizzaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__pizza_service__["a" /* PizzaService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_users_service__["a" /* UsersService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _d || Object])
+], CheckoutComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=checkout.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/home.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#intro-div {\r\n    position: relative;\r\n    background-image: url(" + __webpack_require__("../../../../../src/assets/pizza-hub-img.jpg") + ");\r\n    background-repeat: no-repeat;\r\n    background-size: 100% auto;\r\n    background-position: center top;\r\n    min-height: 100vh;\r\n}\r\n\r\n#intro-content {\r\n    position: absolute;\r\n    top: 150px;\r\n}\r\n\r\n#intro-content h1 {\r\n    color: white;\r\n}\r\n\r\nimg {\r\n    min-height: 100vh;\r\n    max-height: 100vh;\r\n    min-width: 100%;\r\n}\r\n\r\nmain {\r\n    margin-bottom: 150px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <div id=\"intro-div\">\r\n  <div id=\"intro-content\" class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-6 pull-right\">\r\n        <h1 class=\"text-center\">Greetings, traveller. Care to taste the finest of pizzas?\r\n        </h1>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n<main>\r\n  <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"5000\">\r\n    <!-- Indicators -->\r\n    <ol class=\"carousel-indicators\">\r\n      <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\r\n      <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\r\n      <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\r\n    </ol>\r\n\r\n    <!-- Wrapper for slides -->\r\n    <div class=\"carousel-inner\">\r\n      <div class=\"item active\">\r\n        <img src=\"../../assets/pizza-hub-img.jpg\" alt=\"Chania\">\r\n        <div class=\"carousel-caption\">\r\n          <h3>PizzaHub</h3>\r\n          <p>Enjoy your stay!</p>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"item\">\r\n        <img src=\"../../assets/pizza-hub-img2.jpg\" alt=\"Chicago\">\r\n        <div class=\"carousel-caption\">\r\n          <h3>Never be botherd</h3>\r\n          <p>Have some free time? Enjoy a conversation with our friendly staff!</p>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"item\">\r\n        <img src=\"../../assets/pizza-hub-img3.jpg\" alt=\"New York\">\r\n        <div class=\"carousel-caption\">\r\n          <h3>Interested?</h3>\r\n          <p>Give us a shot!</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <!-- Left and right controls -->\r\n    <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\">\r\n    <span class=\"glyphicon glyphicon-chevron-left\"></span>\r\n    <span class=\"sr-only\">Previous</span>\r\n  </a>\r\n    <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\">\r\n    <span class=\"glyphicon glyphicon-chevron-right\"></span>\r\n    <span class=\"sr-only\">Next</span>\r\n  </a>\r\n  </div>\r\n\r\n  <h1>Some content</h1>\r\n</main>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HomeComponent = (function () {
+    function HomeComponent() {
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    return HomeComponent;
+}());
+HomeComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-home',
+        template: __webpack_require__("../../../../../src/app/home/home.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], HomeComponent);
+
+//# sourceMappingURL=home.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/order-details/order-details.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/order-details/order-details.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <h1 class=\"text-center\">Pizzas</h1>\r\n    <div class=\"col-md-12\" *ngFor=\"let pizza of data.order.pizzas\">\r\n      <div class=\"col-md-1\">\r\n        <h3>{{pizza.quantity}} x </h3>\r\n      </div>\r\n      <div class=\"col-md-3\">\r\n        <h3>{{pizza.name}}</h3>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-12\">\r\n      <h1 class=\"text-center\">Address</h1>\r\n      <h3 class=\"text-center\">City: {{data.order.address.city}}</h3>\r\n      <h3 class=\"text-center\">Street: {{data.order.address.street}}</h3>\r\n    </div>\r\n    <div class=\"col-md-12\">\r\n      <h1 class=\"text-center\">Date</h1>\r\n      <h3 class=\"text-center\">{{data.order.date.hour}}:{{data.order.date.minute}} {{data.order.date.weekDay}}\r\n        {{data.order.date.day}} {{data.order.date.month}} {{data.order.date.year}}\r\n      </h3>\r\n    </div>\r\n    <div class=\"col-md-12\">\r\n      <h1 class=\"text-center\">Price</h1>\r\n      <h3 class=\"text-center\">${{data.order.price}}</h3>\r\n    </div>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/order-details/order-details.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderDetailsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var OrderDetailsComponent = (function () {
+    function OrderDetailsComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+    }
+    OrderDetailsComponent.prototype.ngOnInit = function () {
+        var left = window.outerWidth * 0.2;
+        var top = window.outerHeight * 0.05;
+        this.dialogRef.updatePosition({ top: top + 'px', left: left + 'px' });
+    };
+    return OrderDetailsComponent;
+}());
+OrderDetailsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-order-details',
+        template: __webpack_require__("../../../../../src/app/orders/order-details/order-details.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/orders/order-details/order-details.component.css")]
+    }),
+    __param(1, Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_0__angular_material__["a" /* MD_DIALOG_DATA */])),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["d" /* MdDialogRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["d" /* MdDialogRef */]) === "function" && _a || Object, Object])
+], OrderDetailsComponent);
+
+var _a;
+//# sourceMappingURL=order-details.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/order/order.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n.card {\r\n  margin-top: 50px;\r\n  font-family: 'Roboto', sans-serif;\r\n  color: #444;\r\n  border: 1px solid #999;\r\n  border-radius: 4px;\r\n  background: #eee;\r\n  text-align: center;\r\n  padding-top: 30px;\r\n  float: left;\r\n}\r\n.card:before {\r\n    -webkit-transform: translateX(-50%);\r\n    transform: translateX(-50%);\r\n    background-color: #eee;\r\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);\r\n    border-radius: 30px;\r\n    font-size: 28px;\r\n    font-style: normal;\r\n    left: 50%;\r\n    line-height: 60px;\r\n    position: absolute;\r\n    top: -30px;\r\n    width: 60px;\r\n}\r\n.card .card-question {\r\nmargin: 20px 0 20px;\r\nfont-size: 150%;\r\n}\r\n.card .card-separator {\r\nwidth: 100%;\r\nmargin: 10px 0 10px 0;\r\n}\r\n.card a {\r\ntext-decoration: none;\r\ncolor: #7f8c8d;\r\n}\r\n\r\n\r\n.card-red {\r\n  border-top: 4px solid #e74c3c;\r\n}\r\n  .card-red:before {\r\n    color: #e74c3c;\r\n    content: \"\\F0F5\";\r\n    font-family: 'FontAwesome';\r\n  }\r\n .card-red .card-separator {\r\n    border: 1px solid #e74c3c;\r\n  }\r\n  .card-red .card-answer-separator {\r\n    border: 1px dotted #e74c3c;\r\n  }\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/order/order.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"card card-red col-md-12\">\r\n  <p class=\"card-question\" (click)=\"openDialog()\">Click to view</p>\r\n  <div class=\"card-separator\"></div>\r\n  <p style=\"text-align:justify;\">To: {{order.address.city}}, {{order.address.street}}</p>\r\n  <p><b>${{order.price}}</b></p>\r\n  <div class=\"card-separator\"></div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/order/order.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__order_details_order_details_component__ = __webpack_require__("../../../../../src/app/orders/order-details/order-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var OrderComponent = (function () {
+    function OrderComponent(dialog) {
+        this.dialog = dialog;
+    }
+    OrderComponent.prototype.ngOnInit = function () {
+    };
+    OrderComponent.prototype.openDialog = function () {
+        var width = window.outerWidth * 0.6;
+        var height = window.outerHeight * 0.8;
+        var checkOutDialog = this.dialog.open(__WEBPACK_IMPORTED_MODULE_1__order_details_order_details_component__["a" /* OrderDetailsComponent */], {
+            height: height + 'px',
+            width: width + 'px',
+            data: {
+                order: this.order
+            }
+        });
+    };
+    return OrderComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], OrderComponent.prototype, "order", void 0);
+OrderComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+        selector: 'app-order',
+        template: __webpack_require__("../../../../../src/app/orders/order/order.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/orders/order/order.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_material__["b" /* MdDialog */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_material__["b" /* MdDialog */]) === "function" && _a || Object])
+], OrderComponent);
+
+var _a;
+//# sourceMappingURL=order.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/orders-list/orders-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "main {\r\n    background-image: url(" + __webpack_require__("../../../../../src/assets/wooden-background.jpg") + ");\r\n    margin-top: 50px;\r\n    min-height: 100vh;\r\n}\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/orders-list/orders-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main>\r\n  <div class=\"container-fluid\">\r\n    <div class=\"row\">\r\n      <div class=\"order-container\" *ngFor=\"let order of orders\">\r\n        <app-order [order]=\"order\" class=\"col-md-3\"></app-order>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</main>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/orders-list/orders-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_orders_orders_service__ = __webpack_require__("../../../../../src/app/services/orders/orders.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var OrdersListComponent = (function () {
+    function OrdersListComponent(ordersService) {
+        this.ordersService = ordersService;
+    }
+    OrdersListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.ordersService.getOrders()
+            .subscribe(function (orders) {
+            _this.orders = orders;
+        });
+    };
+    return OrdersListComponent;
+}());
+OrdersListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-orders-list',
+        template: __webpack_require__("../../../../../src/app/orders/orders-list/orders-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/orders/orders-list/orders-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_orders_orders_service__["a" /* OrdersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_orders_orders_service__["a" /* OrdersService */]) === "function" && _a || Object])
+], OrdersListComponent);
+
+var _a;
+//# sourceMappingURL=orders-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/orders-routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersRoutingModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var routes = [];
+var OrdersRoutingModule = (function () {
+    function OrdersRoutingModule() {
+    }
+    return OrdersRoutingModule;
+}());
+OrdersRoutingModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forChild(routes)],
+        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
+    })
+], OrdersRoutingModule);
+
+//# sourceMappingURL=orders-routing.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/orders/orders.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_orders_orders_service__ = __webpack_require__("../../../../../src/app/services/orders/orders.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__orders_routing_module__ = __webpack_require__("../../../../../src/app/orders/orders-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__orders_list_orders_list_component__ = __webpack_require__("../../../../../src/app/orders/orders-list/orders-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__order_order_component__ = __webpack_require__("../../../../../src/app/orders/order/order.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__order_details_order_details_component__ = __webpack_require__("../../../../../src/app/orders/order-details/order-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_material__ = __webpack_require__("../../../material/@angular/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+// dialog
+
+
+var OrdersModule = (function () {
+    function OrdersModule() {
+    }
+    return OrdersModule;
+}());
+OrdersModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_3__orders_routing_module__["a" /* OrdersRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_7__angular_material__["c" /* MdDialogModule */],
+            __WEBPACK_IMPORTED_MODULE_8__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+        ],
+        declarations: [__WEBPACK_IMPORTED_MODULE_4__orders_list_orders_list_component__["a" /* OrdersListComponent */], __WEBPACK_IMPORTED_MODULE_5__order_order_component__["a" /* OrderComponent */], __WEBPACK_IMPORTED_MODULE_6__order_details_order_details_component__["a" /* OrderDetailsComponent */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_0__services_orders_orders_service__["a" /* OrdersService */]],
+        // dialog
+        entryComponents: [
+            __WEBPACK_IMPORTED_MODULE_6__order_details_order_details_component__["a" /* OrderDetailsComponent */],
+        ],
+    })
+], OrdersModule);
+
+//# sourceMappingURL=orders.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizza.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PizzaService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PizzaService = (function () {
+    function PizzaService(http) {
+        this.http = http;
+    }
+    PizzaService.prototype.getPizzas = function () {
+        return this.http.get('http://localhost:3000/api/pizzas')
+            .map(function (response) { return response.json(); });
+    };
+    PizzaService.prototype.getPizzaById = function (id) {
+        return this.http.get('http://localhost:3000/api/pizzas/' + id)
+            .map(function (response) { return response.json(); });
+    };
+    PizzaService.prototype.getUsers = function () {
+        return this.http.get('http://localhost:3000/api/users')
+            .map(function (response) { return response.json(); });
+    };
+    PizzaService.prototype.addToCart = function (body) {
+        return this.http.put('http://localhost:3000/api/cart', body)
+            .map(function (response) { return response.json(); });
+    };
+    PizzaService.prototype.removeFromCart = function (body) {
+        return this.http.delete('http://localhost:3000/api/cart', new __WEBPACK_IMPORTED_MODULE_1__angular_http__["RequestOptions"]({
+            body: body
+        }));
+    };
+    PizzaService.prototype.sendOrder = function (data) {
+        return this.http.post('http://localhost:3000/api/orders', data);
+    };
+    return PizzaService;
+}());
+PizzaService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], PizzaService);
+
+var _a;
+//# sourceMappingURL=pizza.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/make-custom-pizza/custom-pizza.model.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomPizza; });
+var CustomPizza = (function () {
+    function CustomPizza() {
+        this.size = [];
+        this.flour = [];
+        this.dairies = [];
+        this.meats = [];
+        this.sauces = [];
+    }
+    return CustomPizza;
+}());
+
+//# sourceMappingURL=custom-pizza.model.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/make-custom-pizza/make-custom-pizza.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\r\nh2 {\r\n    color: black;\r\n    position: relative;\r\n    text-align: center;\r\n    top: 100px;\r\n}\r\n\r\n  #make-pizza-container{\r\n    background-image: url(" + __webpack_require__("../../../../../src/assets/pizza-images/custom-pizza-background.jpg") + "); \r\n    position: relative;\r\n    text-align: left;\r\n    top: 150px;\r\n} \r\n\r\n.selected-product{\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n}\r\n\r\n\r\n.checked {\r\n    display: inline;\r\n}\r\n\r\nbutton{\r\n    margin-right: 50px;\r\n}\r\n\r\nul {\r\n    list-style-type: none;\r\n\r\n}\r\n\r\n\r\nul .select-menu{\r\n    font-size: 50px;\r\n    display: inline;\r\n}\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/make-custom-pizza/make-custom-pizza.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id='make-pizza-container'>\r\n\r\n  <ul>\r\n    <li class='select-menu'>\r\n      <div class='dropdown'>\r\n        <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose size\r\n  <span class='caret'></span></button>\r\n        <ul class='dropdown-menu'>\r\n          <li class=\"input-group-addon beautiful\" *ngFor='let size of sizes' >\r\n            <input type='radio' name='pizzaSize' value='{{size}}' (change)='selectSize($event, size)'>{{size.type}} {{size.price}}$\r\n          </li>\r\n        </ul>\r\n        <span class='selected-product'>Selected size: {{selectedSize[0].type}} {{selectedSize[0].price}}$\r\n        </span>\r\n      </div>\r\n    </li>\r\n\r\n    <li class='select-menu'>\r\n      <div class='dropdown'>\r\n        <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose flour\r\n  <span class='caret'></span></button>\r\n        <ul class='dropdown-menu'>\r\n          <li class=\"input-group-addon beautiful\" *ngFor='let flour of flours'>\r\n            <input type='radio' name='flourType' value='{{flour}}' (change)='selectFlour($event, flour)'>{{flour.type}} {{flour.price}}$\r\n          </li>\r\n        </ul>\r\n        <span class='selected-product'>Selected flour: {{selectedFlour[0].type}} {{selectedFlour[0].price}}$\r\n        </span>\r\n      </div>\r\n    </li>\r\n\r\n    <form #d='ngForm'>\r\n      <li class='select-menu'>\r\n        <div class='dropdown'>\r\n          <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose dairy\r\n  <span class='caret'></span></button>\r\n          <ul class='dropdown-menu'>\r\n            <li class=\"checkbox checkbox-primary\" *ngFor='let dairy of dairies'>\r\n              <input type='checkbox' name='dairy' value='{{dairy}}' (change)='selectDairy($event, dairy)'>{{dairy.type}}\r\n              {{dairy.price}}$\r\n            </li>\r\n          </ul>\r\n          <span class='selected-product'>Selected dairies:\r\n          <li *ngFor = 'let pr of selectedDairies' class = 'checked'>\r\n           {{ pr.type }} {{pr.price}}$\r\n          </li>\r\n        </span>\r\n        </div>\r\n      </li>\r\n    </form>\r\n\r\n\r\n    <li class='select-menu'>\r\n      <div class='dropdown'>\r\n        <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose meat\r\n  <span class='caret'></span></button>\r\n        <ul class='dropdown-menu'>\r\n          <li *ngFor='let meat of meats'>\r\n            <input type='checkbox' name='meat' value='{{meat}}' (change)='selectMeat($event, meat)'>{{meat.type}} {{meat.price}}$\r\n          </li>\r\n        </ul>\r\n        <span class='selected-product'>Selected meats: \r\n          <li *ngFor = 'let pr of selectedMeats' class = 'checked'>\r\n           {{ pr.type }} {{pr.price}}$\r\n          </li>\r\n        </span>\r\n      </div>\r\n    </li>\r\n\r\n    <li class='select-menu'>\r\n      <div class='dropdown'>\r\n        <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose sauce\r\n  <span class='caret'></span></button>\r\n        <ul class='dropdown-menu'>\r\n          <li *ngFor='let sauce of sauces'>\r\n            <input type='checkbox' name='sauce' value='{{sauce}}' (change)='selectSauce($event, sauce)'>{{sauce.type}} {{sauce.price}}$\r\n          </li>\r\n        </ul>\r\n        <span class='selected-product'>Selected sauces:\r\n          <li *ngFor = 'let pr of selectedSauces' class = 'checked'>\r\n           {{ pr.type }} {{pr.price}}$\r\n          </li>\r\n        </span>\r\n      </div>\r\n    </li>\r\n  </ul>\r\n\r\n    <button class='btn btn-primary' type='button' (click) = 'createCustomPizza()'>Make my pizza</button> \r\n   <h3 *ngIf = 'createCustomPizza()'> Your current amount is: {{createCustomPizza()}}</h3> \r\n\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/make-custom-pizza/make-custom-pizza.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MakeCustomPizzaComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__custom_pizza_model__ = __webpack_require__("../../../../../src/app/pizzas/make-custom-pizza/custom-pizza.model.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MakeCustomPizzaComponent = (function () {
+    function MakeCustomPizzaComponent(pizza) {
+        this.pizza = pizza;
+        this.sizes = [
+            {
+                type: 'small',
+                price: 1
+            },
+            {
+                type: 'medium',
+                price: 2
+            },
+            {
+                type: 'large',
+                price: 3
+            },
+            {
+                type: 'family',
+                price: 4
+            }
+        ];
+        this.flours = [
+            {
+                type: 'traditional',
+                price: 5
+            },
+            {
+                type: 'italian style',
+                price: 6
+            },
+            {
+                type: 'thin and crispy',
+                price: 7
+            },
+        ];
+        this.meats = [
+            {
+                type: 'salami',
+                price: 5
+            },
+            {
+                type: 'backon',
+                price: 4
+            },
+            {
+                type: 'ham',
+                price: 6
+            },
+        ];
+        this.dairies = [
+            {
+                type: 'white cheese',
+                price: 3
+            },
+            {
+                type: 'yellow cheese',
+                price: 4
+            },
+            {
+                type: 'mozarella',
+                price: 5
+            },
+        ];
+        this.sauces = [
+            {
+                type: 'garlic',
+                price: 3
+            },
+            {
+                type: 'tomato',
+                price: 2
+            },
+        ];
+        this.selectedSize = [''];
+        this.selectedFlour = [''];
+        this.selectedDairies = [];
+        this.selectedMeats = [];
+        this.selectedSauces = [];
+    }
+    MakeCustomPizzaComponent.prototype.selectSize = function (e, size) {
+        if (e.target.checked) {
+            this.selectedSize[0] = size;
+        }
+        else {
+            var index = this.selectedSize.indexOf(size, 0);
+            if (index > -1) {
+                this.selectedSize.splice(index, 1);
+            }
+        }
+    };
+    MakeCustomPizzaComponent.prototype.selectFlour = function (e, flour) {
+        if (e.target.checked) {
+            this.selectedFlour[0] = flour;
+        }
+        else {
+            var index = this.selectedFlour.indexOf(flour, 0);
+            if (index > -1) {
+                this.selectedFlour.splice(index, 1);
+            }
+        }
+    };
+    MakeCustomPizzaComponent.prototype.selectDairy = function (e, dairy) {
+        if (e.target.checked) {
+            this.selectedDairies.push(dairy);
+        }
+        else {
+            var index = this.selectedDairies.indexOf(dairy, 0);
+            if (index > -1) {
+                this.selectedDairies.splice(index, 1);
+            }
+        }
+    };
+    MakeCustomPizzaComponent.prototype.selectMeat = function (e, meat) {
+        if (e.target.checked) {
+            this.selectedMeats.push(meat);
+        }
+        else {
+            var index = this.selectedMeats.indexOf(meat, 0);
+            if (index > -1) {
+                this.selectedMeats.splice(index, 1);
+            }
+        }
+    };
+    MakeCustomPizzaComponent.prototype.selectSauce = function (e, sauce) {
+        if (e.target.checked) {
+            this.selectedSauces.push(sauce);
+        }
+        else {
+            var index = this.selectedSauces.indexOf(sauce, 0);
+            if (index > -1) {
+                this.selectedSauces.splice(index, 1);
+            }
+        }
+    };
+    MakeCustomPizzaComponent.prototype.createCustomPizza = function () {
+        this.pizza.size[0] = this.selectedSize[0];
+        this.pizza.flour[0] = this.selectedFlour[0];
+        var meatPrice = 0;
+        var dairiesPrice = 0;
+        var saucePrice = 0;
+        for (var i = 0; i < this.selectedDairies.length; i += 1) {
+            this.pizza.dairies[i] = this.selectedDairies[i];
+            dairiesPrice += this.pizza.dairies[i].price;
+        }
+        for (var i = 0; i < this.selectedMeats.length; i += 1) {
+            this.pizza.meats[i] = this.selectedMeats[i];
+            meatPrice += this.pizza.meats[i].price;
+        }
+        for (var i = 0; i < this.selectedSauces.length; i += 1) {
+            this.pizza.sauces[i] = this.selectedSauces[i];
+            saucePrice += this.pizza.sauces[i].price;
+        }
+        var totalPrice = this.pizza.size[0].price + this.pizza.flour[0].price + meatPrice + dairiesPrice + saucePrice;
+        console.log(totalPrice);
+        return totalPrice;
+    };
+    MakeCustomPizzaComponent.prototype.ngOnInit = function () {
+    };
+    return MakeCustomPizzaComponent;
+}());
+MakeCustomPizzaComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-make-custom-pizza',
+        template: __webpack_require__("../../../../../src/app/pizzas/make-custom-pizza/make-custom-pizza.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pizzas/make-custom-pizza/make-custom-pizza.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__custom_pizza_model__["a" /* CustomPizza */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__custom_pizza_model__["a" /* CustomPizza */]) === "function" && _a || Object])
+], MakeCustomPizzaComponent);
+
+var _a;
+//# sourceMappingURL=make-custom-pizza.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza-details/pizza-details.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "main {\r\n    min-height: 100vh;\r\n    background-image: url(" + __webpack_require__("../../../../../src/assets/wooden-background.jpg") + ");\r\n    margin-top: -100px; \r\n}\r\n\r\n.main-input {\r\n    padding-top: 250px;\r\n}\r\n\r\nh1, h3 {\r\n    color: white;\r\n}\r\n\r\na {\r\n    background-color: blanchedalmond;\r\n    border-radius: 5px;\r\n    color: black;\r\n    border: 1px #ededed solid;\r\n    padding: 6px 9px;\r\n    margin-top: 10px;\r\n    text-transform: uppercase;\r\n}\r\n\r\na:hover {\r\n     color: #fff;\r\n    background: green;\r\n    border-color: darkolivegreen;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza-details/pizza-details.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main>\r\n  <div class=\"container main-input\">\r\n    <div class=\"row\">\r\n      <div *ngIf=\"pizza\" class=\"col-md-6\">\r\n        <img src=\"{{pizza.imageUrl}}\" class=\"img-responsive\">\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <div *ngIf=\"pizza\">\r\n          <h1>Name: {{pizza.name}}</h1>\r\n          <h3>Price: ${{pizza.price}}</h3>\r\n          <a routerLink=\"/pizzas/all\">Go back</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</main>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza-details/pizza-details.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PizzaDetailsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pizza_service__ = __webpack_require__("../../../../../src/app/pizza.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PizzaDetailsComponent = (function () {
+    function PizzaDetailsComponent(route, PizzaService) {
+        this.route = route;
+        this.PizzaService = PizzaService;
+    }
+    PizzaDetailsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            if (params.id) {
+                _this.id = +params.id;
+            }
+        });
+        if (this.id && typeof this.id === 'number') {
+            this.PizzaService.getPizzaById(this.id)
+                .subscribe(function (value) {
+                _this.pizza = value;
+            });
+        }
+    };
+    return PizzaDetailsComponent;
+}());
+PizzaDetailsComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+        selector: 'app-pizza-details',
+        template: __webpack_require__("../../../../../src/app/pizzas/pizza-details/pizza-details.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pizzas/pizza-details/pizza-details.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__pizza_service__["a" /* PizzaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__pizza_service__["a" /* PizzaService */]) === "function" && _b || Object])
+], PizzaDetailsComponent);
+
+var _a, _b;
+//# sourceMappingURL=pizza-details.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza-list/pizza-list.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "main {\r\n    background-image: url(" + __webpack_require__("../../../../../src/assets/wooden-background.jpg") + ");\r\n}\r\n\r\n#pizza-container {\r\n    margin-bottom: 125px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza-list/pizza-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main>\r\n  <div class=\"container\" id=\"pizza-container\">\r\n    <div class=\"row\">\r\n      <img *ngIf=\"showLoader\" src=\"../../../assets/Spinner.gif\" alt=\"\">\r\n      <div *ngFor=\"let pizza of pizzas\">\r\n        <app-pizza [pizza]=\"pizza\"></app-pizza>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</main>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza-list/pizza-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PizzaListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pizza_service__ = __webpack_require__("../../../../../src/app/pizza.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PizzaListComponent = (function () {
+    function PizzaListComponent(PizzaService) {
+        this.PizzaService = PizzaService;
+        this.showLoader = false;
+    }
+    PizzaListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.showLoader = true;
+        this.PizzaService.getPizzas()
+            .subscribe(function (value) {
+            _this.pizzas = value;
+            _this.showLoader = false;
+        });
+    };
+    return PizzaListComponent;
+}());
+PizzaListComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-pizza-list',
+        template: __webpack_require__("../../../../../src/app/pizzas/pizza-list/pizza-list.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pizzas/pizza-list/pizza-list.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__pizza_service__["a" /* PizzaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__pizza_service__["a" /* PizzaService */]) === "function" && _a || Object])
+], PizzaListComponent);
+
+var _a;
+//# sourceMappingURL=pizza-list.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza/pizza.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, " .product-item {\r\n    padding: 15px;\r\n    background: #fff;\r\n    margin-top: 20px;\r\n    position: relative;\r\n} \r\n/* .product-item:hover {\r\n    box-shadow: 5px 5px rgba(234, 234, 234, 0.9);\r\n} */\r\n .product-item:after {\r\n    content: \".\";\r\n    display: block;\r\n    height: 0;\r\n    clear: both;\r\n    visibility: hidden;\r\n    font-size: 0;\r\n    line-height:0;\r\n} \r\n.sticker {\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    width: 63px;\r\n    height: 63px;\r\n}\r\n.sticker-new {\r\n    background: url(http://keenthemes.com/assets/bootsnipp/new.png) no-repeat;\r\n    left: auto;\r\n    right: 0;\r\n}\r\n.pi-img-wrapper {\r\n    position: relative;\r\n}\r\n.pi-img-wrapper div {\r\n    background: rgba(0,0,0,0.3);\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    text-align: center;\r\n}\r\n.product-item:hover>.pi-img-wrapper>div {\r\n    display: block;\r\n}\r\n.pi-img-wrapper div .btn {\r\n    padding: 3px 10px;\r\n    color: #fff;\r\n    border: 1px #fff solid;\r\n    margin: -13px 5px 0;\r\n    background: transparent;\r\n    text-transform: uppercase;\r\n    position: relative;\r\n    top: 50%;\r\n    line-height: 1.4;\r\n    font-size: 12px;\r\n}\r\n.product-item .btn:hover {\r\n    background: #e84d1c;\r\n    border-color: #c8c8c8;\r\n}\r\n\r\n.product-item h3 {\r\n    font-size: 14px;\r\n    font-weight: 300;\r\n    padding-bottom: 4px;\r\n}\r\n.product-item h3 a {\r\n    color: #3e4d5c;\r\n}\r\n.product-item h3 a:hover {\r\n    /* color: #E02222; */\r\n    color: green;\r\n}\r\n.pi-price {\r\n    /* color: #e84d1c; */\r\n    color: white;\r\n    font-size: 25px;\r\n    float: left;\r\n    padding-top: 1px;\r\n}\r\n\r\n.pizza-name {\r\n    color: white;\r\n    font-size: 22px;\r\n}\r\n\r\n.product-item .add2cart {\r\n    background-color: blanchedalmond;\r\n    float: right;\r\n    /* color: #a8aeb3; */\r\n    color: black;\r\n    border: 1px #ededed solid;\r\n    padding: 3px 6px;\r\n    text-transform: uppercase;\r\n}\r\n        .product-item .add2cart:hover {\r\n            color: #fff;\r\n            background: green;\r\n            border-color: darkolivegreen;\r\n            /* background: #e84d1c;\r\n            border-color: #e84d1c; */\r\n        }\r\n.pizza-img {\r\n    max-width: 500px;\r\n    min-width: 500px;\r\n    min-height: 450px;\r\n    max-height: 450px;\r\n}\r\n\r\n.pizza-item {\r\n    position: relative;\r\n    background: transparent;\r\n}\r\n\r\n.loader {\r\n    position: absolute;\r\n    top: 100px;\r\n    left: 100px;\r\n    z-index: 100;\r\n}\r\n\r\n@media screen and (max-width: 530px) {\r\n    /* .pizza-img {\r\n        max-width: 400px;\r\n        min-width: 400px;\r\n    } */\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza/pizza.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"col-md-6\">\r\n  <div class=\"product-item pizza-item\">\r\n     <img *ngIf=\"showLoader\" src=\"../../../assets/Spinner.gif\" alt=\"\" class=\"loader\"> \r\n    <div class=\"pi-img-wrapper\">\r\n      <!-- <img [src]=\"pizzaIsLoaded()\" class=\"img-responsive\" class=\"pizza-img\"> -->\r\n       <img src=\"{{pizza.imageUrl}}\" class=\"img-responsive\" class=\"pizza-img\"> \r\n    </div>\r\n    <h3>\r\n      <p class=\"pizza-name\">{{pizza.name}}</p>\r\n    </h3>\r\n    <div class=\"pi-price\">{{pizza.price}}$</div>\r\n    <a routerLink=\"/pizzas/{{pizza.id}}\" class=\"btn add2cart\"> Details</a>\r\n    <button *ngIf=\"auth.isLoggedIn()\" (click)=\"addToCart()\" class=\"btn add2cart\" [disabled]=\"btnDisabled\"> Add to Cart </button>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizza/pizza.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PizzaComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pizza_service__ = __webpack_require__("../../../../../src/app/pizza.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var PizzaComponent = (function () {
+    function PizzaComponent(route, PizzaService, auth) {
+        this.route = route;
+        this.PizzaService = PizzaService;
+        this.auth = auth;
+        this.showLoader = false;
+        this.btnDisabled = false;
+    }
+    PizzaComponent.prototype.ngOnInit = function () {
+    };
+    PizzaComponent.prototype.pizzaIsLoaded = function () {
+        if (this.pizza.imageUrl) {
+            return this.pizza.imageUrl;
+        }
+        else {
+            return '../../../assets/Spinner.gif';
+        }
+    };
+    PizzaComponent.prototype.addToCart = function () {
+        var _this = this;
+        this.showLoader = true;
+        this.btnDisabled = true;
+        this.PizzaService.getUsers()
+            .map(function (users) {
+            var loggedUser = users.find(function (u) { return u.authKey === localStorage.getItem('auth-key'); });
+            var body = {
+                pizza: _this.pizza,
+                userId: loggedUser.id
+            };
+            _this.PizzaService.addToCart(body)
+                .subscribe();
+        })
+            .subscribe(function () {
+            _this.showLoader = false;
+            _this.btnDisabled = false;
+        });
+        // 100% working below
+        // this.PizzaService.getUsers()
+        //   .subscribe((users) => {
+        //     const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
+        //     const body = {
+        //       pizza: this.pizza,
+        //       userId: loggedUser.id
+        //     };
+        //     this.PizzaService.addToCart(body)
+        //       .subscribe(() => {
+        //       });
+        //   });
+    };
+    return PizzaComponent;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], PizzaComponent.prototype, "pizza", void 0);
+PizzaComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+        selector: 'app-pizza',
+        template: __webpack_require__("../../../../../src/app/pizzas/pizza/pizza.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/pizzas/pizza/pizza.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__pizza_service__["a" /* PizzaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__pizza_service__["a" /* PizzaService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__["a" /* AuthService */]) === "function" && _c || Object])
+], PizzaComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=pizza.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizzas-routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PizzasRoutingModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pizza_details_pizza_details_component__ = __webpack_require__("../../../../../src/app/pizzas/pizza-details/pizza-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pizza_list_pizza_list_component__ = __webpack_require__("../../../../../src/app/pizzas/pizza-list/pizza-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__make_custom_pizza_make_custom_pizza_component__ = __webpack_require__("../../../../../src/app/pizzas/make-custom-pizza/make-custom-pizza.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var routes = [
+    { path: '', redirectTo: 'all', pathMatch: 'full' },
+    { path: 'makePizza', component: __WEBPACK_IMPORTED_MODULE_4__make_custom_pizza_make_custom_pizza_component__["a" /* MakeCustomPizzaComponent */] },
+    { path: 'all', component: __WEBPACK_IMPORTED_MODULE_1__pizza_list_pizza_list_component__["a" /* PizzaListComponent */] /*canActivate: [AuthGuard]*/ },
+    { path: ':id', component: __WEBPACK_IMPORTED_MODULE_0__pizza_details_pizza_details_component__["a" /* PizzaDetailsComponent */] }
+];
+var PizzasRoutingModule = (function () {
+    function PizzasRoutingModule() {
+    }
+    return PizzasRoutingModule;
+}());
+PizzasRoutingModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
+        imports: [__WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forChild(routes)],
+        exports: [__WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */]]
+    })
+], PizzasRoutingModule);
+
+//# sourceMappingURL=pizzas-routing.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/pizzas/pizzas.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PizzasModule", function() { return PizzasModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__make_custom_pizza_custom_pizza_model__ = __webpack_require__("../../../../../src/app/pizzas/make-custom-pizza/custom-pizza.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pizza_service__ = __webpack_require__("../../../../../src/app/pizza.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pizza_pizza_component__ = __webpack_require__("../../../../../src/app/pizzas/pizza/pizza.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pizza_list_pizza_list_component__ = __webpack_require__("../../../../../src/app/pizzas/pizza-list/pizza-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pizzas_routing_module__ = __webpack_require__("../../../../../src/app/pizzas/pizzas-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pizza_details_pizza_details_component__ = __webpack_require__("../../../../../src/app/pizzas/pizza-details/pizza-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__make_custom_pizza_make_custom_pizza_component__ = __webpack_require__("../../../../../src/app/pizzas/make-custom-pizza/make-custom-pizza.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+
+var PizzasModule = (function () {
+    function PizzasModule() {
+    }
+    return PizzasModule;
+}());
+PizzasModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_5__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_7__pizzas_routing_module__["a" /* PizzasRoutingModule */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_forms__["c" /* FormsModule */]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__pizza_pizza_component__["a" /* PizzaComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__pizza_list_pizza_list_component__["a" /* PizzaListComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__pizza_details_pizza_details_component__["a" /* PizzaDetailsComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__make_custom_pizza_make_custom_pizza_component__["a" /* MakeCustomPizzaComponent */],
+        ],
+        providers: [__WEBPACK_IMPORTED_MODULE_1__pizza_service__["a" /* PizzaService */], __WEBPACK_IMPORTED_MODULE_0__make_custom_pizza_custom_pizza_model__["a" /* CustomPizza */]]
+    })
+], PizzasModule);
+
+//# sourceMappingURL=pizzas.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth/admin-guard.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminGuard; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AdminGuard = (function () {
+    function AdminGuard(auth, router) {
+        this.auth = auth;
+        this.router = router;
+    }
+    AdminGuard.prototype.canActivate = function () {
+        if (this.auth.isAdmin()) {
+            return true;
+        }
+        else {
+            this.router.navigate(['/unauthorized']);
+            return false;
+        }
+    };
+    return AdminGuard;
+}());
+AdminGuard = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], AdminGuard);
+
+var _a, _b;
+//# sourceMappingURL=admin-guard.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth/auth-guard.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthGuard = (function () {
+    function AuthGuard(auth, router) {
+        this.auth = auth;
+        this.router = router;
+    }
+    AuthGuard.prototype.canActivate = function () {
+        if (this.auth.isLoggedIn()) {
+            return true;
+        }
+        else {
+            this.router.navigate(['/unauthorized']);
+            return false;
+        }
+    };
+    return AuthGuard;
+}());
+AuthGuard = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], AuthGuard);
+
+var _a, _b;
+//# sourceMappingURL=auth-guard.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/auth/auth.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AuthService = (function () {
+    function AuthService(http, router) {
+        this.http = http;
+        this.router = router;
+        this.adminAuthKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluI'
+            + 'iwicGFzc3dvcmQiOiJhZG1pbiIsImFkZHJlc3MiOnt9LCJjYXJ0IjpbXSwiaWF0IjoxNTA0MjY1ODQzfQ'
+            + '.KJNAAz95_2BC5IVN03u5jCSebEoWxXkhamjG7vJp1e0';
+    }
+    AuthService.prototype.loginUser = function (user) {
+        return this.http.post('http://localhost:3000/login', user)
+            .map(function (res) { return res.json(); });
+    };
+    AuthService.prototype.isLoggedIn = function () {
+        return Object(__WEBPACK_IMPORTED_MODULE_1_angular2_jwt__["tokenNotExpired"])('auth-key');
+    };
+    AuthService.prototype.logout = function () {
+        localStorage.removeItem('auth-key');
+        this.router.navigate(['/home']);
+    };
+    AuthService.prototype.isAdmin = function () {
+        var gotAdminKey = (localStorage.getItem('auth-key') === this.adminAuthKey) ? true : false;
+        return this.isLoggedIn() && gotAdminKey;
+    };
+    return AuthService;
+}());
+AuthService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_http__["Http"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], AuthService);
+
+var _a, _b;
+//# sourceMappingURL=auth.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/orders/orders.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrdersService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var OrdersService = (function () {
+    function OrdersService(http) {
+        this.http = http;
+    }
+    OrdersService.prototype.getOrders = function () {
+        return this.http.get('http://localhost:3000/api/orders')
+            .map(function (response) { return response.json(); });
+    };
+    return OrdersService;
+}());
+OrdersService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["Http"]) === "function" && _a || Object])
+], OrdersService);
+
+var _a;
+//# sourceMappingURL=orders.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/users/users.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UsersService = (function () {
+    function UsersService(http) {
+        this.http = http;
+    }
+    UsersService.prototype.registerUser = function (user) {
+        return this.http.post('http://localhost:3000/register', user);
+    };
+    UsersService.prototype.clearUserCart = function (user) {
+        return this.http.delete('http://localhost:3000/api/empty', new __WEBPACK_IMPORTED_MODULE_1__angular_http__["RequestOptions"]({
+            body: user
+        }));
+    };
+    return UsersService;
+}());
+UsersService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], UsersService);
+
+var _a;
+//# sourceMappingURL=users.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/footer/footer.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "footer {\r\n    background-color: #222222;\r\n    position: absolute;\r\n    left: 0;\r\n    bottom: 0;\r\n    height: 125px;\r\n    width: 100%;\r\n    overflow: hidden;\r\n\tcolor: #cccccc;\r\n}\r\n\r\nul.social-network {\r\n\tlist-style: none;\r\n\tdisplay: inline;\r\n\tmargin-left:0 !important;\r\n\tpadding: 0;\r\n}\r\nul.social-network li {\r\n\tdisplay: inline;\r\n\tmargin: 0 5px;\r\n}\r\n\r\n\r\n/* footer social icons */\r\n.social-network a.icoRss:hover {\r\n\tbackground-color: #F56505;\r\n}\r\n.social-network a.icoFacebook:hover {\r\n\tbackground-color:#3B5998;\r\n}\r\n.social-network a.icoTwitter:hover {\r\n\tbackground-color:#33ccff;\r\n}\r\n.social-network a.icoGoogle:hover {\r\n\tbackground-color:#BD3518;\r\n}\r\n.social-network a.icoVimeo:hover {\r\n\tbackground-color:#0590B8;\r\n}\r\n.social-network a.icoLinkedin:hover {\r\n\tbackground-color:#007bb7;\r\n}\r\n.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,\r\n.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {\r\n\tcolor:#fff;\r\n}\r\na.socialIcon:hover, .socialHoverClass {\r\n\tcolor:#44BCDD;\r\n}\r\n\r\n.social-circle li a {\r\n\tdisplay:inline-block;\r\n\tposition:relative;\r\n\tmargin:0 auto 0 auto;\r\n\tborder-radius:50%;\r\n\ttext-align:center;\r\n\twidth: 50px;\r\n\theight: 50px;\r\n\tfont-size:20px;\r\n}\r\n.social-circle li i {\r\n\tmargin:0;\r\n\tline-height:50px;\r\n\ttext-align: center;\r\n}\r\n\r\n.social-circle li a:hover i, .triggeredHover {\r\n\t-moz-transform: rotate(360deg);\r\n\t-webkit-transform: rotate(360deg);\r\n\t-ms--transform: rotate(360deg);\r\n\ttransform: rotate(360deg);\r\n\ttransition: all 0.2s;\r\n}\r\n.social-circle i {\r\n\tcolor: #fff;\r\n\ttransition: all 0.8s;\r\n}\r\n\r\n\r\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/footer/footer.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<footer>\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-6\">\r\n        <h3><span class=\"glyphicon glyphicon-copyright-mark\"></span> PizzaHub 2017, Team: The Sable Donkeys</h3>\r\n      </div>\r\n      <div class=\"col-md-6\">\r\n        <h3>Follow us on</h3>\r\n        <ul class=\"social-network social-circle\">\r\n          <li><a class=\"icoRss\" title=\"Rss\"><i class=\"fa fa-rss\"></i></a></li>\r\n          <li><a class=\"icoFacebook\" title=\"Facebook\"><i class=\"fa fa-facebook\"></i></a></li>\r\n          <li><a class=\"icoTwitter\" title=\"Twitter\"><i class=\"fa fa-twitter\"></i></a></li>\r\n          <li><a class=\"icoGoogle\" title=\"Google +\"><i class=\"fa fa-google-plus\"></i></a></li>\r\n          <li><a class=\"icoLinkedin\" title=\"Linkedin\"><i class=\"fa fa-linkedin\"></i></a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</footer>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/footer/footer.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FooterComponent = (function () {
+    function FooterComponent() {
+    }
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    return FooterComponent;
+}());
+FooterComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-footer',
+        template: __webpack_require__("../../../../../src/app/shared/footer/footer.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/footer/footer.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], FooterComponent);
+
+//# sourceMappingURL=footer.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/nav/nav.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "nav {\r\n    border-radius: 0px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/nav/nav.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<nav class=\"navbar navbar-inverse navbar-fixed-top\">\r\n  <div class=\"container-fluid\">\r\n    <div class=\"navbar-header\">\r\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>\r\n        <span class=\"icon-bar\"></span>                        \r\n      </button>\r\n      <a class=\"navbar-brand\" routerLink=\"\">PizzaHub</a>\r\n    </div>\r\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\r\n      <ul class=\"nav navbar-nav\">\r\n        <!-- <li class=\"active\"><a href=\"#\">Home</a></li> -->\r\n        <li class=\"dropdown\">\r\n          <!-- <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">Page 1 <span class=\"caret\"></span></a>\r\n          <ul class=\"dropdown-menu\">\r\n            <li><a href=\"#\">Page 1-1</a></li>\r\n            <li><a href=\"#\">Page 1-2</a></li>\r\n            <li><a href=\"#\">Page 1-3</a></li>\r\n          </ul> -->\r\n        </li>\r\n        <li><a routerLink=\"/pizzas\">Menu</a></li>\r\n        <li><a routerLink = \"/pizzas/makePizza\">Make your own pizza</a></li>\r\n        <li><a *ngIf=\"auth.isAdmin()\" routerLink=\"/orders\">Orders</a></li>\r\n      </ul>\r\n      <ul class=\"nav navbar-nav navbar-right\">\r\n        <li><a *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/register\"><span class=\"glyphicon glyphicon-user\"></span> Register</a></li>\r\n        <li><a *ngIf=\"!auth.isLoggedIn()\" routerLink=\"/login\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\r\n        <li><a *ngIf=\"auth.isLoggedIn()\" routerLink=\"/cart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span> Cart</a></li>\r\n        <li><a *ngIf=\"auth.isLoggedIn()\" (click)=\"logout()\"><span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>\r\n      </ul>\r\n    </div>\r\n  </div>\r\n</nav>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/nav/nav.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var NavComponent = (function () {
+    function NavComponent(auth) {
+        this.auth = auth;
+    }
+    NavComponent.prototype.ngOnInit = function () {
+    };
+    NavComponent.prototype.logout = function () {
+        this.auth.logout();
+    };
+    return NavComponent;
+}());
+NavComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+        selector: 'app-nav',
+        template: __webpack_require__("../../../../../src/app/shared/nav/nav.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/nav/nav.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__services_auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object])
+], NavComponent);
+
+var _a;
+//# sourceMappingURL=nav.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shared-routing.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedRoutingModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var routes = [];
+var SharedRoutingModule = (function () {
+    function SharedRoutingModule() {
+    }
+    return SharedRoutingModule;
+}());
+SharedRoutingModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */].forChild(routes)],
+        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* RouterModule */]]
+    })
+], SharedRoutingModule);
+
+//# sourceMappingURL=shared-routing.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/shared.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__shared_routing_module__ = __webpack_require__("../../../../../src/app/shared/shared-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__nav_nav_component__ = __webpack_require__("../../../../../src/app/shared/nav/nav.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_footer_component__ = __webpack_require__("../../../../../src/app/shared/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__unauthorized_unauthorized_component__ = __webpack_require__("../../../../../src/app/shared/unauthorized/unauthorized.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var SharedModule = (function () {
+    function SharedModule() {
+    }
+    return SharedModule;
+}());
+SharedModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_0__shared_routing_module__["a" /* SharedRoutingModule */]
+        ],
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_1__nav_nav_component__["a" /* NavComponent */],
+            __WEBPACK_IMPORTED_MODULE_2__footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__unauthorized_unauthorized_component__["a" /* UnauthorizedComponent */]
+        ],
+        exports: [
+            __WEBPACK_IMPORTED_MODULE_4__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_1__nav_nav_component__["a" /* NavComponent */],
+            __WEBPACK_IMPORTED_MODULE_2__footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__unauthorized_unauthorized_component__["a" /* UnauthorizedComponent */],
+        ]
+    })
+], SharedModule);
+
+//# sourceMappingURL=shared.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/unauthorized/unauthorized.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, " #wrong-page-div {\r\n    background-image: url(" + __webpack_require__("../../../../../src/assets/wrong-way-pic.jpg") + ");\r\n    background-repeat: no-repeat;\r\n    background-size: 60% auto;\r\n    background-position: center;\r\n    min-height: 100vh;\r\n} \r\n\r\n h1 {\r\n    color: black;\r\n    position: relative;\r\n    text-align: center;\r\n    top: 100px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/unauthorized/unauthorized.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div id = 'wrong-page-div'> \r\n    <h1> Oooops </h1>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/unauthorized/unauthorized.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UnauthorizedComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var UnauthorizedComponent = (function () {
+    function UnauthorizedComponent() {
+    }
+    UnauthorizedComponent.prototype.ngOnInit = function () {
+    };
+    return UnauthorizedComponent;
+}());
+UnauthorizedComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-unauthorized',
+        template: __webpack_require__("../../../../../src/app/shared/unauthorized/unauthorized.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/shared/unauthorized/unauthorized.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], UnauthorizedComponent);
+
+//# sourceMappingURL=unauthorized.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "main {\r\n    margin-top: 75px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main>\r\n  <div class=\"container\">\r\n    <h1 class=\"well\">Login</h1>\r\n    <div class=\"col-lg-12 well\">\r\n      <div class=\"row\">\r\n        <form #form=\"ngForm\" (ngSubmit)=\"loginUser(form.value)\">\r\n          <div class=\"col-sm-12\">\r\n            <div class=\"row\">\r\n              <div class=\"col-md-6 form-group\">\r\n                <label>Username</label>\r\n                <input name=\"username\" type=\"text\" placeholder=\"Enter Username Here..\" class=\"form-control\" [(ngModel)]=\"username\">\r\n              </div>\r\n              <div class=\"col-sm-6 form-group\">\r\n                <label>Password</label>\r\n                <input name=\"password\" type=\"password\" placeholder=\"Enter Password Here..\" class=\"form-control\" [(ngModel)]=\"password\">\r\n              </div>\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-lg btn-info\">Submit</button>\r\n          </div>\r\n        </form>\r\n      </div>\r\n    </div>\r\n    <h3>{{errorMessage}}</h3>\r\n  </div>\r\n</main>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/login/login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_auth_service__ = __webpack_require__("../../../../../src/app/services/auth/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var LoginComponent = (function () {
+    function LoginComponent(authService, router) {
+        this.authService = authService;
+        this.router = router;
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.loginUser = function (user) {
+        var _this = this;
+        return this.authService.loginUser(user)
+            .subscribe(function (data) {
+            localStorage.setItem('auth-key', data);
+            _this.router.navigate(['/home']);
+        }, function (error) { return console.log(error); });
+    };
+    return LoginComponent;
+}());
+LoginComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+        selector: 'app-login',
+        template: __webpack_require__("../../../../../src/app/users/login/login.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/users/login/login.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_auth_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_auth_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], LoginComponent);
+
+var _a, _b;
+//# sourceMappingURL=login.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/register/register.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "main {\r\n    margin-top: 75px;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/register/register.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<main>\r\n  <div class=\"container\">\r\n    <h1 class=\"well\">Register</h1>\r\n    <div class=\"col-lg-12 well\">\r\n      <div class=\"row\">\r\n        <form #form=\"ngForm\" (ngSubmit)=\"registerUser(form?.value)\">\r\n          <div class=\"col-sm-12\">\r\n            <div class=\"row\">\r\n              <div class=\"col-sm-12 form-group\">\r\n                <label>Username</label>\r\n                <input name=\"username\" type=\"text\" placeholder=\"Enter Username Here..\" class=\"form-control\" [(ngModel)]=\"username\">\r\n              </div>\r\n              <div class=\"col-sm-6 form-group\">\r\n                <label>First Name</label>\r\n                <input name=\"firstName\" type=\"text\" placeholder=\"Enter First Name Here..\" class=\"form-control\" [(ngModel)]=\"firstName\">\r\n              </div>\r\n              <div class=\"col-sm-6 form-group\">\r\n                <label>Last Name</label>\r\n                <input name=\"lastName\" type=\"text\" placeholder=\"Enter Last Name Here..\" class=\"form-control\" [(ngModel)]=\"lastName\">\r\n              </div>\r\n              <div class=\"col-sm-6 form-group\">\r\n                <label>Password</label>\r\n                <input name=\"password\" type=\"password\" placeholder=\"Enter Password Here..\" class=\"form-control\" [(ngModel)]=\"passowrd\">\r\n              </div>\r\n              <div class=\"col-sm-6 form-group\">\r\n                <label>Confirm Password</label>\r\n                <input name=\"confirmPassword\" type=\"password\" placeholder=\"Enter Password Here..\" class=\"form-control\" [(ngModel)]=\"confirmPassword\">\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <fieldset ngModelGroup=\"address\">\r\n                <div class=\"col-sm-4 form-group\">\r\n                  <label>City</label>\r\n                  <input name=\"city\" type=\"text\" placeholder=\"Enter City Name Here..\" class=\"form-control\" [(ngModel)]=\"city\">\r\n                </div>\r\n                <div class=\"col-sm-4 form-group\">\r\n                  <label>Country</label>\r\n                  <input name=\"country\" type=\"text\" placeholder=\"Enter Country Name Here..\" class=\"form-control\" [(ngModel)]=\"country\">\r\n                </div>\r\n                <div class=\"col-sm-4 form-group\">\r\n                  <label>Street</label>\r\n                  <input name=\"street\" type=\"text\" placeholder=\"Enter Street Code Here..\" class=\"form-control\" [(ngModel)]=\"street\">\r\n                </div>\r\n              </fieldset>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label>Additional Address Details</label>\r\n              <textarea name=\"additionalInfo\" placeholder=\"Enter Additional Address Details Here..\" rows=\"3\" class=\"form-control\" [(ngModel)]=\"additionalInfo\"></textarea>\r\n            </div>\r\n            <div class=\"form-group\">\r\n              <label>Phone Number</label>\r\n              <input name=\"phoneNumber\" type=\"text\" placeholder=\"Enter Phone Number Here..\" class=\"form-control\" [(ngModel)]=\"phoneNumber\">\r\n            </div>\r\n            <button type=\"submit\" class=\"btn btn-lg btn-info\">Submit</button>\r\n          </div>\r\n        </form>\r\n      </div>\r\n    </div>\r\n    <h3>{{errorMessage}}</h3>\r\n  </div>\r\n</main>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/register/register.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_users_service__ = __webpack_require__("../../../../../src/app/services/users/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var RegisterComponent = (function () {
+    function RegisterComponent(usersService, router) {
+        this.usersService = usersService;
+        this.router = router;
+        this.canRegister = true;
+    }
+    RegisterComponent.prototype.ngOnInit = function () {
+    };
+    RegisterComponent.prototype.registerUser = function (user) {
+        var _this = this;
+        if (user.password !== user.confirmPassword) {
+            this.canRegister = false;
+            this.errorMessage = 'Passwords must match!';
+        }
+        else if (user.password !== undefined || user.confirmPassword !== undefined) {
+            if (user.password.length < 5 || user.confirmPassword.length < 5) {
+                this.canRegister = false;
+                this.errorMessage = 'Your password must be atleast 5 symbols long!';
+            }
+        }
+        if (user.password === '' || user.confirmPassword === '') {
+            this.canRegister = false;
+            this.errorMessage = 'Please enter a password!';
+        }
+        if (user.username === undefined) {
+            this.canRegister = false;
+            this.errorMessage = 'Please enter a username';
+        }
+        else if (user.username.length < 4) {
+            this.canRegister = false;
+            this.errorMessage = 'Your username must be atleast 4 symbols long!';
+        }
+        // Registration
+        if (this.canRegister) {
+            return this.usersService.registerUser(user)
+                .subscribe(function () {
+                _this.router.navigate(['/login']);
+            }, function (error) {
+                // fix here
+                _this.errorMessage = 'Username is already is use!';
+            });
+        }
+    };
+    return RegisterComponent;
+}());
+RegisterComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+        selector: 'app-register',
+        template: __webpack_require__("../../../../../src/app/users/register/register.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/users/register/register.component.css")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], RegisterComponent);
+
+var _a, _b;
+//# sourceMappingURL=register.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/users/users.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_users_users_service__ = __webpack_require__("../../../../../src/app/services/users/users.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register_component__ = __webpack_require__("../../../../../src/app/users/register/register.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login_component__ = __webpack_require__("../../../../../src/app/users/login/login.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var UsersModule = (function () {
+    function UsersModule() {
+    }
+    return UsersModule;
+}());
+UsersModule = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["c" /* FormsModule */]
+        ],
+        declarations: [__WEBPACK_IMPORTED_MODULE_3__register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_0__services_users_users_service__["a" /* UsersService */]],
+        exports: [__WEBPACK_IMPORTED_MODULE_3__register_register_component__["a" /* RegisterComponent */], __WEBPACK_IMPORTED_MODULE_5__login_login_component__["a" /* LoginComponent */]]
+    })
+], UsersModule);
+
+//# sourceMappingURL=users.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/assets/pizza-hub-img.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "pizza-hub-img.d144158ebc5c52dff2e9.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/pizza-images/custom-pizza-background.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "custom-pizza-background.ac49a603dab7e07b2642.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/wooden-background.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "wooden-background.adaf110b2cee605925be.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/assets/wrong-way-pic.jpg":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "wrong-way-pic.b5e342aca53a2c047160.jpg";
+
+/***/ }),
+
+/***/ "../../../../../src/environments/environment.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+// The file contents for the current environment will overwrite these during build.
+var environment = {
+    production: false
+};
+//# sourceMappingURL=environment.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/main.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
+
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+}
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
+//# sourceMappingURL=main.js.map
+
+/***/ }),
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__("../../../../webpack-dev-server/client/index.js?http:/localhost:4200");
+module.exports = __webpack_require__("../../../../../src/main.ts");
+
+
+/***/ })
+
+},[0]);
+//# sourceMappingURL=main.bundle.js.map

@@ -1,19 +1,23 @@
- h2 {
+
+h2 {
     color: black;
     position: relative;
     text-align: center;
     top: 100px;
 }
 
-#make-pizza-container{
+  #make-pizza-container{
+    background-image: url('../../../assets/pizza-images/custom-pizza-background.jpg'); 
     position: relative;
     text-align: left;
     top: 150px;
-}
+} 
 
 .selected-product{
     font-size: 18px;
+    font-weight: bold;
 }
+
 
 .checked {
     display: inline;
