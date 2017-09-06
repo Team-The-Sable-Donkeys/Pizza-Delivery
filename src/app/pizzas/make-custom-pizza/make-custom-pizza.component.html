@@ -8,9 +8,10 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let size of sizes">
-            <input type="radio" name = 'size' value = 'selectSize'>{{size}}
+            <input type="radio" name='pizzaSize' value='{{size}}' [(ngModel)] = 'selectedSize'>{{size}}
           </li>
         </ul>
+        <span>Selected size: {{ selectedSize }}</span>
       </div>
     </li>
 
@@ -20,23 +21,29 @@
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
           <li *ngFor="let flour of flours">
-            <input type="radio" name = 'flour' value = 'selectFlour'>{{flour}}
+            <input type="radio" name='flourType' value='{{flour}}' [(ngModel)] = 'selectedFlour'>{{flour}}
           </li>
         </ul>
+        <span>Selected flour: {{ selectedFlour }}</span>
       </div>
     </li>
-
+    
+    <form #d = "ngForm">
     <li class='select-menu'>
       <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose diary
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose dairy
   <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li *ngFor="let diary of diaries">
-            <input type="checkbox" >{{diary}}
+          <li *ngFor="let dairy of dairies">
+            <input type="checkbox" name = 'dairyType' value = '{{dairy.valueOf(dairy)}}' [(ngModel)] = 'selectedDairies'>{{dairy}}
           </li>
         </ul>
+        <span>Selected dairies: {{ selectedDairies }}</span>
+        
       </div>
     </li>
+    </form>
+    
 
     <li class='select-menu'>
       <div class="dropdown">
@@ -50,7 +57,7 @@
       </div>
     </li>
 
-  <li class='select-menu'>
+    <li class='select-menu'>
       <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose sauce
   <span class="caret"></span></button>
@@ -61,10 +68,21 @@
         </ul>
       </div>
     </li>
+
   </ul>
 
 </div>
 
+
+
+<div class='test'>
+
+
+
+
+
+
+  </div>
 
 
 
