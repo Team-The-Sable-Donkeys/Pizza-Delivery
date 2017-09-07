@@ -1,6 +1,10 @@
+import { FinalizeCustomPizzaComponent } from './../finalize-custom-pizza/finalize-custom-pizza.component';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CustomPizza } from './custom-pizza.model';
+
+import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
+
 
 @Component({
   selector: 'app-make-custom-pizza',
@@ -87,7 +91,7 @@ export class MakeCustomPizzaComponent implements OnInit {
   selectedMeats = [];
   selectedSauces = [];
 
-  constructor(private pizza: CustomPizza) {}
+  constructor(private pizza: CustomPizza, private dialog: MdDialog) {}
 
   selectSize(e, size) {
     if (e.target.checked) {
@@ -167,8 +171,16 @@ export class MakeCustomPizzaComponent implements OnInit {
     }
 
     const totalPrice = this.pizza.size[0].price + this.pizza.flour[0].price + meatPrice + dairiesPrice + saucePrice;
-    console.log(totalPrice);
     return totalPrice;
+  }
+
+  completePizza() {
+    const width = window.outerWidth * 0.6;
+    const height = window.outerHeight * 0.4;
+    const checkOutDialog = this.dialog.open(FinalizeCustomPizzaComponent, {
+      height: height + 'px',
+      width: width + 'px',
+    });
   }
 
 

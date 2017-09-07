@@ -6,7 +6,7 @@
         <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose size
   <span class='caret'></span></button>
         <ul class='dropdown-menu'>
-          <li class="input-group-addon beautiful" *ngFor='let size of sizes' >
+          <li class="input-group-addon beautiful" *ngFor='let size of sizes'>
             <input type='radio' name='pizzaSize' value='{{size}}' (change)='selectSize($event, size)'>{{size.type}} {{size.price}}$
           </li>
         </ul>
@@ -83,9 +83,13 @@
         </span>
       </div>
     </li>
+
+    <li>
+      <h3 *ngIf='createCustomPizza()'> Your current amount is: {{createCustomPizza()}}</h3>
+    </li>
   </ul>
 
-    <button class='btn btn-primary' type='button' (click) = 'createCustomPizza()'>Make my pizza</button> 
-   <h3 *ngIf = 'createCustomPizza()'> Your current amount is: {{createCustomPizza()}}</h3> 
+  <button class='btn btn-success' type='button' (click)='completePizza()'>Create pizza</button>
+
 
 </div>
