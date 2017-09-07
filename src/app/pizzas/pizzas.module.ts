@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MdDialogModule } from '@angular/material';
+import {ToasterModule, ToasterService} from 'angular2-toaster';
 
 import { PizzasRoutingModule } from './pizzas-routing.module';
 import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
@@ -19,6 +20,7 @@ import { MakeCustomPizzaService } from './make-custom-pizza/make-custom-pizza.se
     PizzasRoutingModule,
     FormsModule,
     MdDialogModule,
+    ToasterModule,
   ],
   declarations: [
     PizzaComponent,

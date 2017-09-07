@@ -20,13 +20,13 @@ export class MakeCustomPizzaComponent implements OnInit {
   dairies = [];
   sauces = [];
 
-  selectedSize = [''];
-  selectedFlour = [''];
+  selectedSize = [0, 0];
+  selectedFlour = [0, 0];
   selectedDairies = [];
   selectedMeats = [];
   selectedSauces = [];
 
-  constructor(private pizza: CustomPizza, private dialog: MdDialog, private customPizza: MakeCustomPizzaService) { }
+  constructor(private pizza: CustomPizza, private dialog: MdDialog, private customPizza: MakeCustomPizzaService) {}
 
   selectSize(e, size) {
     this.selectedSize[0] = size;
@@ -92,6 +92,7 @@ export class MakeCustomPizzaComponent implements OnInit {
     }
 
     const totalPrice = this.pizza.size[0].price + this.pizza.flour[0].price + meatPrice + dairiesPrice + saucePrice;
+    this.pizza.price = totalPrice;
     return totalPrice;
   }
 
@@ -105,15 +106,20 @@ export class MakeCustomPizzaComponent implements OnInit {
   }
 
   clearData() {
-    this.selectedSize[0] = '';
-    this.selectedFlour[0] = '';
+    this.selectedSize[0] = 0;
+    this.selectedFlour[0] = 0;
     this.selectedMeats.splice(0, this.selectedMeats.length);
     this.selectedDairies.splice(0, this.selectedDairies.length);
     this.selectedSauces.splice(0, this.selectedSauces.length);
+
+    this.pizza.size[0] = 0;
+    this.pizza.flour[0] = 0;
+    this.pizza.meats.splice(0, this.pizza.meats.length);
+    this.pizza.dairies.splice(0, this.pizza.dairies.length);
+    this.pizza.sauces.splice(0, this.pizza.sauces.length);
   }
 
   ngOnInit() {
-
     this.customPizza.getSizes()
       .subscribe((value) => {
         this.sizes = value;

@@ -7,7 +7,7 @@
   <span class='caret'></span></button>
         <ul class='dropdown-menu'>
           <li class="input-group-addon beautiful" *ngFor='let size of sizes'>
-            <input type='radio' name='pizzaSize' value='{{size}}' (change)='selectSize($event, size)'>{{size.type}} {{size.price}}$
+            <input required type='radio' name='radio-choice' value='{{size}}' (change)='selectSize($event, size)' required>{{size.type}} {{size.price}}$
           </li>
         </ul>
         <span class='selected-product'>Selected size: {{selectedSize[0].type}} {{selectedSize[0].price}}$

@@ -1,11 +1,30 @@
+<toaster-container></toaster-container>
+
 <div id='finalize-wrapper'>
+  <ul class='list-group'>
+    <li class='list-group-item'>
+      Pizza size: {{customPizza.size[0].type}} {{customPizza.size[0].price}}$
+    </li>
+    <li class='list-group-item'>
+      Pizza flour: {{customPizza.flour[0].type}} {{customPizza.flour[0].price}}$
+    </li>
+    <li class='list-group-item' *ngFor='let meat of customPizza.meats'>
+      Pizza meats {{meat.type}} -> {{meat.price}}$
+    </li>
+    <li class='list-group-item' *ngFor='let dairy of customPizza.dairies'>
+      Pizza dairies: {{dairy.type}} -> {{dairy.price}}$
+    </li>
+    <li class='list-group-item' *ngFor='let sauce of customPizza.sauces'>
+      Pizza sauces: {{sauce.type}} -> {{sauce.price}}$
+    </li>
+    <li class='list-group-item'>
+      <p class='total-price'>Total price: {{customPizza.price}}$</p>
+    </li>
+  </ul>
   <p>
-    pizza details: ingrediants + price
+    <button *ngIf="auth.isLoggedIn()" (click)="addToCart()" class="btn btn-success" [disabled]="btnDisabled">Add to cart</button>
   </p>
   <p>
-    add to cart button
-  </p>
-  <p>
-    discard button
+    <button class='btn btn-danger' type='button'>Discard</button>
   </p>
 </div>

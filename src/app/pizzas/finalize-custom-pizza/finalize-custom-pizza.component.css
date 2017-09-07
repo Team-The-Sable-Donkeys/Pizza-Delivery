@@ -1,6 +1,10 @@
- #finalize-wrapper {
-    position: relative;
-    text-align: left;
-    top: 150px;
-    left: 300px;
-} 
+.total-price{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+
