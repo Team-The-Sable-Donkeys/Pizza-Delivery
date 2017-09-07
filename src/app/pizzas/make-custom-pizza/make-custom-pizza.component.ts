@@ -15,8 +15,12 @@ import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
 export class MakeCustomPizzaComponent implements OnInit {
 
   sizes = [];
+  flours = [];
+  meats = [];
+  dairies = [];
+  sauces = [];
 
-  selectedSize = [0];
+  selectedSize = [''];
   selectedFlour = [''];
   selectedDairies = [];
   selectedMeats = [];
@@ -104,27 +108,27 @@ export class MakeCustomPizzaComponent implements OnInit {
 
     this.customPizza.getSizes()
       .subscribe((value) => {
-        this.selectedSize = value;
+        this.sizes = value;
       });
 
     this.customPizza.getFlours()
       .subscribe((value) => {
-        this.selectedFlour = value;
+        this.flours = value;
       });
 
     this.customPizza.getMeats()
       .subscribe((value) => {
-        this.selectedMeats = value;
+        this.meats = value;
       });
 
     this.customPizza.getDairies()
       .subscribe((value) => {
-        this.selectedDairies = value;
+        this.dairies = value;
       });
 
     this.customPizza.getSauces()
       .subscribe((value) => {
-        this.selectedSauces = value;
+        this.sauces = value;
       });
   }
 

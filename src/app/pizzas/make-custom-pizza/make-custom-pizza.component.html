@@ -6,7 +6,7 @@
         <button  class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose size
   <span class='caret'></span></button>
         <ul class='dropdown-menu'>
-          <li class="input-group-addon beautiful" *ngFor='let size of selectedSize'>
+          <li class="input-group-addon beautiful" *ngFor='let size of sizes'>
             <input type='radio' name='pizzaSize' value='{{size}}' (change)='selectSize($event, size)'>{{size.type}} {{size.price}}$
           </li>
         </ul>
@@ -20,7 +20,7 @@
         <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose flour
   <span class='caret'></span></button>
         <ul class='dropdown-menu'>
-          <li class="input-group-addon beautiful" *ngFor='let flour of selectedFlour'>
+          <li class="input-group-addon beautiful" *ngFor='let flour of flours'>
             <input type='radio' name='flourType' value='{{flour}}' (change)='selectFlour($event, flour)'>{{flour.type}} {{flour.price}}$
           </li>
         </ul>
@@ -35,7 +35,7 @@
           <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose dairy
   <span class='caret'></span></button>
           <ul class='dropdown-menu'>
-            <li class="input-group-addon beautiful" *ngFor='let dairy of selectedDairies'>
+            <li class="input-group-addon beautiful" *ngFor='let dairy of dairies'>
               <input type='checkbox' name='dairy' value='{{dairy}}' (change)='selectDairy($event, dairy)'>{{dairy.type}}
               {{dairy.price}}$
             </li>
@@ -55,7 +55,7 @@
         <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose meat
   <span class='caret'></span></button>
         <ul class='dropdown-menu'>
-          <li class="input-group-addon beautiful" *ngFor='let meat of selectedMeats'>
+          <li class="input-group-addon beautiful" *ngFor='let meat of meats'>
             <input type='checkbox' name='meat' value='{{meat}}' (change)='selectMeat($event, meat)'>{{meat.type}} {{meat.price}}$
           </li>
         </ul>
@@ -72,7 +72,7 @@
         <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose sauce
   <span class='caret'></span></button>
         <ul class='dropdown-menu'>
-          <li class="input-group-addon beautiful" *ngFor='let sauce of selectedSauces'>
+          <li class="input-group-addon beautiful" *ngFor='let sauce of sauces'>
             <input type='checkbox' name='sauce' value='{{sauce}}' (change)='selectSauce($event, sauce)'>{{sauce.type}} {{sauce.price}}$
           </li>
         </ul>
