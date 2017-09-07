@@ -104,6 +104,14 @@ export class MakeCustomPizzaComponent implements OnInit {
     });
   }
 
+  clearData() {
+    this.selectedSize[0] = '';
+    this.selectedFlour[0] = '';
+    this.selectedMeats.splice(0, this.selectedMeats.length);
+    this.selectedDairies.splice(0, this.selectedDairies.length);
+    this.selectedSauces.splice(0, this.selectedSauces.length);
+  }
+
   ngOnInit() {
 
     this.customPizza.getSizes()
