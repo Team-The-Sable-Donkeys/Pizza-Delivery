@@ -2,6 +2,7 @@ import { FinalizeCustomPizzaComponent } from './../finalize-custom-pizza/finaliz
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CustomPizza } from './custom-pizza.model';
+import { MakeCustomPizzaService } from './make-custom-pizza.service';
 
 import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
 
@@ -13,106 +14,22 @@ import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
 })
 export class MakeCustomPizzaComponent implements OnInit {
 
- public sizes = [
-      {
-        type: 'small',
-        price: 1
-      },
-      {
-        type: 'medium',
-        price: 2
-      },
-      {
-        type: 'large',
-        price: 3
-      },
-      {
-        type: 'family',
-        price: 4
-      }
-  ];
+  sizes = [];
 
-  public flours = [
-    {
-      type: 'traditional',
-      price: 5
-    },
-    {
-      type: 'italian style',
-      price: 6
-    },
-    {
-      type: 'thin and crispy',
-      price: 7
-    },
-  ];
-  public meats = [
-    {
-      type: 'salami',
-      price: 5
-    },
-    {
-      type: 'backon',
-      price: 4
-    },
-    {
-      type: 'ham',
-      price: 6
-    },
-  ];
-  public dairies = [
-    {
-      type: 'white cheese',
-      price: 3
-    },
-    {
-      type: 'yellow cheese',
-      price: 4
-    },
-    {
-      type: 'mozarella',
-      price: 5
-    },
-  ];
-  public sauces = [
-    {
-      type: 'garlic',
-      price: 3
-    },
-    {
-      type: 'tomato',
-      price: 2
-    },
-  ];
-
-  selectedSize = [''];
+  selectedSize = [0];
   selectedFlour = [''];
   selectedDairies = [];
   selectedMeats = [];
   selectedSauces = [];
 
-  constructor(private pizza: CustomPizza, private dialog: MdDialog) {}
+  constructor(private pizza: CustomPizza, private dialog: MdDialog, private customPizza: MakeCustomPizzaService) { }
 
   selectSize(e, size) {
-    if (e.target.checked) {
-      this.selectedSize[0] = size;
-    } else {
-      const index = this.selectedSize.indexOf(size, 0);
-      if (index > -1) {
-        this.selectedSize.splice(index, 1);
-      }
-    }
+    this.selectedSize[0] = size;
   }
 
   selectFlour(e, flour) {
-    if (e.target.checked) {
-      this.selectedFlour[0] = flour;
-    } else {
-      const index = this.selectedFlour.indexOf(flour, 0);
-      if (index > -1) {
-        this.selectedFlour.splice(index, 1);
-      }
-    }
+    this.selectedFlour[0] = flour;
   }
 
   selectDairy(e, dairy) {
@@ -183,8 +100,32 @@ export class MakeCustomPizzaComponent implements OnInit {
     });
   }
 
-
   ngOnInit() {
+
+    this.customPizza.getSizes()
+      .subscribe((value) => {
+        this.selectedSize = value;
+      });
+
+    this.customPizza.getFlours()
+      .subscribe((value) => {
+        this.selectedFlour = value;
+      });
+
+    this.customPizza.getMeats()
+      .subscribe((value) => {
+        this.selectedMeats = value;
+      });
+
+    this.customPizza.getDairies()
+      .subscribe((value) => {
+        this.selectedDairies = value;
+      });
+
+    this.customPizza.getSauces()
+      .subscribe((value) => {
+        this.selectedSauces = value;
+      });
   }
 
 }

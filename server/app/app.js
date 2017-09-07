@@ -31,6 +31,41 @@ const init = (data) => {
             });
     });
 
+    app.get('/api/custom-pizza-sizes', (request, response) => {
+        return data.getSizes()
+            .then((sizes) => {
+                return response.json(sizes);
+            });
+    });
+
+    app.get('/api/custom-pizza-flours', (request, response) => {
+        return data.getFlours()
+            .then((flours) => {
+                return response.json(flours);
+            });
+    });
+
+    app.get('/api/custom-pizza-meats', (request, response) => {
+        return data.getMeats()
+            .then((meats) => {
+                return response.json(meats);
+            });
+    });
+
+    app.get('/api/custom-pizza-dairies', (request, response) => {
+        return data.getDairies()
+            .then((dairies) => {
+                return response.json(dairies);
+            });
+    });
+
+    app.get('/api/custom-pizza-sauces', (request, response) => {
+        return data.getSauces()
+            .then((sauces) => {
+                return response.json(sauces);
+            });
+    });
+
     app.get('/api/pizzas/:id', (request, response) => {
         const id = +request.params.id;
         return data.getPizzaById(id)

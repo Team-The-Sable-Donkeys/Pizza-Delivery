@@ -11,6 +11,7 @@ import { PizzasRoutingModule } from './pizzas-routing.module';
 import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
 import { MakeCustomPizzaComponent } from './make-custom-pizza/make-custom-pizza.component';
 import { FinalizeCustomPizzaComponent } from './finalize-custom-pizza/finalize-custom-pizza.component';
+import { MakeCustomPizzaService } from './make-custom-pizza/make-custom-pizza.service';
 
 @NgModule({
   imports: [
@@ -29,6 +30,6 @@ import { FinalizeCustomPizzaComponent } from './finalize-custom-pizza/finalize-c
   entryComponents: [
     FinalizeCustomPizzaComponent,
   ],
-  providers: [PizzaService, CustomPizza]
+  providers: [PizzaService, CustomPizza, MakeCustomPizzaService]
 })
 export class PizzasModule { }

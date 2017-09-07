@@ -14,6 +14,51 @@ const init = (db) => {
             })
     };
 
+    const getSizes = () => {
+        return db.collection('custom-pizza-sizes')
+        .find()
+        .toArray()
+        .then((sizes) => {
+            return Promise.resolve(sizes);
+        });
+    };
+
+    const getFlours = () => {
+        return db.collection('custom-pizza-flours')
+        .find()
+        .toArray()
+        .then((flours) => {
+            return Promise.resolve(flours);
+        });
+    };
+
+    const getMeats = () => {
+        return db.collection('custom-pizza-meats')
+        .find()
+        .toArray()
+        .then((meats) => {
+            return Promise.resolve(meats);
+        });
+    };
+
+    const getDairies = () => {
+        return db.collection('custom-pizza-dairies')
+        .find()
+        .toArray()
+        .then((dairies) => {
+            return Promise.resolve(dairies);
+        });
+    };
+
+    const getSauces = () => {
+        return db.collection('custom-pizza-sauces')
+        .find()
+        .toArray()
+        .then((sauces) => {
+            return Promise.resolve(sauces);
+        });
+    };
+
     const getUsers = () => {
         return db.collection('pizza-users')
             .find()
@@ -167,7 +212,12 @@ const init = (db) => {
         deletePizzaFromCart,
         insertOrder,
         emptyUserCart,
-        getOrders
+        getOrders,
+        getSizes,
+        getFlours,
+        getMeats,
+        getDairies,
+        getSauces
     };
 
     return Promise.resolve(data);
