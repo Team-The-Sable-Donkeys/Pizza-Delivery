@@ -50,7 +50,27 @@ export class CartComponent implements OnInit {
     }
   }
 
-  removeFromCart() {
+  removeOneFromCart() {
+    this.PizzaService.getUsers()
+      .subscribe((users) => {
+        const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
+        const body = {
+          pizza: this.pizza,
+          userId: loggedUser.id
+        };
+        this.PizzaService.removeFromCart(body)
+          .subscribe();
+      });
+    this.totalPriceChanged.emit(this.prevTotal - this.subTotal);
+
+    if (this.pizza.quantity > 1) {
+      this.pizza.quantity--;
+    } else {
+    this.itemRemoved.emit(this.pizza.id);
+    }
+  }
+
+  removeAllFromCart() {
     this.PizzaService.getUsers()
       .subscribe((users) => {
         const loggedUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));

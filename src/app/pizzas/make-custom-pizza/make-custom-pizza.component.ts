@@ -26,7 +26,15 @@ export class MakeCustomPizzaComponent implements OnInit {
   selectedMeats = [];
   selectedSauces = [];
 
-  constructor(private pizza: CustomPizza, private dialog: MdDialog, private customPizza: MakeCustomPizzaService) {}
+  constructor(private pizza: CustomPizza, private dialog: MdDialog, private customPizza: MakeCustomPizzaService) { }
+
+  getNextId = (function () {
+    let counter = 9;
+    return function () {
+      counter += 1;
+      return counter;
+    };
+  })();
 
   selectSize(e, size) {
     this.selectedSize[0] = size;
@@ -70,6 +78,7 @@ export class MakeCustomPizzaComponent implements OnInit {
   }
 
   createCustomPizza() {
+    this.pizza.id = this.getNextId();
     this.pizza.size[0] = this.selectedSize[0];
     this.pizza.flour[0] = this.selectedFlour[0];
     let meatPrice = 0;
@@ -118,6 +127,7 @@ export class MakeCustomPizzaComponent implements OnInit {
     this.pizza.dairies.splice(0, this.pizza.dairies.length);
     this.pizza.sauces.splice(0, this.pizza.sauces.length);
   }
+
 
   ngOnInit() {
     this.customPizza.getSizes()

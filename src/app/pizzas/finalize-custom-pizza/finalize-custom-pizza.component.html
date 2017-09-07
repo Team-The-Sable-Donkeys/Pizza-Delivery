@@ -25,6 +25,6 @@
     <button *ngIf="auth.isLoggedIn()" (click)="addToCart()" class="btn btn-success" [disabled]="btnDisabled">Add to cart</button>
   </p>
   <p>
-    <button class='btn btn-danger' type='button'>Discard</button>
+    <button class='btn btn-danger' type='button' (click) = 'discard()'>Discard</button>
   </p>
 </div>

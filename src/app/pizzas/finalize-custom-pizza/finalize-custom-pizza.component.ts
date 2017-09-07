@@ -5,8 +5,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 
 import { AuthService } from '../../services/auth/auth.service';
-import { ToasterService } from 'angular2-toaster/angular2-toaster';
-
 
 @Component({
   selector: 'app-finalize-custom-pizza',
@@ -15,15 +13,12 @@ import { ToasterService } from 'angular2-toaster/angular2-toaster';
 })
 export class FinalizeCustomPizzaComponent implements OnInit {
 
-  showLoader = false;
   btnDisabled = false;
 
   constructor(public dialogRef: MdDialogRef<FinalizeCustomPizzaComponent>,
-    @Inject(MD_DIALOG_DATA) public data,
     private pizzaService: PizzaService,
     public customPizza: CustomPizza,
-    public auth: AuthService,
-  private toasterService: ToasterService) {
+    public auth: AuthService) {
 
   }
 
@@ -37,7 +32,6 @@ export class FinalizeCustomPizzaComponent implements OnInit {
           pizza: this.customPizza,
           userId: loggedUser.id
         };
-        console.log(body.pizza);
         this.pizzaService.addToCart(body)
           .subscribe();
       })
@@ -45,9 +39,11 @@ export class FinalizeCustomPizzaComponent implements OnInit {
         this.btnDisabled = false;
       });
 
-      this.dialogRef.close();
-      this.toasterService.pop('success', 'Finished!', 'Your pizza has been successfully added to you cart.');
+    this.dialogRef.close();
+  }
 
+  discard() {
+    this.dialogRef.close();
   }
 
   ngOnInit() {
