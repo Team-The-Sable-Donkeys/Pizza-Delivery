@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomPizza } from './make-custom-pizza/custom-pizza.model';
 import { PizzaService } from './../pizza.service';
 import { PizzaComponent } from './pizza/pizza.component';
@@ -6,7 +7,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MdDialogModule } from '@angular/material';
-import {ToasterModule, ToasterService} from 'angular2-toaster';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 import { PizzasRoutingModule } from './pizzas-routing.module';
 import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
@@ -20,7 +21,7 @@ import { MakeCustomPizzaService } from './make-custom-pizza/make-custom-pizza.se
     PizzasRoutingModule,
     FormsModule,
     MdDialogModule,
-    ToasterModule,
+    ToastModule.forRoot(),
   ],
   declarations: [
     PizzaComponent,

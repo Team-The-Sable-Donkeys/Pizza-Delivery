@@ -1,10 +1,12 @@
 import { FinalizeCustomPizzaComponent } from './../finalize-custom-pizza/finalize-custom-pizza.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { CustomPizza } from './custom-pizza.model';
 import { MakeCustomPizzaService } from './make-custom-pizza.service';
+import { AuthService } from '../../services/auth/auth.service';
 
 import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 
 @Component({
@@ -26,7 +28,15 @@ export class MakeCustomPizzaComponent implements OnInit {
   selectedMeats = [];
   selectedSauces = [];
 
-  constructor(private pizza: CustomPizza, private dialog: MdDialog, private customPizza: MakeCustomPizzaService) { }
+  constructor(private pizza: CustomPizza,
+    private dialog: MdDialog,
+    private customPizza: MakeCustomPizzaService,
+    public toastr: ToastsManager,
+    public auth: AuthService,
+    vcr: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vcr);
+
+  }
 
   getNextId = (function () {
     let counter = 9;
@@ -108,10 +118,18 @@ export class MakeCustomPizzaComponent implements OnInit {
   completePizza() {
     const width = window.outerWidth * 0.6;
     const height = window.outerHeight * 0.4;
-    const checkOutDialog = this.dialog.open(FinalizeCustomPizzaComponent, {
-      height: height + 'px',
-      width: width + 'px',
-    });
+    if (!this.auth.isLoggedIn()) {
+      this.toastr.options = {
+        animate: 'flyRight',
+        positionClass: 'toast-top-full-width',
+      };
+      this.toastr.error('Your must sign in first', null, { toastLife: 2000 });
+    } else {
+      const checkOutDialog = this.dialog.open(FinalizeCustomPizzaComponent, {
+        height: height + 'px',
+        width: width + 'px',
+      });
+    }
   }
 
   clearData() {
@@ -126,6 +144,12 @@ export class MakeCustomPizzaComponent implements OnInit {
     this.pizza.meats.splice(0, this.pizza.meats.length);
     this.pizza.dairies.splice(0, this.pizza.dairies.length);
     this.pizza.sauces.splice(0, this.pizza.sauces.length);
+
+    this.toastr.options = {
+      animate: 'flyRight',
+      positionClass: 'toast-top-full-width',
+    };
+    this.toastr.success('Your list has been successfuly cleared!', null, { toastLife: 2000 });
   }
 
 

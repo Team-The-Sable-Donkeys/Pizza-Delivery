@@ -1,17 +1,23 @@
 
 h2 {
-    color: black;
-    position: relative;
-    text-align: center;
-    top: 100px;
+        color: #7c795d; 
+        font-family: 'Trocchi', 
+        serif; font-size: 45px; 
+        font-weight: normal; 
+        line-height: 48px; 
+        position: relative;
+        text-align: center;
+        top: 100px;
 }
 
 
   #make-pizza-container{
+    height: 45em;
+    top: 150px;
     background-image: url('../../../assets/pizza-images/custom-pizza-background.jpg'); 
     position: relative;
     text-align: left;
-    top: 150px;
+   
 } 
 
 .selected-product{
@@ -22,6 +28,11 @@ h2 {
 
 .checked {
     display: inline;
+}
+
+.toast-top-full-width {
+    top: 50px;
+    margin-top: 50px;
 }
 
 button{
