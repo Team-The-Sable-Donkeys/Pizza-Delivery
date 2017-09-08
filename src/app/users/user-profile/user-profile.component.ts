@@ -9,6 +9,7 @@ import { PizzaService } from '../../pizza.service';
 export class UserProfileComponent implements OnInit {
 
   public currentUser;
+  public currentAddress;
 
   constructor(private pizzaService: PizzaService) { }
 
@@ -18,6 +19,11 @@ export class UserProfileComponent implements OnInit {
       .subscribe((u) => {
         this.currentUser = u;
       });
+  this.currentAddress = this.pizzaService.getFixedUserAddress()
+      .subscribe((a) => {
+        this.currentAddress = a;
+      });
+
   }
 
 }
