@@ -6,8 +6,10 @@ export class OrdersService {
 
   constructor(private http: Http) { }
 
-  getOrders() {
-    return this.http.get('http://localhost:3000/api/orders')
+  getOrders(page) {
+    const params = new URLSearchParams();
+    params.set('page', page);
+    return this.http.get('http://localhost:3000/api/orders?page=' + page)
       .map((response) => response.json());
   }
 

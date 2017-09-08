@@ -192,11 +192,13 @@ const init = (db) => {
             )
     }
 
-    const getOrders = () => {
+    const getOrders = (page) => {
         return db.collection('pizza-orders')
             .find()
             .toArray()
             .then((orders) => {
+                const ORDERS_PER_PAGE = 12;
+                orders = orders.slice((page - 1) * ORDERS_PER_PAGE, page * ORDERS_PER_PAGE);
                 return Promise.resolve(orders);
             })
     }

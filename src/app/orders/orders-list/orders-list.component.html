@@ -1,9 +1,13 @@
 <main>
-  <div class="container-fluid">
+  <div class="container-fluid orders-container">
     <div class="row">
       <div class="order-container" *ngFor="let order of orders">
         <app-order [order]="order" class="col-md-3"></app-order>
       </div>
+    </div>
+    <div class="page-btns">
+      <button class="btn btn-success pull-left">Previous Page</button>
+      <button class="btn btn-success pull-right">Next page</button>
     </div>
   </div>
 </main>

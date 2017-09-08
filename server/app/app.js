@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 
 const jwt = require('jsonwebtoken');
 const SECRET_KEY = 'the camp alpha';
@@ -131,7 +131,8 @@ const init = (data) => {
     });
 
     app.get('/api/orders', (request, response) => {
-        return data.getOrders()
+        const page = +request.query.page;
+        return data.getOrders(page)
             .then((orders) => {
                 return response.json(orders);
             });
