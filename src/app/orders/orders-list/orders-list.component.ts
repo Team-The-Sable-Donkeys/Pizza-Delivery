@@ -11,6 +11,10 @@ export class OrdersListComponent implements OnInit {
 
   orders;
   page;
+  pageError;
+  maxPage;
+  nextDisabled = false;
+  prevDisabled = false;
   constructor(public ordersService: OrdersService,
     private router: Router,
     private route: ActivatedRoute) { }
@@ -24,13 +28,55 @@ export class OrdersListComponent implements OnInit {
       });
 
     this.ordersService.getOrders(this.page)
-      .subscribe((orders) => {
-        this.orders = orders;
+      .subscribe((data) => {
+        this.orders = data.orders;
+        this.maxPage = data.length;
+        this.btnCheck(this.maxPage);
       });
   }
 
-  goToPage(pageNum) {
-    this.router.navigate(['/product-list'], { queryParams: { page: pageNum } });
+  nextPage() {
+    let maxPage;
+    const newPage = this.page + 1;
+    this.ordersService.getOrders(newPage)
+      .subscribe((data) => {
+        maxPage = data.length;
+        if (newPage <= maxPage) {
+          this.router.navigate(['/orders'], { queryParams: { page: newPage } });
+          this.page = newPage;
+          this.btnCheck(this.maxPage);
+          this.orders = data.orders;
+        }
+      });
+  }
+
+  prevPage() {
+    const newPage = this.page - 1;
+    if (newPage <= 0) {
+      return;
+    }
+    this.ordersService.getOrders(newPage)
+      .subscribe((data) => {
+        this.router.navigate(['/orders'], { queryParams: { page: newPage } });
+        this.page = newPage;
+        this.btnCheck(this.maxPage);
+        this.orders = data.orders;
+      });
+  }
+
+  btnCheck(maxPage) {
+    if (this.page === maxPage) {
+      this.nextDisabled = true;
+      this.prevDisabled = false;
+    }
+    if (this.page === 1) {
+      this.prevDisabled = true;
+      this.nextDisabled = false;
+    }
+    if (this.page === 1 && this.page === maxPage) {
+      this.prevDisabled = true;
+      this.nextDisabled = true;
+    }
   }
 
 }

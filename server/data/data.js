@@ -198,8 +198,12 @@ const init = (db) => {
             .toArray()
             .then((orders) => {
                 const ORDERS_PER_PAGE = 12;
+                const ordersLength = Math.ceil(orders.length / ORDERS_PER_PAGE);
                 orders = orders.slice((page - 1) * ORDERS_PER_PAGE, page * ORDERS_PER_PAGE);
-                return Promise.resolve(orders);
+                return Promise.resolve({
+                    orders: orders,
+                    length: ordersLength
+                });
             })
     }
 
