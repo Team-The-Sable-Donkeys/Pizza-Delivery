@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'pizzas', loadChildren: './pizzas/pizzas.module.ts#PizzasModule' },
+  { path: 'profile', loadChildren: './users/users.module.ts#UsersModule', canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cart', component: CartListComponent, canActivate: [AuthGuard] },
