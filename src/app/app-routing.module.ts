@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', component: AboutContactComponent },
+  { path: 'contactus', component: AboutContactComponent },
   { path: 'cart', component: CartListComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersListComponent, canActivate: [AdminGuard] },
   { path: '**', component: UnauthorizedComponent, pathMatch: 'full' }
