@@ -4,4 +4,12 @@ main {
     min-height: 100vh;
 }
 
+.orders-container {
+    margin-bottom: 125px;
+}
+
+.page-btns {
+    margin-top: 50px;
+}
+
 

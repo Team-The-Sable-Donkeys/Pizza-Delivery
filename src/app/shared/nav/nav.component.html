@@ -22,7 +22,7 @@
         </li>
         <li><a routerLink="/pizzas">Menu</a></li>
         <li><a routerLink = "/pizzas/makePizza">Make your own pizza</a></li>
-        <li><a *ngIf="auth.isAdmin()" routerLink="/orders">Orders</a></li>
+        <li><a *ngIf="auth.isAdmin()" routerLink="/orders" [queryParams]="{page: 1}">Orders</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a *ngIf="auth.isLoggedIn()" routerLink="/profile"><span class="glyphicon glyphicon-user"></span> To Be Username </a></li>        

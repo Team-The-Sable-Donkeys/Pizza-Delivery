@@ -1,9 +1,13 @@
 <main>
-  <div class="container-fluid">
+  <div class="container-fluid orders-container">
     <div class="row">
       <div class="order-container" *ngFor="let order of orders">
         <app-order [order]="order" class="col-md-3"></app-order>
       </div>
+    </div>
+    <div class="page-btns">
+      <button class="btn btn-success pull-left" id="next-page-btn" (click)="prevPage()" *ngIf="!prevDisabled">Previous Page</button>
+      <button class="btn btn-success pull-right" id="prev-page-btn" (click)="nextPage()" *ngIf="!nextDisabled">Next page</button>
     </div>
   </div>
 </main>

@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt-nodejs');
 const jwt = require('jsonwebtoken');
 const SECRET_KEY = 'the camp alpha';
 
@@ -192,12 +192,18 @@ const init = (db) => {
             )
     }
 
-    const getOrders = () => {
+    const getOrders = (page) => {
         return db.collection('pizza-orders')
             .find()
             .toArray()
             .then((orders) => {
-                return Promise.resolve(orders);
+                const ORDERS_PER_PAGE = 12;
+                const ordersLength = Math.ceil(orders.length / ORDERS_PER_PAGE);
+                orders = orders.slice((page - 1) * ORDERS_PER_PAGE, page * ORDERS_PER_PAGE);
+                return Promise.resolve({
+                    orders: orders,
+                    length: ordersLength
+                });
             })
     }
 
