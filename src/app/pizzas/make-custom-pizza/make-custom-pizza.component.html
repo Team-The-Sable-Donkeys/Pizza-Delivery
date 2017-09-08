@@ -12,8 +12,8 @@
             <input required type='radio' name='radio-choice' value='{{size}}' (change)='selectSize($event, size)' required>{{size.type}} {{size.price}}$
           </li>
         </ul>
-        <span class='selected-product'>Selected size: {{selectedSize[0].type}} {{selectedSize[0].price}}$
-        </span>
+        <!-- <span class='selected-product'>Selected size: {{selectedSize[0].type}} {{selectedSize[0].price}}$
+        </span> -->
       </div>
     </li>
 
@@ -26,8 +26,8 @@
             <input type='radio' name='flourType' value='{{flour}}' (change)='selectFlour($event, flour)'>{{flour.type}} {{flour.price}}$
           </li>
         </ul>
-        <span class='selected-product'>Selected flour: {{selectedFlour[0].type}} {{selectedFlour[0].price}}$
-        </span>
+        <!-- <span class='selected-product'>Selected flour: {{selectedFlour[0].type}} {{selectedFlour[0].price}}$
+        </span> -->
       </div>
     </li>
 
@@ -42,11 +42,11 @@
               {{dairy.price}}$
             </li>
           </ul>
-          <span class='selected-product'>Selected dairies:
+          <!-- <span class='selected-product'>Selected dairies:
           <li *ngFor = 'let pr of selectedDairies' class = 'checked'>
            {{ pr.type }} {{pr.price}}$
           </li>
-        </span>
+        </span> -->
         </div>
       </li>
     </form>
@@ -61,11 +61,11 @@
             <input type='checkbox' name='meat' value='{{meat}}' (change)='selectMeat($event, meat)'>{{meat.type}} {{meat.price}}$
           </li>
         </ul>
-        <span class='selected-product'>Selected meats: 
+        <!-- <span class='selected-product'>Selected meats: 
           <li *ngFor = 'let pr of selectedMeats' class = 'checked'>
            {{ pr.type }} {{pr.price}}$
           </li>
-        </span>
+        </span> -->
       </div>
     </li>
 
@@ -78,11 +78,11 @@
             <input type='checkbox' name='sauce' value='{{sauce}}' (change)='selectSauce($event, sauce)'>{{sauce.type}} {{sauce.price}}$
           </li>
         </ul>
-        <span class='selected-product'>Selected sauces:
+        <!-- <span class='selected-product'>Selected sauces:
           <li  *ngFor = 'let pr of selectedSauces' class = 'checked'>
            {{ pr.type }} {{pr.price}}$
           </li>
-        </span>
+        </span> -->
       </div>
     </li>
 
@@ -91,8 +91,11 @@
     </li>
   </ul>
 
-  <button class='btn btn-success' type='button' (click)='completePizza()'>Create pizza</button>
-  <button class='btn btn-danger' type='button' (click)='clearData()'>Clear all</button>
+  <button class='btn btn-success' type='button' (click)='completePizza()'>
+    <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Create pizza</button>
+<br>
+  <button class='btn btn-danger' type='button' (click)='clearData()'>
+    <span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Clear all</button>
   
 
 
