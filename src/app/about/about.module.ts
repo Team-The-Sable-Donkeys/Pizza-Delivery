@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about/about.component';
 import { AboutContactComponent } from './about-contact/about-contact.component';
+import { MessagesService } from './../services/messages/messages.service';
 
 // dialog
 import { MdDialogModule } from '@angular/material';
@@ -22,6 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AboutComponent,
     AboutContactComponent
-  ]
+  ],
+  providers: [MessagesService],
+  exports: [AboutComponent, AboutContactComponent]
 })
 export class AboutModule { }
