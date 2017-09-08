@@ -12,15 +12,12 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private pizzaService: PizzaService) { }
 
-  findUser() {
-    this.pizzaService.getUsers()
-      .subscribe((users) => {
-          this.currentUser = users.find((u) => u.authKey === localStorage.getItem('auth-key'));
-      });
-  }
 
   ngOnInit() {
-   // this.findUser();
+   this.currentUser = this.pizzaService.getFixedUser()
+      .subscribe((u) => {
+        this.currentUser = u;
+      });
   }
 
 }

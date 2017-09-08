@@ -23,6 +23,11 @@ export class PizzaService {
       .map((response) => response.json());
   }
 
+  getFixedUser() {
+    return this.http.get('http://localhost:3000/api/users')
+      .map((response) => response.json().find((u) => u.authKey === localStorage.getItem('auth-key')));
+  }
+
   addToCart(body) {
     return this.http.put('http://localhost:3000/api/cart', body)
       .map((response) => response.json());
