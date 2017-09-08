@@ -1,3 +1,4 @@
+import { MyCurrencyPipe } from './pipes/mycurrency.pipe';
 import { AdminGuard } from './services/auth/admin-guard.service';
 import { OrdersModule } from './orders/orders.module';
 import { CartModule } from './cart/cart.module';
@@ -18,7 +19,8 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MyCurrencyPipe
   ],
   imports: [
     BrowserModule,

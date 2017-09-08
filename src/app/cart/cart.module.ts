@@ -22,6 +22,6 @@ import { CheckoutComponent } from './checkout/checkout.component';
   // dialog
   entryComponents: [
     CheckoutComponent,
-  ],
+  ]
 })
 export class CartModule { }
