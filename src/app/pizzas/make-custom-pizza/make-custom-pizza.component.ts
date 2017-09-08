@@ -119,11 +119,12 @@ export class MakeCustomPizzaComponent implements OnInit {
     const width = window.outerWidth * 0.6;
     const height = window.outerHeight * 0.4;
     if (!this.auth.isLoggedIn()) {
-      this.toastr.options = {
-        animate: 'flyRight',
-        positionClass: 'toast-top-full-width',
-      };
-      this.toastr.error('Your must sign in first', null, { toastLife: 2000 });
+      this.toastr.error('Your must sign in first', null, {
+          animate: 'flyRight',
+          positionClass: 'toast-top-full-width',
+          showCloseButton: 'true',
+          toastLife: 2000
+        });
     } else {
       const checkOutDialog = this.dialog.open(FinalizeCustomPizzaComponent, {
         height: height + 'px',
@@ -145,11 +146,12 @@ export class MakeCustomPizzaComponent implements OnInit {
     this.pizza.dairies.splice(0, this.pizza.dairies.length);
     this.pizza.sauces.splice(0, this.pizza.sauces.length);
 
-    this.toastr.options = {
-      animate: 'flyRight',
-      positionClass: 'toast-top-full-width',
-    };
-    this.toastr.success('Your list has been successfuly cleared!', null, { toastLife: 2000 });
+    this.toastr.success('Your list has been successfuly cleared!', null, {
+          animate: 'flyRight',
+          positionClass: 'toast-top-full-width',
+          showCloseButton: 'true',
+          toastLife: 2000
+        });
   }
 
 

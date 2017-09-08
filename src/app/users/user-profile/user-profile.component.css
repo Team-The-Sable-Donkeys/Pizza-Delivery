@@ -1,3 +1,18 @@
-main {
-    margin-top: 75px;
+.container {
+     margin-top: 75px;
+    width: 80%;
+    padding: 10px;
+}
+img{
+    margin-top: 80px;
+    width: 300px;
+}
+
+.address{
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+li{
+    list-style-type: none;
 }

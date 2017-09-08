@@ -1,3 +1,30 @@
-<main>
-  <h1>Profile</h1>
-</main>
+<div class='container'>
+  <div class='jumbotron'>
+    <div class='row'>
+      <div class='col-md-4 col-xs-12 col-sm-6 col-lg-4'>
+        <img src='https://www.pixilart.com/images/art/thumb/0943dae0270548f.png' alt='stack photo' class='img'>
+      </div>
+      <div class='col-md-8 col-xs-12 col-sm-6 col-lg-8'>
+        <div class='container' style='border-bottom:1px solid black'>
+          <h2>The profile of: {{currentUser.username}}</h2>
+        </div>
+        <hr>
+        <ul class='container details'>
+          <li>
+            <p><span class='glyphicon glyphicon-user' style='width:50px;'></span>First name: {{currentUser.firstName}}</p>
+          </li>
+          <li>
+            <p><span class='glyphicon glyphicon-user' style='width:50px;'></span>Last name: {{currentUser.lastName}}</p>
+          </li>
+          <li>
+            <p><span class='glyphicon glyphicon-home' style='width:50px;'></span>Address: </p>
+            <ul>
+              <li class = 'address glyphicon glyphicon-city'>City: {{currentAddress.city}}</li>
+              <li class = 'address'>Street: {{currentAddress.street}}</li>
+              <li class = 'address'>Country: {{currentAddress.country}}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

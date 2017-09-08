@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PizzaService } from '../../pizza.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  public currentUser;
+  public currentAddress;
+
+  constructor(private pizzaService: PizzaService) { }
+
 
   ngOnInit() {
+   this.currentUser = this.pizzaService.getFixedUser()
+      .subscribe((u) => {
+        this.currentUser = u;
+      });
+  this.currentAddress = this.pizzaService.getFixedUserAddress()
+      .subscribe((a) => {
+        this.currentAddress = a;
+      });
+
   }
 
 }

@@ -28,6 +28,8 @@ export class FinalizeCustomPizzaComponent implements OnInit {
   }
 
 
+
+
   addToCart() {
     this.btnDisabled = true;
     const currPrice = this.customPizza.price;
@@ -47,21 +49,27 @@ export class FinalizeCustomPizzaComponent implements OnInit {
           this.btnDisabled = false;
         });
 
-      this.toastr.options = {
-        animate: 'flyRight',
-        positionClass: 'toast-top-full-width',
-        showCloseButton: 'true'
-      };
-      this.toastr.success('Your list has been successfuly cleared!', null, { toastLife: 2000 });
+      this.toastr.success('Your list has been successfuly cleared!', null,
+        {
+          animate: 'flyRight',
+          positionClass: 'toast-top-full-width',
+          showCloseButton: 'true',
+          toastLife: 2000
+        });
       this.dialogRef.close();
     } else {
-      this.toastr.options = {
-        animate: 'flyRight',
-        positionClass: 'toast-top-full-width',
-        showCloseButton: 'true'
-      };
-       this.toastr.error('You have to choose pizza size !', null, { toastLife: 4000 });
-      this.toastr.error('You have to choose pizza flour and size!', null, { toastLife: 4000 });
+      this.toastr.error('You have to choose pizza size !', null, {
+          animate: 'flyRight',
+          positionClass: 'toast-top-full-width',
+          showCloseButton: 'true',
+          toastLife: 4000
+        });
+      this.toastr.error('You have to choose pizza flour and size!', null, {
+          animate: 'flyRight',
+          positionClass: 'toast-top-full-width',
+          showCloseButton: 'true',
+          toastLife: 4000
+        });
     }
   }
 

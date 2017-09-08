@@ -6,6 +6,8 @@ import { AuthGuard } from './services/auth/auth-guard.service';
 import { LoginComponent } from './users/login/login.component';
 import { RegisterComponent } from './users/register/register.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about/about.component';
+import { AboutContactComponent } from './about/about-contact/about-contact.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'profile', loadChildren: './users/users.module.ts#UsersModule', canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contactus', component: AboutContactComponent },
   { path: 'cart', component: CartListComponent, canActivate: [AuthGuard] },
   { path: 'orders', component: OrdersListComponent, canActivate: [AdminGuard] },
   { path: '**', component: UnauthorizedComponent, pathMatch: 'full' }
