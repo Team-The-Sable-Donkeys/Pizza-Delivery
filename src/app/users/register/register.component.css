@@ -1,3 +1,10 @@
 main {
     margin-top: 75px;
+    margin-bottom: 150px;
+}
+
+@media only screen and (max-width: 991px) {
+	main {
+        margin-bottom: 200px; 
+    }
 }
