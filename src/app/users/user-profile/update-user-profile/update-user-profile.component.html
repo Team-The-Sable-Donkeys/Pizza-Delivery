@@ -14,14 +14,6 @@
                 <label>Last Name</label>
                 <input name='lastName' type='text' placeholder='Enter Last Name Here..' class='form-control' [(ngModel)]='lastName'>
               </div>
-              <div class='col-sm-6 form-group'>
-                <label>Password</label>
-                <input name='password' type='password' placeholder='Enter Password Here..' class='form-control' [(ngModel)]='passowrd'>
-              </div>
-              <div class='col-sm-6 form-group'>
-                <label>Confirm Password</label>
-                <input name='confirmPassword' type='password' placeholder='Enter Password Here..' class='form-control' [(ngModel)]='confirmPassword'>
-              </div>
             </div>
             <div class='row'>
               <fieldset ngModelGroup='address'>
@@ -48,10 +40,12 @@
               <input name='phoneNumber' type='text' placeholder='Enter Phone Number Here..' class='form-control' [(ngModel)]='phoneNumber'>
             </div>
             <button type='submit' class='btn btn-lg btn-info'>Update</button>
+            <button type='submit' class='btn btn-lg btn-danger' routerLink='/profile/view'>Return</button>
+            
           </div>
         </form>
       </div>
     </div>
-    <h3>{{errorMessage}}</h3>
+    <h3>{{message}}</h3>
   </div>
 </main>

@@ -163,6 +163,8 @@ const init = (db) => {
 
     const updateProfile = (user) => {
         const saltRounds = 10;
+        let errorMessage;
+        let canRegister;
         let newFirstName;
         let newLastName;
         let city;
@@ -175,49 +177,41 @@ const init = (db) => {
             country
         };
 
-        if (user.newData.password === '' || user.newData.password === null){
-            newPassword = user.oldData.password;
-        } else {
-            newPassword = user.newData.password;
-        }
-
-        if (user.newData.firstName){
+        if (user.newData.firstName) {
             newFirstName = user.newData.firstName;
         } else {
             newFirstName = user.oldData.firstName;
         }
 
-        if (user.newData.lastName){
+        if (user.newData.lastName) {
             newLastName = user.newData.lastName;
         } else {
             newLastName = user.oldData.lastName;
         }
 
-        if (user.newData.address.city){
+        if (user.newData.address.city) {
             newAddress.city = user.newData.address.city;
         } else {
             newAddress.city = user.oldData.address.city;
         }
 
-        if (user.newData.address.street){
+        if (user.newData.address.street) {
             newAddress.street = user.newData.address.street;
         } else {
             newAddress.street = user.oldData.address.street;
         }
 
-        if (user.newData.address.country){
+        if (user.newData.address.country) {
             newAddress.country = user.newData.address.country;
         } else {
             newAddress.country = user.oldData.address.country;
         }
 
-        if ( user.newData.phoneNumber === '' || user.newData.phoneNumber === null ){
-            newPhoneNumber = user.oldData.phoneNumber;
-        } else if(user.newData.phoneNumber.toString().length < 8) {
+        if (user.newData.phoneNumber === '' || user.newData.phoneNumber === null || user.newData.phoneNumber === undefined) {
             newPhoneNumber = user.oldData.phoneNumber;
         } else {
             newPhoneNumber = user.newData.phoneNumber;
-        }        
+        }
 
         return db.collection('pizza-users')
             .update({ 'username': user.oldData.username },
@@ -225,7 +219,6 @@ const init = (db) => {
                 $set: {
                     firstName: newFirstName,
                     lastName: newLastName,
-                    password: bcrypt.hashSync(newPassword, bcrypt.genSaltSync(saltRounds), null),
                     phoneNumber: newPhoneNumber,
                     address: newAddress,
                 },
