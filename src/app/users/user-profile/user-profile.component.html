@@ -2,7 +2,7 @@
   <div class='jumbotron'>
     <div class='row'>
       <div class='col-md-4 col-xs-12 col-sm-6 col-lg-4'>
-        <img src='https://www.pixilart.com/images/art/thumb/0943dae0270548f.png' alt='stack photo' class='img'>
+        <img src='../../../assets/pizza-images/defaul-user-pic.png' alt='stack photo' class='img'>
       </div>
       <div class='col-md-8 col-xs-12 col-sm-6 col-lg-8'>
         <div class='container' style='border-bottom:1px solid black'>
@@ -17,6 +17,9 @@
             <p><span class='glyphicon glyphicon-user' style='width:50px;'></span>Last name: {{currentUser.lastName}}</p>
           </li>
           <li>
+            <p><span class='glyphicon glyphicon-phone' style='width:50px;'></span>Phone number: {{currentUser.phoneNumber}}</p>
+          </li>
+          <li>
             <p><span class='glyphicon glyphicon-home' style='width:50px;'></span>Address: </p>
             <ul>
               <li class = 'address glyphicon glyphicon-city'>City: {{currentAddress.city}}</li>
@@ -24,6 +27,10 @@
               <li class = 'address'>Country: {{currentAddress.country}}</li>
             </ul>
           </li>
+          <br>
+          <li>
+            <a routerLink='/profile/update'><span class="glyphicon glyphicon-user"></span> Update profile </a>
+            </li>
         </ul>
       </div>
     </div>

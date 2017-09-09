@@ -16,47 +16,47 @@ const init = (db) => {
 
     const getSizes = () => {
         return db.collection('custom-pizza-sizes')
-        .find()
-        .toArray()
-        .then((sizes) => {
-            return Promise.resolve(sizes);
-        });
+            .find()
+            .toArray()
+            .then((sizes) => {
+                return Promise.resolve(sizes);
+            });
     };
 
     const getFlours = () => {
         return db.collection('custom-pizza-flours')
-        .find()
-        .toArray()
-        .then((flours) => {
-            return Promise.resolve(flours);
-        });
+            .find()
+            .toArray()
+            .then((flours) => {
+                return Promise.resolve(flours);
+            });
     };
 
     const getMeats = () => {
         return db.collection('custom-pizza-meats')
-        .find()
-        .toArray()
-        .then((meats) => {
-            return Promise.resolve(meats);
-        });
+            .find()
+            .toArray()
+            .then((meats) => {
+                return Promise.resolve(meats);
+            });
     };
 
     const getDairies = () => {
         return db.collection('custom-pizza-dairies')
-        .find()
-        .toArray()
-        .then((dairies) => {
-            return Promise.resolve(dairies);
-        });
+            .find()
+            .toArray()
+            .then((dairies) => {
+                return Promise.resolve(dairies);
+            });
     };
 
     const getSauces = () => {
         return db.collection('custom-pizza-sauces')
-        .find()
-        .toArray()
-        .then((sauces) => {
-            return Promise.resolve(sauces);
-        });
+            .find()
+            .toArray()
+            .then((sauces) => {
+                return Promise.resolve(sauces);
+            });
     };
 
     const getUsers = () => {
@@ -158,7 +158,79 @@ const init = (db) => {
                 } else {
                     throw new Error('Username is already in use!');
                 }
-            })
+            });
+    };
+
+    const updateProfile = (user) => {
+        const saltRounds = 10;
+        let newFirstName;
+        let newLastName;
+        let city;
+        let street;
+        let country;
+        let newPhoneNumber;
+        let newAddress = {
+            city,
+            street,
+            country
+        };
+
+        if (user.newData.password === '' || user.newData.password === null){
+            newPassword = user.oldData.password;
+        } else {
+            newPassword = user.newData.password;
+        }
+
+        if (user.newData.firstName){
+            newFirstName = user.newData.firstName;
+        } else {
+            newFirstName = user.oldData.firstName;
+        }
+
+        if (user.newData.lastName){
+            newLastName = user.newData.lastName;
+        } else {
+            newLastName = user.oldData.lastName;
+        }
+
+        if (user.newData.address.city){
+            newAddress.city = user.newData.address.city;
+        } else {
+            newAddress.city = user.oldData.address.city;
+        }
+
+        if (user.newData.address.street){
+            newAddress.street = user.newData.address.street;
+        } else {
+            newAddress.street = user.oldData.address.street;
+        }
+
+        if (user.newData.address.country){
+            newAddress.country = user.newData.address.country;
+        } else {
+            newAddress.country = user.oldData.address.country;
+        }
+
+        if ( user.newData.phoneNumber === '' || user.newData.phoneNumber === null ){
+            newPhoneNumber = user.oldData.phoneNumber;
+        } else if(user.newData.phoneNumber.toString().length < 8) {
+            newPhoneNumber = user.oldData.phoneNumber;
+        } else {
+            newPhoneNumber = user.newData.phoneNumber;
+        }        
+
+        return db.collection('pizza-users')
+            .update({ 'username': user.oldData.username },
+            {
+                $set: {
+                    firstName: newFirstName,
+                    lastName: newLastName,
+                    password: bcrypt.hashSync(newPassword, bcrypt.genSaltSync(saltRounds), null),
+                    phoneNumber: newPhoneNumber,
+                    address: newAddress,
+                },
+            }
+            );
     };
 
     const login = (user) => {
@@ -181,14 +253,14 @@ const init = (db) => {
     const emptyUserCart = (userId) => {
         return db.collection('pizza-users')
             .update(
-                {
-                    'id': userId
-                },
-                {
-                    $set: {
-                        cart: []
-                    }
+            {
+                'id': userId
+            },
+            {
+                $set: {
+                    cart: []
                 }
+            }
             )
     }
 
@@ -215,6 +287,7 @@ const init = (db) => {
         })
     }
 
+
     const data = {
         getPizzas,
         getPizzaById,
@@ -232,7 +305,8 @@ const init = (db) => {
         getFlours,
         getMeats,
         getDairies,
-        getSauces
+        getSauces,
+        updateProfile
     };
 
     return Promise.resolve(data);

@@ -41,6 +41,7 @@ export class RegisterComponent implements OnInit {
     // Registration
     if (this.canRegister) {
       return this.usersService.registerUser(user)
+
         .subscribe(() => {
           this.router.navigate(['/login']);
         },

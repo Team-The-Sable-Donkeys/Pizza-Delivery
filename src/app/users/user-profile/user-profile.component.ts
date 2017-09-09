@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { PizzaService } from '../../pizza.service';
+import { UpdateUserProfileComponent } from './update-user-profile/update-user-profile.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,13 +15,12 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private pizzaService: PizzaService) { }
 
-
   ngOnInit() {
-   this.currentUser = this.pizzaService.getFixedUser()
+    this.currentUser = this.pizzaService.getFixedUser()
       .subscribe((u) => {
         this.currentUser = u;
       });
-  this.currentAddress = this.pizzaService.getFixedUserAddress()
+    this.currentAddress = this.pizzaService.getFixedUserAddress()
       .subscribe((a) => {
         this.currentAddress = a;
       });

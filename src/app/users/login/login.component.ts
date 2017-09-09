@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
       (data) => {
         localStorage.setItem('auth-key', data);
         this.router.navigate(['/home']);
+      location.reload();
       },
       error => console.log(error)
       );
