@@ -1,7 +1,8 @@
 .container {
-     margin-top: 75px;
+     margin-top: 0 0 125px;
     width: 80%;
-    padding: 10px;
+    padding: 25px;
+    border-radius: 45px;
 }
 img{
     margin-top: 80px;
