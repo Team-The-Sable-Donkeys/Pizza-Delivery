@@ -9,6 +9,12 @@ footer {
 	color: #cccccc;
 }
 
+@media only screen and (max-width: 991px) {
+	footer {
+		height: 175px;
+	}
+}
+
 ul.social-network {
 	list-style: none;
 	display: inline;
