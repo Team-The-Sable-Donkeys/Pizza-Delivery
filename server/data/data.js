@@ -207,6 +207,14 @@ const init = (db) => {
             })
     }
 
+    const insertMsg = (data) => {
+        return db.collection('pizza-messages').insert({
+            name: data.name,
+            email: data.email,
+            message: data.message
+        })
+    }
+
     const data = {
         getPizzas,
         getPizzaById,
@@ -217,6 +225,7 @@ const init = (db) => {
         updateUserCart,
         deletePizzaFromCart,
         insertOrder,
+        insertMsg,
         emptyUserCart,
         getOrders,
         getSizes,

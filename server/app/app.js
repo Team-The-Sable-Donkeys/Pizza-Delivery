@@ -143,6 +143,11 @@ const init = (data) => {
         return data.insertOrder(order);
     });
 
+    app.post('/contact', (request, response) => {
+        const msg = request.body;
+        return data.insertMsg(msg);
+    });
+
     app.get('*', (request, response) => {
         response.sendFile(path.join(__dirname, '../../dist/index.html'));
     });
