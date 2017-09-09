@@ -87,15 +87,23 @@
     </li>
 
     <li>
-      <h3 *ngIf='createCustomPizza()'> Your current amount is: {{createCustomPizza()}}</h3>
+      <p class = 'amount' *ngIf='createCustomPizza()'>
+        <span>
+           <input type = 'text' value = 'Current amount: {{createCustomPizza()}}$'> 
+      </span>
+        </p>
     </li>
   </ul>
 
-  <button class='btn btn-success' type='button' (click)='completePizza()'>
+  <li>
+  <button class='btn btn-success pizza-button' type='button' (click)='completePizza()'>
     <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Create pizza</button>
-<br>
-  <button class='btn btn-danger' type='button' (click)='clearData()'>
+    </li>
+  <br>
+<li>
+  <button class='btn btn-danger pizza-button' type='button' (click)='clearData()'>
     <span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Clear all</button>
+    </li>
   
 
 

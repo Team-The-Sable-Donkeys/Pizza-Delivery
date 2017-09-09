@@ -10,20 +10,26 @@ h2 {
         top: 100px;
 }
 
-h3{
+input{
+    border-radius: 65px;
+}
+
+.amount{
     font-family: Courier New, Courier, monospace;
-    font-weight: bold;
     color: red;
+    width: 100px;
 }
 
 
   #make-pizza-container{
-    height: 45em;
+    height: 600px;
     top: 150px;
     background-image: url('../../../assets/pizza-images/custom-pizza-background.jpg'); 
+    background-repeat:no-repeat;
+    background-size:cover;
     position: relative;
     text-align: left;
-   
+   border-radius: 30px;
 } 
 
 .selected-product{
@@ -39,6 +45,10 @@ h3{
 .toast-top-full-width {
     top: 50px;
     margin-top: 50px;
+}
+
+.pizza-button{
+    margin-left:40px;
 }
 
 button{
