@@ -10,7 +10,6 @@ const SECRET_KEY = 'the camp alpha';
 
 const init = (data) => {
     const app = express();
-
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(cookieParser());
@@ -147,6 +146,14 @@ const init = (data) => {
         const msg = request.body;
         return data.insertMsg(msg);
     });
+
+    app.post('/api/users' , (request, response) => {
+        const input = request.body;
+        return data.updateProfile(input)
+            .then(() => {
+                return response.status(201);
+            });
+    })
 
     app.get('*', (request, response) => {
         response.sendFile(path.join(__dirname, '../../dist/index.html'));
