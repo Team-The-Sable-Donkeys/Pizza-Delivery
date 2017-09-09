@@ -47,9 +47,13 @@ export class AboutContactComponent implements OnInit {
     }
 
     if(this.formIsValid){
+      this.errorMessage = 'Thank you for your message!';
       return this.messagesService.insertMessage(data)
       .subscribe(()=>
-        this.router.navigate(['/home']));
+        this.router.navigate(['/home']),
+      (err) => {
+        console.log(err);
+      });
     }
   }
 }
