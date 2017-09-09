@@ -1,15 +1,15 @@
-<h2> Here you can make your own selection </h2>
-
 <div id='make-pizza-container'>
+  <h2> Here you can make your own selection </h2>
 
   <ul>
     <li class='select-menu'>
       <div class='dropdown'>
-        <button  class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose size
+        <button class='btn btn-outline-primary dropdown-toggle' type='button' data-toggle='dropdown'>Choose size
   <span class='caret'></span></button>
         <ul class='dropdown-menu'>
           <li class="input-group-addon beautiful" *ngFor='let size of sizes'>
-            <input required type='radio' name='radio-choice' value='{{size}}' (change)='selectSize($event, size)' required>{{size.type}} {{size.price}}$
+            <input required type='radio' name='radio-choice' value='{{size}}' (change)='selectSize($event, size)' required>{{size.type}}
+            {{size.price}}$
           </li>
         </ul>
         <!-- <span class='selected-product'>Selected size: {{selectedSize[0].type}} {{selectedSize[0].price}}$
@@ -87,24 +87,21 @@
     </li>
 
     <li>
-      <p class = 'amount' *ngIf='createCustomPizza()'>
+      <p class='amount' *ngIf='createCustomPizza()'>
         <span>
            <input type = 'text' value = 'Current amount: {{createCustomPizza()}}$'> 
       </span>
-        </p>
+      </p>
     </li>
   </ul>
 
   <li>
-  <button class='btn btn-success pizza-button' type='button' (click)='completePizza()'>
+    <button class='btn btn-success pizza-button' type='button' (click)='completePizza()'>
     <span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Create pizza</button>
-    </li>
+  </li>
   <br>
-<li>
-  <button class='btn btn-danger pizza-button' type='button' (click)='clearData()'>
+  <li>
+    <button class='btn btn-danger pizza-button' type='button' (click)='clearData()'>
     <span class="glyphicon btn-glyphicon glyphicon-minus img-circle text-warning"></span>Clear all</button>
-    </li>
-  
-
-
+  </li>
 </div>
