@@ -19,7 +19,7 @@ export class UsersService {
   }
 
   updateUserProfile(data) {
-    return this.http.post('http://localhost:3000/api/users', data);
+    return this.http.post('http://localhost:3000/api/users', data).subscribe();
   }
 
 }
