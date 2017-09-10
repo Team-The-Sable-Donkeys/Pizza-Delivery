@@ -1,3 +1,4 @@
+import { MyCurrencyPipe } from './../../pipes/mycurrency.pipe';
 import { MdDialogModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { PizzaService } from './../../pizza.service';
@@ -13,7 +14,7 @@ fdescribe('CartListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpModule, MdDialogModule],
-      declarations: [ CartListComponent ],
+      declarations: [ CartListComponent, MyCurrencyPipe ],
       providers: [PizzaService],
       schemas: [NO_ERRORS_SCHEMA]
     })
