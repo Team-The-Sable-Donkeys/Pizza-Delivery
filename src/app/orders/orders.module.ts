@@ -1,3 +1,4 @@
+import { AuthHttp } from 'angular2-jwt';
 import { OrdersService } from './../services/orders/orders.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

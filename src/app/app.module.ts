@@ -7,7 +7,7 @@ import { AuthService } from './services/auth/auth.service';
 import { UsersModule } from './users/users.module';
 import { SharedModule } from './shared/shared.module';
 import { PizzasModule } from './pizzas/pizzas.module';
-import { AboutModule } from './about/about.module'
+import { AboutModule } from './about/about.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';

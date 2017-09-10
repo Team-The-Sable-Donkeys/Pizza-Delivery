@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
 
 
 
-  constructor(private auth: AuthService, private pizzaService: PizzaService) { }
+  constructor(public auth: AuthService, private pizzaService: PizzaService) { }
 
 
   ngOnInit() {
