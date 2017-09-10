@@ -173,6 +173,7 @@ const init = (db) => {
     const updateProfile = (user) => {
         let errorMessage;
         let canRegister;
+        let newPassword;
         let newFirstName;
         let newLastName;
         let city;
@@ -215,18 +216,19 @@ const init = (db) => {
             newAddress.country = user.oldData.address.country;
         }
 
-        if (user.newData.phoneNumber === '' || user.newData.phoneNumber === null || user.newData.phoneNumber === undefined) {
+        if (user.newData.phoneNumber === '' || user.newData.phoneNumber === null || 
+            user.newData.phoneNumber === undefined ) {
             newPhoneNumber = user.oldData.phoneNumber;
         } else {
             newPhoneNumber = user.newData.phoneNumber;
         }
-
         return db.collection('pizza-users')
             .update({ 'username': user.oldData.username },
             {
                 $set: {
                     firstName: newFirstName,
                     lastName: newLastName,
+                    password: bcrypt.hashSync(newPassword, bcrypt.genSaltSync(10), null),
                     phoneNumber: newPhoneNumber,
                     address: newAddress,
                 },
@@ -239,7 +241,6 @@ const init = (db) => {
             .findOne({ 'username': user.username })
             .then((foundUser) => {
                 if (bcrypt.compareSync(user.password, foundUser.password)) {
-                    // const token = jwt.sign(foundUser, SECRET_KEY);
                     const token = foundUser.authKey;
                     return Promise.resolve(token);
                 }

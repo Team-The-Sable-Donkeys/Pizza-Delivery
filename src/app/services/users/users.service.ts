@@ -19,7 +19,6 @@ export class UsersService {
   }
 
   updateUserProfile(data) {
-    console.log(data);
     return this.http.post('http://localhost:3000/api/users', data);
   }
 

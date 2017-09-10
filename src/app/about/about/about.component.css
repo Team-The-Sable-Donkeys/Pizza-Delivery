@@ -1,6 +1,15 @@
 body {
-    padding-top: 54px;
+    padding-top: 55px;
 }
+
+.container {
+    padding-top: 50px;
+}
+
+#btm-container{
+    padding-bottom: 150px;
+}
+
 
 @media (min-width: 992px) {
     body {

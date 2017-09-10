@@ -138,7 +138,6 @@ const init = (data) => {
     });
 
     app.get('/api/user-orders', (request, response) => {
-        console.log('idaaaa');
         return data.getUserOrders()
             .then((orders) => {
                 return response.json(orders);
@@ -152,7 +151,9 @@ const init = (data) => {
 
     app.post('/contact', (request, response) => {
         const msg = request.body;
-        return data.insertMsg(msg);
+        return data.insertMsg(msg).then(() => {
+            return Promise.resolve();
+        });
     });
 
     app.post('/api/users' , (request, response) => {
