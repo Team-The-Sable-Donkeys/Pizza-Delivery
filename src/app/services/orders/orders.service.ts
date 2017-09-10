@@ -9,7 +9,7 @@ export class OrdersService {
   getOrders(page) {
     const params = new URLSearchParams();
     params.set('page', page);
-    return this.http.get('https://sablepizzahubdata.herokuapp.com/orders?page=' + page)
+    return this.http.get('https://sablepizzahubdata.herokuapp.com/api/orders?page=' + page)
       .map((response) => response.json());
   }
 
