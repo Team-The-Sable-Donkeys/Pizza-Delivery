@@ -151,7 +151,9 @@ const init = (data) => {
 
     app.post('/contact', (request, response) => {
         const msg = request.body;
-        return data.insertMsg(msg);
+        return data.insertMsg(msg).then(() => {
+            return Promise.resolve();
+        });
     });
 
     app.post('/api/users' , (request, response) => {
