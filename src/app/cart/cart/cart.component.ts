@@ -1,8 +1,10 @@
 import { PizzaService } from './../../pizza.service';
-import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
+  /* tslint:disable */
   selector: '[app-cart]',
+  /* tslint:enable */
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
