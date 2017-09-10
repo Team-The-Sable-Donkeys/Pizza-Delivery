@@ -29,7 +29,9 @@ a:hover,a:focus{
 #contact{
 	background:#333333;
 	color:#f4f4f4;
-	padding-bottom:80px;
+	padding-bottom:2px;
+	margin-top: 75px;
+	height: 100%;
 }
 
 textarea.form-control{
