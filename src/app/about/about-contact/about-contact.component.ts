@@ -13,13 +13,16 @@ export class AboutContactComponent implements OnInit {
   formIsValid = true;
   errorMessage;
   regexMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  name;
+  email;
+  message;
   constructor(private messagesService: MessagesService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  createQuestion(data: ContactForm){
-    //name check
+  createQuestion(data: ContactForm) {
+    // name check
     if (data.name === undefined) {
       this.formIsValid = false;
       this.errorMessage = 'Please enter a name.';
@@ -28,7 +31,7 @@ export class AboutContactComponent implements OnInit {
       this.errorMessage = 'Your name must be atleast 4 symbols long!';
     }
 
-    //mail check
+    // mail check
     if (data.email === undefined) {
       this.formIsValid = false;
       this.errorMessage = 'Please enter an email.';
@@ -37,7 +40,7 @@ export class AboutContactComponent implements OnInit {
       this.errorMessage = 'Email is not in the correct format!';
     }
 
-    //message check
+    // message check
     if (data.message === undefined) {
       this.formIsValid = false;
       this.errorMessage = 'Please enter your message.';
@@ -46,12 +49,12 @@ export class AboutContactComponent implements OnInit {
       this.errorMessage = 'Your message must be atleast 14 symbols long!';
     }
 
-    if(this.formIsValid){
+    if (this.formIsValid) {
       this.errorMessage = 'Thank you for your message!';
       this.router.navigate(['/home']);
       return this.messagesService.insertMessage(data)
-      .subscribe(()=>
-        //this.router.navigate(['/home'])
+      .subscribe(() =>
+        // this.router.navigate(['/home'])
       (err) => {
         console.log(err);
       });

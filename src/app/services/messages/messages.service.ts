@@ -6,7 +6,7 @@ export class MessagesService {
 
   constructor(private http: Http) { }
 
-  insertMessage(msg){
+  insertMessage(msg) {
     return this.http.post('http://localhost:3000/contact', msg)
       .map((res) => res.json());
   }
