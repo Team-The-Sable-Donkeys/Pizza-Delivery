@@ -8,18 +8,20 @@ export class UsersService {
   constructor(private http: Http) {
   }
 
+  url = 'https://sablepizzahubdata.herokuapp.com/';
+
   registerUser(user) {
-    return this.http.post('http://localhost:3000/register', user);
+    return this.http.post(this.url + 'register', user);
   }
 
   clearUserCart(user) {
-    return this.http.delete('http://localhost:3000/api/empty', new RequestOptions({
+    return this.http.delete(this.url + 'api/empty', new RequestOptions({
       body: user
     }));
   }
 
   updateUserProfile(data) {
-    return this.http.post('http://localhost:3000/api/users', data).subscribe();
+    return this.http.post(this.url + 'api/users', data).subscribe();
   }
 
 }
