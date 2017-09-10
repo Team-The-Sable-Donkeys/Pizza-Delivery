@@ -173,7 +173,6 @@ const init = (db) => {
     const updateProfile = (user) => {
         let errorMessage;
         let canRegister;
-        let newPassword;
         let newFirstName;
         let newLastName;
         let city;
@@ -228,7 +227,6 @@ const init = (db) => {
                 $set: {
                     firstName: newFirstName,
                     lastName: newLastName,
-                    password: bcrypt.hashSync(newPassword, bcrypt.genSaltSync(10), null),
                     phoneNumber: newPhoneNumber,
                     address: newAddress,
                 },
