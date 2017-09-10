@@ -1,16 +1,22 @@
+import { FormsModule } from '@angular/forms';
+import { PizzaService } from './../../pizza.service';
 import { HttpModule } from '@angular/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CartComponent } from './cart.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-fdescribe('CartComponent', () => {
+
+describe('CartComponent', () => {
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CartComponent ],
-      imports: [HttpModule]
+      imports: [HttpModule, FormsModule],
+      providers: [PizzaService],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
@@ -33,6 +39,6 @@ fdescribe('CartComponent', () => {
       }
     };
     component.changeSubTotal(ev);
-    expect(component).toBeTruthy();
+    expect(component.pizza.quantity).toEqual(ev.target.value);
   });
 });
