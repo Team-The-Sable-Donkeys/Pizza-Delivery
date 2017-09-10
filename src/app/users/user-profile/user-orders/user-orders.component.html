@@ -1,7 +1,8 @@
+<h3>Your orders' history: </h3>
 <ul>
   <li *ngFor='let pizza of currentPizzaNames'>
     {{pizza}}
   </li>
+  <br>
 </ul>
-
 <button class='btn btn-info' type='button' (click)='close()'>Close</button>

@@ -215,7 +215,8 @@ const init = (db) => {
             newAddress.country = user.oldData.address.country;
         }
 
-        if (user.newData.phoneNumber === '' || user.newData.phoneNumber === null || user.newData.phoneNumber === undefined) {
+        if (user.newData.phoneNumber === '' || user.newData.phoneNumber === null || 
+            user.newData.phoneNumber === undefined ) {
             newPhoneNumber = user.oldData.phoneNumber;
         } else {
             newPhoneNumber = user.newData.phoneNumber;

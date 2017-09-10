@@ -11,6 +11,7 @@ import { PizzaService } from '../../../pizza.service';
 export class UpdateUserProfileComponent implements OnInit {
 
   currentUser;
+errorMessage;
 message;
 
   constructor(private usersService: UsersService,
@@ -30,6 +31,19 @@ message;
       oldData: this.currentUser,
       newData: user
     };
+
+    const inputPhoneNumber = +user.phoneNumber;
+    const reg = /^\d+$/;
+
+    if (user.phoneNumber && !reg.test(user.phoneNumber)) {
+      this.errorMessage = 'Phone number must consist of numbers only!';
+      return;
+    }
+     if (user.phoneNumber && user.phoneNumber.length < 8) {
+      this.errorMessage = 'Phone number must be at least 8 digits';
+      return;
+    }
+
     return this.usersService.updateUserProfile(data)
       .subscribe((users) => {
         this.message = 'success';

@@ -138,7 +138,6 @@ const init = (data) => {
     });
 
     app.get('/api/user-orders', (request, response) => {
-        console.log('idaaaa');
         return data.getUserOrders()
             .then((orders) => {
                 return response.json(orders);
