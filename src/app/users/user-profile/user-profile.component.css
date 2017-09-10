@@ -17,3 +17,7 @@ img{
 li{
     list-style-type: none;
 }
+
+main {
+    margin-top: 75px;
+}
