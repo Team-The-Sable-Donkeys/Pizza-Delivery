@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  errorMessage;
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       location.reload();
       },
-      error => console.log(error)
+      error => this.errorMessage = 'Username / password incorrect'
       );
   }
 

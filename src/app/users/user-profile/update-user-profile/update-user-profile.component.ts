@@ -33,9 +33,10 @@ message;
     };
 
     const inputPhoneNumber = +user.phoneNumber;
-    const reg = /^\d+$/;
+    const numbReg = /^\d+$/;
+    const lettersReg = /^[a-zA-Z]*$/;
 
-    if (user.phoneNumber && !reg.test(user.phoneNumber)) {
+    if (user.phoneNumber && !numbReg.test(user.phoneNumber)) {
       this.errorMessage = 'Phone number must consist of numbers only!';
       return;
     }
@@ -44,11 +45,20 @@ message;
       return;
     }
 
+    if (user.address.country && !lettersReg.test(user.address.country)) {
+      this.errorMessage = 'Country name must consist of latin letters only!';
+      return;
+    }
+
+    if (user.address.city && !lettersReg.test(user.address.city)) {
+      this.errorMessage = 'City name must consist of latin letters only!';
+      return;
+    }
+
     return this.usersService.updateUserProfile(data)
       .subscribe((users) => {
         this.message = 'success';
         this.router.navigate(['/profile/view']);
-        console.log(users);
       },
       (error) => {
         console.log('Ooooops, korec');
