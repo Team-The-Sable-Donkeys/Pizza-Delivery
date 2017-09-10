@@ -7,7 +7,7 @@ export class MakeCustomPizzaService {
 
 constructor(private http: Http) { }
 
-url = 'https://sablepizzahubdata.herokuapp.com/orders?page=';
+url = 'https://sablepizzahubdata.herokuapp.com/';
 
 getSizes() {
     return this.http.get(this.url + 'custom-pizza-sizes')
