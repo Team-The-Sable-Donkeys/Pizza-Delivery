@@ -11,12 +11,23 @@ import { PizzaService } from '../../../pizza.service';
 export class UpdateUserProfileComponent implements OnInit {
 
   currentUser;
-errorMessage;
-message;
+  errorMessage;
+  message;
+
+  username;
+  password;
+  confirmPassword;
+  firstName;
+  lastName;
+  city;
+  country;
+  street;
+  additionalInfo;
+  phoneNumber;
 
   constructor(private usersService: UsersService,
     private router: Router,
-  private pizzaService: PizzaService) { }
+    private pizzaService: PizzaService) { }
 
   ngOnInit() {
     this.currentUser = this.pizzaService.getFixedUser()
@@ -40,7 +51,7 @@ message;
       this.errorMessage = 'Phone number must consist of numbers only!';
       return;
     }
-     if (user.phoneNumber && user.phoneNumber.length < 8) {
+    if (user.phoneNumber && user.phoneNumber.length < 8) {
       this.errorMessage = 'Phone number must be at least 8 digits';
       return;
     }

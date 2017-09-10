@@ -17,7 +17,7 @@ export class PizzaComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private PizzaService: PizzaService,
-    private auth: AuthService) {
+    public auth: AuthService) {
   }
 
   ngOnInit() {

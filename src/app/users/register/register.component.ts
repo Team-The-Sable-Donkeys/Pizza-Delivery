@@ -11,6 +11,16 @@ export class RegisterComponent implements OnInit {
 
   canRegister = true;
   errorMessage;
+  username;
+  password;
+  confirmPassword;
+  firstName;
+  lastName;
+  city;
+  country;
+  street;
+  additionalInfo;
+  phoneNumber;
   constructor(private usersService: UsersService, private router: Router) { }
 
   ngOnInit() {

@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   errorMessage;
+  username;
+  password;
 
   constructor(private authService: AuthService, private router: Router) { }
 
