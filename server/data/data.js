@@ -68,6 +68,15 @@ const init = (db) => {
             })
     };
 
+    const getUserOrders = () => {
+        return db.collection('pizza-orders')
+            .find()
+            .toArray()
+            .then((orders) => {
+                return Promise.resolve(orders);
+            });
+    };
+
     const getUserById = (id) => {
         return db.collection('pizza-users')
             .findOne({ 'id': id })
@@ -162,7 +171,6 @@ const init = (db) => {
     };
 
     const updateProfile = (user) => {
-        const saltRounds = 10;
         let errorMessage;
         let canRegister;
         let newFirstName;
@@ -299,7 +307,8 @@ const init = (db) => {
         getMeats,
         getDairies,
         getSauces,
-        updateProfile
+        updateProfile,
+        getUserOrders,
     };
 
     return Promise.resolve(data);

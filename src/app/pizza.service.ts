@@ -34,6 +34,12 @@ export class PizzaService {
       .map((usr) => usr.address);
   }
 
+  getFixedOrder(username) {
+    console.log(username);
+    return this.http.get('http://localhost:3000/api/user-orders')
+    .map((response) => response.json().filter((o) => o.username === username));
+  }
+
   addToCart(body) {
     return this.http.put('http://localhost:3000/api/cart', body)
       .map((response) => response.json());

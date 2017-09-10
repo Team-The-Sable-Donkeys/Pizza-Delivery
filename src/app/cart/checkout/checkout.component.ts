@@ -44,6 +44,7 @@ export class CheckoutComponent implements OnInit {
       pizzasInOrder.push(currentPizza);
     });
     const order = {
+      username: this.data.user.username,
       address: value,
       pizzas: pizzasInOrder,
       date: {
