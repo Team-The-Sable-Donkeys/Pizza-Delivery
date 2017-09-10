@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: Http, private router: Router) { }
 
   loginUser(user) {
-    return this.http.post('http://localhost:3000/login', user)
+    return this.http.post('https://sablepizzahubdata.herokuapp.com/login', user)
       .map(res => res.json());
   }
 
