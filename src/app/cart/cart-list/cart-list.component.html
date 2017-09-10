@@ -23,7 +23,7 @@
         <tr>
           <td><a routerLink="/pizzas" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
           <td colspan="2" class="hidden-xs"></td>
-          <td class="hidden-xs text-center"><strong>Total ${{totalPrice}}</strong></td>
+          <td class="hidden-xs text-center"><strong>Total ${{totalPrice | myCurrency}}</strong></td>
           <td><a class="btn btn-success btn-block" (click)="checkOut()">Checkout <i class="fa fa-angle-right"></i></a></td>
         </tr>
       </tfoot>

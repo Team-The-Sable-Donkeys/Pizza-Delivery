@@ -20,8 +20,7 @@ import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    MyCurrencyPipe
+    HomeComponent
   ],
   imports: [
     BrowserModule,

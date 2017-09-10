@@ -1,3 +1,4 @@
+import { MyCurrencyPipe } from './../pipes/mycurrency.pipe';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
@@ -18,7 +19,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     BrowserAnimationsModule,
     FormsModule
   ],
-  declarations: [CartListComponent, CartComponent, CheckoutComponent],
+  declarations: [CartListComponent, CartComponent, CheckoutComponent, MyCurrencyPipe],
   // dialog
   entryComponents: [
     CheckoutComponent,
